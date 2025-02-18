@@ -9,7 +9,7 @@ const {
 } = createI18nServer(dictionaries)
 
 export async function getCurrentLocale() {
-  return getServerCurrentLocale()
+  return await getServerCurrentLocale()
 }
 
 export async function getStaticParams() {

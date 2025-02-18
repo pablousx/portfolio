@@ -7,7 +7,13 @@ import { locales } from 'i18n/config'
 import getDictionary, { getStaticParams } from 'i18n/server'
 import { setStaticParamsLocale } from 'next-international/server'
 
-export async function generateMetadata({ params: { locale } }) {
+export async function generateMetadata(props) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const { title, description } = await getDictionary('meta')
 
   const languages = {}
@@ -48,7 +54,17 @@ export async function generateStaticParams() {
   return await getStaticParams()
 }
 
-export default async function LocaleLayout({ children, params: { locale } }) {
+export default async function LocaleLayout(props) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
+  const {
+    children
+  } = props;
+
   setStaticParamsLocale(locale)
 
   return (

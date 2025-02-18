@@ -20,7 +20,7 @@ export default function Logo() {
         className={clsx(styles.logo, currentSection === 'landing' && styles.current)}
         title={aria.goToTop}
         src={logoIcon}
-      ></IconLink>
+      />
     </div>
   )
 }

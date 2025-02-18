@@ -1,17 +1,13 @@
 import styles from './page.module.css'
 
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/react'
+// import { Analytics } from '@vercel/analytics/react'
+// import { SpeedInsights } from '@vercel/speed-insights/react'
 
-import Footer from '@/components/Footer'
+import sections from '@/constants/sections'
 import Interactive from '@/components/Interactive'
 import Navbar from '@/components/Navbar'
-import sections from '@/constants/sections'
-import dynamic from 'next/dynamic'
-
-const Showcase = dynamic(() => import('@/components/Showcase'), {
-  ssr: false
-})
+import Footer from '@/components/Footer'
+import Showcase from '@/components/Showcase'
 
 export default async function Page() {
   return (
@@ -23,8 +19,8 @@ export default async function Page() {
         ))}
         <Footer />
         <Showcase />
-        <SpeedInsights debug={false} />
-        <Analytics debug={false} />
+        {/* <SpeedInsights debug={false} /> */}
+        {/* <Analytics debug={false} /> */}
       </main>
     </Interactive>
   )
