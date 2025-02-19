@@ -29,7 +29,6 @@ export default function Icon({
   const ariaHidden = hidden ? true : undefined
 
   useEffect(() => {
-    console.log('🚀 | src:', src)
     setIcon(() => dynamic(() => import(`../../public/icons/${src}`)))
   }, [src])
 

@@ -37,11 +37,11 @@ export default function useInteractivenessTracker() {
       callback(e.clientX - x, e.clientY - y)
     }
 
-    setTimeout(() => {
-      element.style.display = 'none'
-      element.offsetHeight
-      element.style.display = ''
-    }, 500)
+    // setTimeout(() => {
+    //   element.style.display = 'none'
+    //   element.offsetHeight
+    //   element.style.display = ''
+    // }, 500)
 
     const debouncedHandleTrackInteractiveness = debounce((e) => {
       handleTrackInteractiveness(e)
