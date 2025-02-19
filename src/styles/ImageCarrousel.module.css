@@ -97,11 +97,16 @@
 
   display: flex;
   justify-content: center;
-  gap: 0.75em;
   margin: auto;
 }
 
-.dots button {
+.dot {
+  padding-inline: 0.375em;
+
+  cursor: pointer;
+}
+
+.dot button {
   width: 0.85em;
   height: 0.85em;
   padding: 0;
@@ -115,7 +120,7 @@
     border-color 0.3s;
 }
 
-.dots button.selected {
+.dot.selected button {
   border-color: transparent;
   background-color: var(--light-color);
 }

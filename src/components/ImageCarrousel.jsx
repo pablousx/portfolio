@@ -83,16 +83,19 @@ export default function ImageCarrousel({
       />
       <div className={styles.dots}>
         {images.map((_, index) => (
-          <button
-            type='button'
-            title={`${aria.seeImage} ${index + 1}`}
+          <label
             key={index}
-            className={clsx(imageIndex === index && styles.selected)}
-            onClick={(ev) => {
-              ev.stopPropagation()
-              handleImageChange(index)
-            }}
-          />
+            className={clsx(styles.dot, imageIndex === index && styles.selected)}
+          >
+            <button
+              type='button'
+              title={`${aria.seeImage} ${index + 1}`}
+              onClick={(ev) => {
+                ev.stopPropagation()
+                handleImageChange(index)
+              }}
+            />
+          </label>
         ))}
       </div>
     </div>

@@ -3,24 +3,24 @@
     {
       "name": "LinkedIn",
       "icon": "landing/linkedin-icon.svg",
-      "url": "https://www.linkedin.com/in/nanndo54"
+      "url": "https://www.linkedin.com/in/nandous"
     },
     {
       "name": "Email",
       "icon": "landing/email-icon.svg",
-      "url": "mailto:nanndo54@outlook.com"
+      "url": "mailto:nandou54@outlook.com"
     },
     {
       "name": "GitHub",
       "icon": "landing/github-icon.svg",
-      "url": "https://github.com/nanndo54"
+      "url": "https://github.com/nandou54"
     }
   ],
   "landing": {
     "title": "Inicio",
     "name": "Pablo Cabrera",
     "presentation": "Creando experiencias digitales <strong>inolvidables</strong>.",
-    "email": "nanndo54@outlook.com",
+    "email": "nandou54@outlook.com",
     "emailButton": "Copia mi email",
     "cvButton": "¡Descarga mi CV!",
     "image": {
@@ -62,15 +62,9 @@
         "icon": "projects/quiz-game-icon.svg",
         "name": "Quiz Game",
         "description": "<u>Juego de preguntas en línea</u>. Tiene una interfaz cómoda y sencilla para proveer una <u>divertida</u> y <u>educativa</u> experiencia.",
-        "website": "https://quiz.nanndo54.dev/",
-        "code": "https://github.com/nanndo54/quiz-game",
-        "skills": [
-          "React",
-          "Redux",
-          "HTML5",
-          "CSS3",
-          "Vite.js"
-        ],
+        "website": "https://quiz.nandous.com/",
+        "code": "https://github.com/nandou54/quiz-game",
+        "skills": ["React", "Redux", "HTML5", "CSS3", "Vite.js"],
         "images": [
           {
             "src": "projects/quiz-game/img1.jpg",
@@ -104,14 +98,9 @@
         "icon": "projects/mini-translator-icon.svg",
         "name": "Mini Translator",
         "description": "<u>Traductor minimalista</u> en tiempo real. Facilita la traducción entre <u>más de 100 lenguajes</u>, así como el dictado del texto.",
-        "website": "https://translator.nanndo54.dev/",
-        "code": "https://github.com/nanndo54/mini-translator",
-        "skills": [
-          "JavaScript",
-          "HTML5",
-          "CSS3",
-          "Vite.js"
-        ],
+        "website": "https://translator.nandous.com/",
+        "code": "https://github.com/nandou54/mini-translator",
+        "skills": ["JavaScript", "HTML5", "CSS3", "Vite.js"],
         "images": [
           {
             "src": "projects/mini-translator/img1.jpg",
@@ -137,15 +126,9 @@
         "icon": "projects/jolc-icon.svg",
         "name": "JOLC",
         "description": "<u>Intérprete de JOLC</u>, un lenguaje de programación derivado de <u>Julia</u>, ejecutable en la web. Facilita el debug del lenguaje mediante reportes.",
-        "website": "https://jolc.nanndo54.dev/",
-        "code": "https://github.com/nanndo54/jolc",
-        "skills": [
-          "React",
-          "Redux",
-          "Python",
-          "HTML5",
-          "CSS3"
-        ],
+        "website": "https://jolc.nandous.com/",
+        "code": "https://github.com/nandou54/jolc",
+        "skills": ["React", "Redux", "Python", "HTML5", "CSS3"],
         "images": [
           {
             "src": "projects/jolc/img1.jpg",
@@ -442,6 +425,6 @@
   },
   "meta": {
     "title": "Mi Portafolio <DEV/>",
-    "description": "¡Hola! Soy Pablo Cabrera (nanndo54), Desarrollador Web Full-Stack a tu servicio. ¡Pongámonos en contacto! 🚀"
+    "description": "¡Hola! Soy Pablo Cabrera (nandous), Desarrollador Web Full-Stack a tu servicio. ¡Pongámonos en contacto! 🚀"
   }
 }

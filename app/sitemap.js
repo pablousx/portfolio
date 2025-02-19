@@ -1,13 +1,13 @@
 export default function sitemap() {
   return [
     {
-      url: 'https://nanndo54.dev/en',
+      url: 'https://nandous.com/en',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1
     },
     {
-      url: 'https://nanndo54.dev/es',
+      url: 'https://nandous.com/es',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8

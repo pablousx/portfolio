@@ -9,7 +9,7 @@ const {
 } = createI18nServer(dictionaries)
 
 export async function getCurrentLocale() {
-  return await getServerCurrentLocale()
+  return getServerCurrentLocale()
 }
 
 export async function getStaticParams() {
@@ -19,7 +19,6 @@ export async function getStaticParams() {
 export default async function getDictionary(scope) {
   const locale = await getCurrentLocale()
   const dictionary = dictionaries[locale]
-  const scopedDictionary = scope ? dictionary[scope] : dictionary
 
-  return await scopedDictionary
+  return scope ? dictionary[scope] : dictionary
 }

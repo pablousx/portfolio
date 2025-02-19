@@ -7,7 +7,7 @@ import { githubIcon } from '@/constants/icons'
 export default async function Footer() {
   return (
     <footer className={styles.base}>
-      <Link href='https://github.com/nanndo54/portfolio' isExternal decoration={false}>
+      <Link href='https://github.com/nandou54/portfolio' isExternal decoration={false}>
         Source
         <Icon src={githubIcon} lightColor />
       </Link>

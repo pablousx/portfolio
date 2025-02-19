@@ -7,18 +7,13 @@ import { locales } from 'i18n/config'
 import getDictionary, { getStaticParams } from 'i18n/server'
 import { setStaticParamsLocale } from 'next-international/server'
 
-export async function generateMetadata(props) {
-  const params = await props.params;
-
-  const {
-    locale
-  } = params;
-
+export async function generateMetadata({ params }) {
+  const { locale } = await params
   const { title, description } = await getDictionary('meta')
 
   const languages = {}
   for (const locale of locales) {
-    languages[locale] = `https://nanndo54.dev/${locale}`
+    languages[locale] = `https://nandous.com/${locale}`
   }
 
   const image = (await import(`i18n/locales/${locale}/splash.jpg`)).default
@@ -27,9 +22,9 @@ export async function generateMetadata(props) {
   return {
     title,
     description,
-    metadataBase: `https://nanndo54.dev/${locale}`,
+    metadataBase: `https://nandous.com/${locale}`,
     alternates: {
-      canonical: 'https://nanndo54.dev/',
+      canonical: 'https://nandous.com/',
       languages
     },
     openGraph: {
@@ -41,7 +36,7 @@ export async function generateMetadata(props) {
         height,
         width,
         type: 'image/jpeg',
-        alt: 'nanndo54.dev'
+        alt: 'nandous.com'
       }
     },
     appleWebApp: {
@@ -54,17 +49,8 @@ export async function generateStaticParams() {
   return await getStaticParams()
 }
 
-export default async function LocaleLayout(props) {
-  const params = await props.params;
-
-  const {
-    locale
-  } = params;
-
-  const {
-    children
-  } = props;
-
+export default async function LocaleLayout({ params, children }) {
+  const { locale } = await params
   setStaticParamsLocale(locale)
 
   return (

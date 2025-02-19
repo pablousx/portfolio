@@ -22,6 +22,6 @@ export default function robots() {
         disallow: '/static/'
       }
     ],
-    sitemap: 'https://nanndo54.dev/sitemap.xml'
+    sitemap: 'https://nandous.com/sitemap.xml'
   }
 }

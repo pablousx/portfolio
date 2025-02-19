@@ -3,24 +3,24 @@
     {
       "name": "LinkedIn",
       "icon": "landing/linkedin-icon.svg",
-      "url": "https://www.linkedin.com/in/nanndo54"
+      "url": "https://www.linkedin.com/in/nandous"
     },
     {
       "name": "Email",
       "icon": "landing/email-icon.svg",
-      "url": "mailto:nanndo54@outlook.com"
+      "url": "mailto:nandou54@outlook.com"
     },
     {
       "name": "GitHub",
       "icon": "landing/github-icon.svg",
-      "url": "https://github.com/nanndo54"
+      "url": "https://github.com/nandou54"
     }
   ],
   "landing": {
     "title": "Home",
     "name": "Pablo Cabrera",
     "presentation": "Creating <strong>unforgettable</strong> digital experiences.",
-    "email": "nanndo54@outlook.com",
+    "email": "nandou54@outlook.com",
     "emailButton": "Copy my email",
     "cvButton": "Download my CV!",
     "image": {
@@ -62,8 +62,8 @@
         "icon": "projects/quiz-game-icon.svg",
         "name": "Quiz Game",
         "description": "<u>Quiz game online</u>. The GUI aims to be comfortable and simple, to provide <u>knowledge</u> and <u>fun</u> at the same time!",
-        "website": "https://quiz.nanndo54.dev/",
-        "code": "https://github.com/nanndo54/quiz-game",
+        "website": "https://quiz.nandous.com/",
+        "code": "https://github.com/nandou54/quiz-game",
         "skills": [
           "React",
           "Redux",
@@ -104,8 +104,8 @@
         "icon": "projects/mini-translator-icon.svg",
         "name": "Mini Translator",
         "description": "<u>Real-time minimalistic translation tool</u>. Mini Translator eases the translation between <u>100+ languages</u>, as well as text spelling.",
-        "website": "https://translator.nanndo54.dev/",
-        "code": "https://github.com/nanndo54/mini-translator",
+        "website": "https://translator.nandous.com/",
+        "code": "https://github.com/nandou54/mini-translator",
         "skills": [
           "JavaScript",
           "HTML5",
@@ -137,8 +137,8 @@
         "icon": "projects/jolc-icon.svg",
         "name": "JOLC",
         "description": "<u>Web interpreter</u> for a programming language derived from <u>Julia</u>, named <u>JOLC</u>. Eases the debug of the language via AST, error and symbols reports.",
-        "website": "https://jolc.nanndo54.dev/",
-        "code": "https://github.com/nanndo54/jolc",
+        "website": "https://jolc.nandous.com/",
+        "code": "https://github.com/nandou54/jolc",
         "skills": [
           "React",
           "Redux",
@@ -443,6 +443,6 @@
   },
   "meta": {
     "title": "My <DEV/> Portfolio",
-    "description": "Hi! I'm Pablo Cabrera (nanndo54), a Full-Stack Web Developer at your disposal. Let's get in touch! 🚀"
+    "description": "Hi! I'm Pablo Cabrera (nandous), a Full-Stack Web Developer at your disposal. Let's get in touch! 🚀"
   }
 }
