@@ -64,7 +64,13 @@
         "description": "<u>Juego de preguntas en línea</u>. Tiene una interfaz cómoda y sencilla para proveer una <u>divertida</u> y <u>educativa</u> experiencia.",
         "website": "https://quiz.nandous.com/",
         "code": "https://github.com/nandou54/quiz-game",
-        "skills": ["React", "Redux", "HTML5", "CSS3", "Vite.js"],
+        "skills": [
+          "React",
+          "Redux",
+          "HTML5",
+          "CSS3",
+          "Vite.js"
+        ],
         "images": [
           {
             "src": "projects/quiz-game/img1.jpg",
@@ -100,7 +106,12 @@
         "description": "<u>Traductor minimalista</u> en tiempo real. Facilita la traducción entre <u>más de 100 lenguajes</u>, así como el dictado del texto.",
         "website": "https://translator.nandous.com/",
         "code": "https://github.com/nandou54/mini-translator",
-        "skills": ["JavaScript", "HTML5", "CSS3", "Vite.js"],
+        "skills": [
+          "JavaScript",
+          "HTML5",
+          "CSS3",
+          "Vite.js"
+        ],
         "images": [
           {
             "src": "projects/mini-translator/img1.jpg",
@@ -128,7 +139,13 @@
         "description": "<u>Intérprete de JOLC</u>, un lenguaje de programación derivado de <u>Julia</u>, ejecutable en la web. Facilita el debug del lenguaje mediante reportes.",
         "website": "https://jolc.nandous.com/",
         "code": "https://github.com/nandou54/jolc",
-        "skills": ["React", "Redux", "Python", "HTML5", "CSS3"],
+        "skills": [
+          "React",
+          "Redux",
+          "Python",
+          "HTML5",
+          "CSS3"
+        ],
         "images": [
           {
             "src": "projects/jolc/img1.jpg",

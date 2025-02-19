@@ -34,6 +34,6 @@ export async function POST(request) {
 
     return new Response(null, { status: 200 })
   } catch (error) {
-    return new Response(null, { status: 500 })
+    return new Response(error, { status: 500 })
   }
 }

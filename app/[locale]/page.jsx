@@ -1,8 +1,5 @@
 import styles from './page.module.css'
 
-// import { Analytics } from '@vercel/analytics/react'
-// import { SpeedInsights } from '@vercel/speed-insights/react'
-
 import sections from '@/constants/sections'
 import Interactive from '@/components/Interactive'
 import Navbar from '@/components/Navbar'
@@ -19,8 +16,6 @@ export default async function Page() {
         ))}
         <Footer />
         <Showcase />
-        {/* <SpeedInsights debug={false} /> */}
-        {/* <Analytics debug={false} /> */}
       </main>
     </Interactive>
   )

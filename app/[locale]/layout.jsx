@@ -1,11 +1,14 @@
 import 'node_modules/hint.css/hint.min.css'
 import './global.css'
 
+import { locales } from 'i18n/config'
 import { bodyFont, titleFont } from 'app/fonts'
 import clsx from 'clsx/lite'
-import { locales } from 'i18n/config'
 import getDictionary, { getStaticParams } from 'i18n/server'
 import { setStaticParamsLocale } from 'next-international/server'
+
+import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export async function generateMetadata({ params }) {
   const { locale } = await params
@@ -46,7 +49,7 @@ export async function generateMetadata({ params }) {
 }
 
 export async function generateStaticParams() {
-  return await getStaticParams()
+  return getStaticParams()
 }
 
 export default async function LocaleLayout({ params, children }) {
@@ -57,6 +60,8 @@ export default async function LocaleLayout({ params, children }) {
     <html lang={locale} translate='no'>
       <body className={clsx(titleFont.variable, bodyFont.variable)} top='true'>
         {children}
+        <Analytics debug={false} />
+        <SpeedInsights debug={false} />
       </body>
     </html>
   )
