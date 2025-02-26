@@ -14,7 +14,7 @@ export default async function QuoteSection({ id }) {
       <blockquote className={clsx(styles.quote, 'interactive-border')}>
         <p>
           <sup>“</sup>
-          <RichText>{text}</RichText>
+          <RichText as='span'>{text}</RichText>
           <sup>”</sup>
         </p>
         <p className={styles.author}>— {author}</p>

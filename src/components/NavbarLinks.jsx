@@ -5,7 +5,6 @@ import styles from '@/styles/NavbarLinks.module.css'
 import Button from '@/components/Button'
 import IconButton from '@/components/IconButton'
 import Link from '@/components/Link'
-import { closeIcon } from '@/constants/icons'
 import sections from '@/constants/sections'
 import useAppStore from '@/state/store'
 import clsx from 'clsx/lite'
@@ -96,7 +95,7 @@ export default function NavbarLinks() {
         onClick={handleCloseMenu}
       >
         <IconButton
-          src={closeIcon}
+          src='close'
           iconProps={{ lightColor: true }}
           title={aria.close}
           className={styles.closeButton}

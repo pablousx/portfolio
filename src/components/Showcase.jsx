@@ -8,7 +8,6 @@ import Icon from '@/components/Icon'
 import IconButton from '@/components/IconButton'
 import Image from '@/components/Image'
 
-import { arrowIcon, closeIcon, minusIcon, plusIcon, zoomIcon } from '@/constants/icons'
 import useCarrousel from '@/hooks/useCarrousel'
 import useAppStore from '@/state/store'
 import clsx from 'clsx/lite'
@@ -86,7 +85,7 @@ export default function Showcase() {
             )}
             <p>{alt}</p>
             <IconButton
-              src={closeIcon}
+              src='close'
               iconProps={{ lightColor: true }}
               title={aria.close}
               className={styles.closeButton}
@@ -95,7 +94,7 @@ export default function Showcase() {
           </header>
           <div onClick={(ev) => ev.stopPropagation()}>
             <IconButton
-              src={arrowIcon}
+              src='arrow'
               iconProps={{ lightColor: true }}
               title={aria.previousImage}
               className={styles.previousImage}
@@ -118,7 +117,7 @@ export default function Showcase() {
                 ))}
             </TransformComponent>
             <IconButton
-              src={arrowIcon}
+              src='arrow'
               iconProps={{ lightColor: true }}
               title={aria.nextImage}
               className={styles.nextImage}
@@ -128,16 +127,16 @@ export default function Showcase() {
           </div>
           <footer onClick={(ev) => ev.stopPropagation()}>
             <p>{(scale * 100).toFixed(0)}%</p>
-            <Icon src={zoomIcon} lightColor />
+            <Icon src='zoom' lightColor />
             <span className={styles.buttons}>
               <IconButton
-                src={minusIcon}
+                src='minus'
                 iconProps={{ lightColor: true, border: true }}
                 title={aria.zoomOut}
                 onClick={() => ref.current?.zoomOut(0.2)}
               />
               <IconButton
-                src={plusIcon}
+                src='plus'
                 iconProps={{ lightColor: true, border: true }}
                 title={aria.zoomIn}
                 onClick={() => ref.current?.zoomIn(0.2)}

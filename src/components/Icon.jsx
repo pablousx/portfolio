@@ -1,9 +1,8 @@
-'use client'
 import Hint from '@/components/Hint'
 import styles from '@/styles/Icon.module.css'
 import clsx from 'clsx/lite'
-import dynamic from 'next/dynamic'
-import { useEffect, useState } from 'react'
+
+import ICONS from '@/constants/icons'
 
 const classNameByType = {
   secondary: styles.secondary
@@ -25,12 +24,8 @@ export default function Icon({
   lightColor = false,
   ...props
 }) {
-  const [SvgIcon, setIcon] = useState(() => () => null)
+  const SvgIcon = ICONS[src] || ICONS.missing
   const ariaHidden = hidden ? true : undefined
-
-  useEffect(() => {
-    setIcon(() => dynamic(() => import(`../../public/icons/${src}`)))
-  }, [src])
 
   return (
     <figure
@@ -47,23 +42,14 @@ export default function Icon({
       )}
       aria-hidden={ariaHidden}
     >
-      {hint ? (
-        <Hint label={hint} position={hintPosition}>
-          <SvgIcon
-            className={styles.icon}
-            title={alt}
-            {...props}
-            aria-hidden={ariaHidden}
-          />
-        </Hint>
-      ) : (
+      <Hint label={hint} position={hintPosition}>
         <SvgIcon
           className={styles.icon}
           title={alt}
           {...props}
           aria-hidden={ariaHidden}
         />
-      )}
+      </Hint>
     </figure>
   )
 }

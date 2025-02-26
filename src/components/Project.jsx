@@ -6,7 +6,6 @@ import ImageCarrousel from '@/components/ImageCarrousel'
 import Link from '@/components/Link'
 import RichText from '@/components/RichText'
 import Skill from '@/components/Skill'
-import { codeIcon, websiteIcon } from '@/constants/icons'
 import clsx from 'clsx/lite'
 import getDictionary from 'i18n/server'
 
@@ -41,12 +40,12 @@ export default async function Project({
         {code && (
           <Link asButton variant='secondary' href={code} isExternal decoration={false}>
             {codeButton}
-            <Icon src={codeIcon} foregroundColor hidden interactive />
+            <Icon src='code' foregroundColor hidden interactive />
           </Link>
         )}
         <Link asButton variant='primary' href={website} isExternal decoration={false}>
           {websiteButton}
-          <Icon src={websiteIcon} backgroundColor />
+          <Icon src='website' backgroundColor />
         </Link>
       </footer>
     </article>

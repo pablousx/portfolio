@@ -1,7 +1,6 @@
 import 'node_modules/hint.css/hint.min.css'
 import './global.css'
 
-import { locales } from 'i18n/config'
 import { bodyFont, titleFont } from 'app/fonts'
 import clsx from 'clsx/lite'
 import getDictionary, { getStaticParams } from 'i18n/server'
@@ -14,22 +13,13 @@ export async function generateMetadata({ params }) {
   const { locale } = await params
   const { title, description } = await getDictionary('meta')
 
-  const languages = {}
-  for (const locale of locales) {
-    languages[locale] = `https://nandous.com/${locale}`
-  }
-
   const image = (await import(`i18n/locales/${locale}/splash.jpg`)).default
   const { src: url, width, height } = image
 
   return {
     title,
     description,
-    metadataBase: `https://nandous.com/${locale}`,
-    alternates: {
-      canonical: 'https://nandous.com/',
-      languages
-    },
+    metadataBase: 'https://nandous.com',
     openGraph: {
       siteName: title,
       type: 'website',

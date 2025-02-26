@@ -5,11 +5,23 @@ import {
   NAME_MAX_LENGTH,
   SUBJECT_MAX_LENGTH
 } from '@/constants/patterns'
+import getDictionary from 'i18n/server'
 import { sendEmail } from 'lib/send-email'
 
+const EMAIL = process.env.SMTP_EMAIL
+
+const sanitize = (str) => str.replace(/</g, '&lt;').replace(/>/g, '&gt;')
+
 export async function POST(request) {
+  const dictionary = await getDictionary('email')
+  const { subject: cxSubject, html: cxHtml } = dictionary
+
   const data = await request.json()
-  const { email, name, subject, message } = data
+  let { email, name, subject, message } = data
+  email = sanitize(email)
+  name = sanitize(name)
+  subject = sanitize(subject)
+  message = sanitize(message)
 
   try {
     if (
@@ -21,16 +33,23 @@ export async function POST(request) {
     )
       return new Response(null, { status: 400 })
 
-    const html = `Solicitud de contacto:
-    <p><strong>Correo:</strong> ${email}</p>
-    <p><strong>Nombre:</strong> ${name}</p>
-    <p>${message.replace('\n', '<br/>')}</p>
-    `
+    Promise.all([
+      await sendEmail({
+        to: email,
+        subject: cxSubject,
+        html: cxHtml.replace('{{name}}', name)
+      }),
 
-    await sendEmail({
-      subject,
-      html
-    })
+      await sendEmail({
+        to: EMAIL,
+        subject,
+        html: `Solicitud de contacto:
+          <p><strong>Correo:</strong> ${email}</p>
+          <p><strong>Nombre:</strong> ${name}</p>
+          <p>${message.replace('\n', '<br/>')}</p>
+        `
+      })
+    ])
 
     return new Response(null, { status: 200 })
   } catch (error) {

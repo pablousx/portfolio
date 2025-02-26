@@ -6,7 +6,6 @@ import { useRef } from 'react'
 import IconButton from '@/components/IconButton'
 import Image from '@/components/Image'
 import OpenShowcase from '@/components/OpenShowcase'
-import { arrowIcon } from '@/constants/icons'
 import useCarrousel from '@/hooks/useCarrousel'
 import clsx from 'clsx/lite'
 import useDictionary from 'i18n/client'
@@ -41,7 +40,7 @@ export default function ImageCarrousel({
       )}
     >
       <IconButton
-        src={arrowIcon}
+        src='arrow'
         iconProps={{ lightColor: true }}
         title={aria.previousImage}
         className={styles.previousImage}
@@ -72,7 +71,7 @@ export default function ImageCarrousel({
         </div>
       </OpenShowcase>
       <IconButton
-        src={arrowIcon}
+        src='arrow'
         iconProps={{ lightColor: true }}
         className={styles.nextImage}
         onClick={(ev) => {

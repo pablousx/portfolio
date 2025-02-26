@@ -34,14 +34,8 @@
 }
 
 .base footer p {
-  opacity: 0;
-  pointer-events: none;
-
-  transition: opacity 0.3s;
-}
-
-.base footer.show p {
-  opacity: 1;
+  font-size: 1.125em;
+  font-style: italic;
 }
 
 .row {

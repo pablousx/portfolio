@@ -9,6 +9,7 @@
 
 .label {
   white-space: nowrap;
+  font-weight: 600;
 
   padding-right: 0.75em;
   margin-right: 0.75em;

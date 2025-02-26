@@ -2,25 +2,25 @@
   "contacts": [
     {
       "name": "LinkedIn",
-      "icon": "landing/linkedin-icon.svg",
+      "icon": "linkedin",
       "url": "https://www.linkedin.com/in/nandous"
     },
     {
       "name": "Email",
-      "icon": "landing/email-icon.svg",
-      "url": "mailto:nandou54@outlook.com"
+      "icon": "email",
+      "url": "mailto:me@nandous.com"
     },
     {
       "name": "GitHub",
-      "icon": "landing/github-icon.svg",
+      "icon": "github",
       "url": "https://github.com/nandou54"
     }
   ],
   "landing": {
     "title": "Inicio",
-    "name": "Pablo Cabrera",
+    "name": "Pablo Pineda",
     "presentation": "Creando experiencias digitales <strong>inolvidables</strong>.",
-    "email": "nandou54@outlook.com",
+    "email": "me@nandous.com",
     "emailButton": "Copia mi email",
     "cvButton": "¡Descarga mi CV!",
     "image": {
@@ -35,7 +35,7 @@
     "content": [
       {
         "year": 2023,
-        "icon": "projects/kolo-empresas-icon.svg",
+        "icon": "koloempresas",
         "name": "KOLO Empresas",
         "description": "<u>ERP</u> que permite al pequeño y mediano empresario <u>manejar, crece e innovar su empresa</u> de manera accesible y personalizable.",
         "website": "https://info.kolo-app.com",
@@ -59,7 +59,7 @@
       },
       {
         "year": 2023,
-        "icon": "projects/quiz-game-icon.svg",
+        "icon": "quizgame",
         "name": "Quiz Game",
         "description": "<u>Juego de preguntas en línea</u>. Tiene una interfaz cómoda y sencilla para proveer una <u>divertida</u> y <u>educativa</u> experiencia.",
         "website": "https://quiz.nandous.com/",
@@ -68,7 +68,7 @@
           "React",
           "Redux",
           "HTML5",
-          "CSS3",
+          "CSS",
           "Vite.js"
         ],
         "images": [
@@ -101,7 +101,7 @@
       },
       {
         "year": 2022,
-        "icon": "projects/mini-translator-icon.svg",
+        "icon": "minitranslator",
         "name": "Mini Translator",
         "description": "<u>Traductor minimalista</u> en tiempo real. Facilita la traducción entre <u>más de 100 lenguajes</u>, así como el dictado del texto.",
         "website": "https://translator.nandous.com/",
@@ -109,7 +109,7 @@
         "skills": [
           "JavaScript",
           "HTML5",
-          "CSS3",
+          "CSS",
           "Vite.js"
         ],
         "images": [
@@ -134,7 +134,7 @@
       },
       {
         "year": 2022,
-        "icon": "projects/jolc-icon.svg",
+        "icon": "jolc",
         "name": "JOLC",
         "description": "<u>Intérprete de JOLC</u>, un lenguaje de programación derivado de <u>Julia</u>, ejecutable en la web. Facilita el debug del lenguaje mediante reportes.",
         "website": "https://jolc.nandous.com/",
@@ -144,7 +144,7 @@
           "Redux",
           "Python",
           "HTML5",
-          "CSS3"
+          "CSS"
         ],
         "images": [
           {
@@ -172,35 +172,35 @@
         "skills": [
           {
             "name": "Next.js",
-            "icon": "skills/backend/nextjs.svg"
+            "icon": "nextjs"
           },
           {
             "name": "React",
-            "icon": "skills/frontend/reactjs.svg"
+            "icon": "reactjs"
           },
           {
             "name": "JavaScript",
-            "icon": "skills/frontend/javascript.svg"
+            "icon": "javascript"
           },
           {
-            "name": "CSS3",
-            "icon": "skills/frontend/css3.svg"
+            "name": "CSS",
+            "icon": "css"
           },
           {
             "name": "HTML5",
-            "icon": "skills/frontend/html5.svg"
+            "icon": "html5"
           },
           {
             "name": "TypeScript",
-            "icon": "skills/frontend/typescript.svg"
+            "icon": "typescript"
           },
           {
             "name": "Vite.js",
-            "icon": "skills/frontend/vitejs.svg"
+            "icon": "vitejs"
           },
           {
             "name": "Redux",
-            "icon": "skills/frontend/redux.svg"
+            "icon": "redux"
           }
         ]
       },
@@ -209,36 +209,36 @@
         "skills": [
           {
             "name": "Node.js",
-            "icon": "skills/backend/nodejs.svg"
+            "icon": "nodejs"
           },
           {
             "name": "Express.js",
-            "icon": "skills/backend/expressjs.svg",
+            "icon": "expressjs",
             "contrast": true
           },
           {
             "name": "TypeScript",
-            "icon": "skills/frontend/typescript.svg"
+            "icon": "typescript"
           },
           {
             "name": "Python",
-            "icon": "skills/backend/python.svg"
+            "icon": "python"
           },
           {
             "name": "Java",
-            "icon": "skills/backend/java.svg"
+            "icon": "java"
           },
           {
             "name": "GO",
-            "icon": "skills/backend/go.svg"
+            "icon": "go"
           },
           {
             "name": "Linux",
-            "icon": "skills/backend/linux.svg"
+            "icon": "linux"
           },
           {
             "name": "Nginx",
-            "icon": "skills/backend/nginx.svg"
+            "icon": "nginx"
           }
         ]
       },
@@ -247,32 +247,32 @@
         "skills": [
           {
             "name": "AWS",
-            "icon": "skills/cloud/aws.svg"
+            "icon": "aws"
           },
           {
             "name": "Vercel",
-            "icon": "skills/cloud/vercel.svg",
+            "icon": "vercel",
             "contrast": true
           },
           {
             "name": "Firebase",
-            "icon": "skills/cloud/firebase.svg"
+            "icon": "firebase"
           },
           {
             "name": "Cloudflare",
-            "icon": "skills/cloud/cloudflare.svg"
+            "icon": "cloudflare"
           },
           {
             "name": "Google Cloud Platform",
-            "icon": "skills/cloud/gcp.svg"
+            "icon": "gcp"
           },
           {
             "name": "Netlify",
-            "icon": "skills/cloud/netlify.svg"
+            "icon": "netlify"
           },
           {
             "name": "Oracle Cloud",
-            "icon": "skills/cloud/oraclecloud.svg"
+            "icon": "oraclecloud"
           }
         ]
       },
@@ -281,23 +281,23 @@
         "skills": [
           {
             "name": "MySQL",
-            "icon": "skills/database/mysql.svg"
+            "icon": "mysql"
           },
           {
             "name": "SQL Server",
-            "icon": "skills/database/sqlserver.svg"
+            "icon": "sqlserver"
           },
           {
             "name": "Oracle SQL",
-            "icon": "skills/database/oraclesql.svg"
+            "icon": "oraclesql"
           },
           {
             "name": "Redis",
-            "icon": "skills/database/redis.svg"
+            "icon": "redis"
           },
           {
             "name": "MongoDB",
-            "icon": "skills/database/mongodb.svg"
+            "icon": "mongodb"
           }
         ]
       },
@@ -306,11 +306,11 @@
         "skills": [
           {
             "name": "Playwright",
-            "icon": "skills/testing/playwright.svg"
+            "icon": "playwright"
           },
           {
             "name": "Cypress.io",
-            "icon": "skills/testing/cypressio.svg"
+            "icon": "cypressio"
           }
         ]
       },
@@ -319,39 +319,39 @@
         "skills": [
           {
             "name": "Docker",
-            "icon": "skills/tools/docker.svg"
+            "icon": "docker"
           },
           {
             "name": "Git",
-            "icon": "skills/tools/git.svg"
+            "icon": "git"
           },
           {
             "name": "Notion",
-            "icon": "skills/tools/notion.svg"
+            "icon": "notion"
           },
           {
             "name": "VS Code",
-            "icon": "skills/tools/vscode.svg"
+            "icon": "vscode"
           },
           {
             "name": "JetBrains",
-            "icon": "skills/tools/jetbrains.svg"
+            "icon": "jetbrains"
           },
           {
             "name": "Jira",
-            "icon": "skills/tools/jira.svg"
+            "icon": "jira"
           },
           {
             "name": "Kubernetes",
-            "icon": "skills/tools/kubernetes.svg"
+            "icon": "kubernetes"
           },
           {
             "name": "Slack",
-            "icon": "skills/tools/slack.svg"
+            "icon": "slack"
           },
           {
             "name": "WordPress",
-            "icon": "skills/tools/wordpress.svg",
+            "icon": "wordpress",
             "contrast": true
           }
         ]
@@ -412,6 +412,7 @@
       "messagePlaceholder": "¡Me gusta tu portafolio!",
       "submitButton": "Enviar mensaje",
       "requiredLabel": "Campo requerido",
+      "hint": "Ctrl + Enter para enviar",
       "successMessage": "Me pondré en contacto contigo lo más pronto posible",
       "successTooltip": "¡Enviado! ✅",
       "error400Message": "Falló la validación del formulario. Por favor verifica tus datos e inténtalo de nuevo.",
@@ -432,7 +433,7 @@
     "goToTop": "Ir hacia arriba",
     "navigateTo": "Navegar a",
     "nextImage": "Ver imagen siguiente",
-    "openShowcase": "Abrir en grande",
+    "openShowcase": "Expandir",
     "previousImage": "Ver imagen anterior",
     "seeImage": "Ver imagen",
     "toggleLocale": "Switch to english",
@@ -440,8 +441,12 @@
     "zoomIn": "Acercar",
     "zoomOut": "Alejar"
   },
+  "email": {
+    "subject": "¡Gracias por ponerte en contacto!",
+    "html": "<p>Estimado {{name}},</p><p>Gracias por ponerte en contacto conmigo. He recibido tu mensaje y me pondré en contacto contigo pronto.</p><p>Saludos cordiales,<br><br>- <i>Pablo Pineda</i> • me@nandous.com</p>"
+  },
   "meta": {
     "title": "Mi Portafolio <DEV/>",
-    "description": "¡Hola! Soy Pablo Cabrera (nandous), Desarrollador Web Full-Stack a tu servicio. ¡Pongámonos en contacto! 🚀"
+    "description": "¡Hola! Soy Pablo Pineda (nandou54), Desarrollador Web Full-Stack a tu servicio. ¡Pongámonos en contacto! 🚀"
   }
 }

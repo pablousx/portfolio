@@ -1,11 +1,11 @@
 'use client'
 import styles from '@/styles/ContactForm.module.css'
+import { useEffect, useRef, useState } from 'react'
 
 import Button from '@/components/Button'
 import Hint from '@/components/Hint'
 import Icon from '@/components/Icon'
 import Input from '@/components/Input'
-import { sendIcon } from '@/constants/icons'
 import {
   EMAIL_MAX_LENGTH,
   MESSAGE_MAX_LENGTH,
@@ -14,7 +14,7 @@ import {
 } from '@/constants/patterns'
 import clsx from 'clsx/lite'
 import useDictionary from 'i18n/client'
-import { useState } from 'react'
+import useAppStore from '@/state/store'
 
 export default function ContactForm({ children }) {
   const { form } = useDictionary('contact')
@@ -29,6 +29,7 @@ export default function ContactForm({ children }) {
     messagePlaceholder,
     submitButton,
     requiredLabel,
+    hint,
     successMessage,
     successTooltip,
     error400Message,
@@ -39,6 +40,9 @@ export default function ContactForm({ children }) {
   const [sending, setSending] = useState(false)
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState()
+
+  const formRef = useRef(null)
+  const { currentSection } = useAppStore()
 
   const handleChange = () => {
     setSuccess(false)
@@ -79,8 +83,25 @@ export default function ContactForm({ children }) {
       })
   }
 
+  useEffect(() => {
+    if (currentSection !== 'contact') return
+
+    const handleKeyDown = (ev) => {
+      if (ev.ctrlKey && ev.key === 'Enter') formRef.current.requestSubmit()
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [currentSection])
+
   return (
-    <form className={styles.base} onSubmit={handleSubmit} onChange={handleChange}>
+    <form
+      ref={formRef}
+      className={styles.base}
+      onSubmit={handleSubmit}
+      onChange={handleChange}
+    >
       <header>
         {children}
         <b className={styles.requiredLabel}>{requiredLabel}</b>
@@ -117,12 +138,12 @@ export default function ContactForm({ children }) {
         required
         maxLength={MESSAGE_MAX_LENGTH}
       />
-      <footer className={clsx((success || error) && styles.show)}>
-        <p>{success ? successMessage : error}</p>
+      <footer>
+        {!sending && <p>{success ? successMessage : error ? error : hint}</p>}
         <Hint position='bottom' label={successTooltip} hideAlways showAlways={success}>
           <Button type='submit' variant='primary' disabled={success} loading={sending}>
             {submitButton}
-            <Icon src={sendIcon} backgroundColor />
+            <Icon src='send' backgroundColor />
           </Button>
         </Hint>
       </footer>

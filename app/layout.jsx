@@ -6,7 +6,8 @@ export const viewport = {
 }
 
 export const metadata = {
-  keywords: 'portfolio, portafolio, full-stack, frontend, javascript, developer',
+  keywords:
+    'portfolio, portafolio, full stack, frontend, javascript, developer, guatemala',
   appleWebApp: {
     statusBarStyle: themeColor
   }

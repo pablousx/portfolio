@@ -4,7 +4,6 @@ import Project from '@/components/Project'
 import Section from '@/components/Section'
 
 import Icon from '@/components/Icon'
-import { arrowIcon } from '@/constants/icons'
 import getDictionary from 'i18n/server'
 
 export default async function ProjectsSection({ id }) {
@@ -54,7 +53,7 @@ export default async function ProjectsSection({ id }) {
           ))}
         </div>
         <div className={styles.timeline}>
-          <Icon src={arrowIcon} foregroundColor />
+          <Icon src='arrow' foregroundColor />
         </div>
       </div>
     </Section>

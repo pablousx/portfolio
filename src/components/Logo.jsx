@@ -2,7 +2,6 @@
 import styles from '@/styles/Logo.module.css'
 
 import IconLink from '@/components/IconLink'
-import { logoIcon } from '@/constants/icons'
 import useAppStore from '@/state/store'
 import clsx from 'clsx/lite'
 import useDictionary from 'i18n/client'
@@ -19,7 +18,7 @@ export default function Logo() {
         href='/'
         className={clsx(styles.logo, currentSection === 'landing' && styles.current)}
         title={aria.goToTop}
-        src={logoIcon}
+        src='logo'
       />
     </div>
   )

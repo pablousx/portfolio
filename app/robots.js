@@ -3,11 +3,7 @@ export default function robots() {
     rules: [
       {
         userAgent: '*',
-        allow: '/en'
-      },
-      {
-        userAgent: '*',
-        allow: '/es'
+        allow: '/'
       },
       {
         userAgent: '*',
