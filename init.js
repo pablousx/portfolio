@@ -1,8 +1,8 @@
 import fs from 'fs'
 import { getPlaceholder } from './lib/get-placeholder.js'
 
-import en from './i18n/locales/en/dictionary.json' assert { type: 'json' }
-import es from './i18n/locales/es/dictionary.json' assert { type: 'json' }
+import en from './i18n/locales/en/dictionary.json' with { type: 'json' }
+import es from './i18n/locales/es/dictionary.json' with { type: 'json' }
 
 export const dictionaries = {
   en,

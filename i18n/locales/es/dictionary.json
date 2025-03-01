@@ -390,7 +390,7 @@
       "messagePlaceholder": "¡Me gusta tu portafolio!",
       "submitButton": "Enviar mensaje",
       "requiredLabel": "Campo requerido",
-      "hint": "Ctrl + Enter para enviar",
+      "hint": "<span class='key'>Ctrl</span> / <span class='key'>CMD</span> + <span class='key'>Enter</span> para enviar",
       "successMessage": "Me pondré en contacto contigo lo más pronto posible",
       "successTooltip": "¡Enviado! ✅",
       "error400Message": "Falló la validación del formulario. Por favor verifica tus datos e inténtalo de nuevo.",
@@ -421,7 +421,7 @@
   },
   "email": {
     "subject": "¡Gracias por ponerte en contacto!",
-    "html": "<p>Estimado {{name}},</p><p>Gracias por ponerte en contacto conmigo. He recibido tu mensaje y me pondré en contacto contigo pronto.</p><p>Saludos cordiales,<br><br>- <i>Pablo Pineda</i> • me@nandous.com</p>"
+    "html": "<p>Estimado {{name}},</p><p>Gracias por ponerte en contacto conmigo. He recibido tu mensaje y me pondré en contacto contigo pronto.</p><p>Saludos cordiales,<br><br>- <i>Pablo Pineda</i> • nandous.com</p>"
   },
   "meta": {
     "title": "Mi Portafolio <DEV/>",

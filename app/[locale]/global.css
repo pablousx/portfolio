@@ -292,6 +292,24 @@ u {
   white-space: nowrap;
 }
 
+.key {
+  font-family: var(--monospace-font);
+  font-weight: 600;
+  font-size: 0.625rem;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  vertical-align: middle;
+
+  background-color: var(--dim-foreground-color);
+  color: var(--background-color);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+}
+
+p:has(.key) {
+  line-height: 1;
+}
+
 .no-select,
 .no-select * {
   -webkit-touch-callout: none;

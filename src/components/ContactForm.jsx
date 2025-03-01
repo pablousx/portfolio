@@ -15,6 +15,7 @@ import {
 import clsx from 'clsx/lite'
 import useDictionary from 'i18n/client'
 import useAppStore from '@/state/store'
+import RichText from '@/components/RichText'
 
 export default function ContactForm({ children }) {
   const { form } = useDictionary('contact')
@@ -87,7 +88,8 @@ export default function ContactForm({ children }) {
     if (currentSection !== 'contact') return
 
     const handleKeyDown = (ev) => {
-      if (ev.ctrlKey && ev.key === 'Enter') formRef.current.requestSubmit()
+      if ((ev.ctrlKey || ev.metaKey) && ev.key === 'Enter')
+        formRef.current.requestSubmit()
     }
 
     window.addEventListener('keydown', handleKeyDown)
@@ -95,12 +97,19 @@ export default function ContactForm({ children }) {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [currentSection])
 
+  const [isFocused, setIsFocused] = useState(false)
+
+  const handleFocus = () => setIsFocused(true)
+  const handleBlur = () => setIsFocused(false)
+
   return (
     <form
       ref={formRef}
       className={styles.base}
       onSubmit={handleSubmit}
       onChange={handleChange}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
     >
       <header>
         {children}
@@ -139,7 +148,9 @@ export default function ContactForm({ children }) {
         maxLength={MESSAGE_MAX_LENGTH}
       />
       <footer>
-        {!sending && <p>{success ? successMessage : error ? error : hint}</p>}
+        <RichText as='p' className={clsx((sending || !isFocused) && styles.hidden)}>
+          {success ? successMessage : error || hint}
+        </RichText>
         <Hint position='bottom' label={successTooltip} hideAlways showAlways={success}>
           <Button type='submit' variant='primary' disabled={success} loading={sending}>
             {submitButton}

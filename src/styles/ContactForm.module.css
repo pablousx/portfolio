@@ -36,6 +36,12 @@
 .base footer p {
   font-size: 1.125em;
   font-style: italic;
+
+  transition: opacity 0.5s;
+}
+
+.hidden {
+  opacity: 0;
 }
 
 .row {
