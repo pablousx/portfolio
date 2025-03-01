@@ -5,13 +5,20 @@ import { bodyFont, titleFont } from 'app/fonts'
 import clsx from 'clsx/lite'
 import getDictionary, { getStaticParams } from 'i18n/server'
 import { setStaticParamsLocale } from 'next-international/server'
+import { locales } from 'i18n/config'
 
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export async function generateMetadata({ params }) {
   const { locale } = await params
+
   const { title, description } = await getDictionary('meta')
+
+  const languages = {}
+  for (const locale of locales) {
+    languages[locale] = `https://nandous.com/${locale}`
+  }
 
   const image = (await import(`i18n/locales/${locale}/splash.jpg`)).default
   const { src: url, width, height } = image
@@ -19,7 +26,11 @@ export async function generateMetadata({ params }) {
   return {
     title,
     description,
-    metadataBase: 'https://nandous.com',
+    metadataBase: `https://nandous.com/${locale}`,
+    alternates: {
+      canonical: 'https://nandous.com/',
+      languages
+    },
     openGraph: {
       siteName: title,
       type: 'website',
