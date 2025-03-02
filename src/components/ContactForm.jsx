@@ -14,7 +14,6 @@ import {
 } from '@/constants/patterns'
 import clsx from 'clsx/lite'
 import useDictionary from 'i18n/client'
-import useAppStore from '@/state/store'
 import RichText from '@/components/RichText'
 
 export default function ContactForm({ children }) {
@@ -38,12 +37,23 @@ export default function ContactForm({ children }) {
     errorMessage
   } = form
 
+  const [isFocused, setIsFocused] = useState(false)
   const [sending, setSending] = useState(false)
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState()
 
   const formRef = useRef(null)
-  const { currentSection } = useAppStore()
+
+  const handleFocus = () => {
+    setIsFocused(true)
+  }
+
+  const handleBlur = () => {
+    setIsFocused(false)
+    setTimeout(() => {
+      handleChange()
+    }, 500)
+  }
 
   const handleChange = () => {
     setSuccess(false)
@@ -85,7 +95,7 @@ export default function ContactForm({ children }) {
   }
 
   useEffect(() => {
-    if (currentSection !== 'contact') return
+    if (!isFocused) return
 
     const handleKeyDown = (ev) => {
       if ((ev.ctrlKey || ev.metaKey) && ev.key === 'Enter')
@@ -95,12 +105,7 @@ export default function ContactForm({ children }) {
     window.addEventListener('keydown', handleKeyDown)
 
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [currentSection])
-
-  const [isFocused, setIsFocused] = useState(false)
-
-  const handleFocus = () => setIsFocused(true)
-  const handleBlur = () => setIsFocused(false)
+  }, [isFocused])
 
   return (
     <form

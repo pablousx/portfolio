@@ -60,8 +60,8 @@
   scroll-snap-align: start;
 }
 
-.previousImage,
-.nextImage {
+button.previousImage,
+button.nextImage {
   position: absolute;
   top: 0;
   height: 100%;
@@ -73,6 +73,11 @@
     transform 0.1s ease-in-out,
     opacity 0.2s 0.1s;
   z-index: 1;
+}
+
+.previousImage figure,
+.nextImage figure {
+  height: auto;
 }
 
 .previousImage {

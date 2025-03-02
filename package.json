@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "private": "true",
   "scripts": {
-    "dev": "concurrently \"nodemon init.js --watch 'i18n/locales/*/dictionary.json'\" \"next dev\"",
+    "dev": "concurrently \"nodemon init.js --watch 'i18n/locales/*/dictionary.json'\" \"next dev --turbopack\"",
     "build": "node init.js && next build",
     "start": "node init.js && next start",
     "init": "node init.js",

@@ -13,7 +13,7 @@
 
   padding-right: 0.75em;
   margin-right: 0.75em;
-  border-right: 0.125em solid var(--dimmer-foreground-color);
+  border-right: 0.15rem solid var(--dimmer-foreground-color);
 
   transition: border-color 0.25s;
 }

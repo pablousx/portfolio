@@ -34,7 +34,7 @@ body {
   --light: 237, 45%, 96%;
   --dark: 210, 45%, 4%;
   --accent: 207, 80%, 50%;
-  --secondary-accent: 248, 95%, 62%;
+  --alt-accent: 248, 95%, 62%;
   --dim: 0.7;
   --dimmer: 0.45;
   --dimmest: 0.125;
@@ -67,10 +67,10 @@ body {
   --dimmer-accent-color: hsl(var(--accent), var(--dimmer));
   --dimmest-accent-color: hsl(var(--accent), var(--dimmest));
 
-  --alt-accent-color: hsl(var(--secondary-accent));
-  --dim-alt-accent-color: hsl(var(--secondary-accent), var(--dim));
-  --dimmer-alt-accent-color: hsl(var(--secondary-accent), var(--dimmer));
-  --dimmest-alt-accent-color: hsl(var(--secondary-accent), var(--dimmest));
+  --alt-accent-color: hsl(var(--alt-accent));
+  --dim-alt-accent-color: hsl(var(--alt-accent), var(--dim));
+  --dimmer-alt-accent-color: hsl(var(--alt-accent), var(--dimmer));
+  --dimmest-alt-accent-color: hsl(var(--alt-accent), var(--dimmest));
 }
 
 body.no-scroll {
@@ -84,7 +84,7 @@ body.no-scroll {
 
 body[dark='true'] {
   --accent: 207, 80%, 55%;
-  --secondary-accent: 248, 95%, 69%;
+  --alt-accent: 248, 95%, 69%;
   --dimmer: 0.3625;
 
   --foreground-color: var(--light-color);
@@ -107,7 +107,7 @@ body[dark='true'] {
     color-scheme: dark;
 
     --accent: 207, 80%, 55%;
-    --secondary-accent: 248, 95%, 69%;
+    --alt-accent: 248, 95%, 69%;
     --dimmer: 0.3625;
 
     --foreground-color: var(--light-color);
@@ -292,22 +292,30 @@ u {
   white-space: nowrap;
 }
 
-.key {
-  font-family: var(--monospace-font);
-  font-weight: 600;
-  font-size: 0.625rem;
-  letter-spacing: 0.05rem;
-  text-transform: uppercase;
-  vertical-align: middle;
-
-  background-color: var(--dim-foreground-color);
-  color: var(--background-color);
-  padding: 0.125rem 0.25rem;
-  border-radius: 0.25rem;
+p:has(> .keys) {
+  line-height: 1;
 }
 
-p:has(.key) {
-  line-height: 1;
+.keys {
+  font-family: var(--monospace-font);
+  font-weight: 600;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  line-height: 1.25;
+  vertical-align: middle;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+}
+
+.keys span {
+  background-color: var(--foreground-color);
+  color: var(--background-color);
+  font-size: 0.375em;
+
+  padding: 0.25em 0.625em;
+  border-radius: 0.5em;
 }
 
 .no-select,

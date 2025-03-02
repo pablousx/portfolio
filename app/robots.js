@@ -3,11 +3,19 @@ export default function robots() {
     rules: [
       {
         userAgent: '*',
-        allow: '/'
+        allow: '/en/'
       },
       {
         userAgent: '*',
-        allow: '/cv/'
+        allow: '/es/'
+      },
+      {
+        userAgent: '*',
+        allow: '/en/cv/'
+      },
+      {
+        userAgent: '*',
+        allow: '/es/cv/'
       },
       {
         userAgent: '*',

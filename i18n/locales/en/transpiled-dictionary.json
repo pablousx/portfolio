@@ -413,7 +413,7 @@
       "messagePlaceholder": "Nice portfolio!",
       "submitButton": "Send message",
       "requiredLabel": "Required field",
-      "hint": "<span class='key'>Ctrl</span> / <span class='key'>CMD</span> + <span class='key'>Enter</span> to send",
+      "hint": "<span class='keys'><span>Ctrl</span>/<span>Cmd</span>+<span>Enter</span></span>",
       "successMessage": "I'll be in touch as soon as possible",
       "successTooltip": "Sent! ✅",
       "error400Message": "Form validation failed. Please check your data and try again.",
@@ -444,7 +444,7 @@
   },
   "email": {
     "subject": "Thank you for reaching out!",
-    "html": "<p>Dear {{name}},</p><p>Thank you for getting in touch with me. I have received your message and will be in contact with you soon.</p><p>Best regards,<br><br>- <i>Pablo Pineda</i> • nandous.com</p>"
+    "html": "<p>Dear {{name}},</p><p>Thank you for getting in touch with me. I have received your message and will be in contact with you soon.</p><p>Best regards,<br><br>- <i>Pablo Pineda</i> — <a href='https://nandous.com'>nandous.com</a></p>"
   },
   "meta": {
     "title": "My <DEV/> Portfolio",

@@ -390,7 +390,7 @@
       "messagePlaceholder": "¡Me gusta tu portafolio!",
       "submitButton": "Enviar mensaje",
       "requiredLabel": "Campo requerido",
-      "hint": "<span class='key'>Ctrl</span> / <span class='key'>CMD</span> + <span class='key'>Enter</span> para enviar",
+      "hint": "<span class='keys'><span>Ctrl</span>/<span>Cmd</span>+<span>Enter</span></span>",
       "successMessage": "Me pondré en contacto contigo lo más pronto posible",
       "successTooltip": "¡Enviado! ✅",
       "error400Message": "Falló la validación del formulario. Por favor verifica tus datos e inténtalo de nuevo.",
@@ -421,10 +421,10 @@
   },
   "email": {
     "subject": "¡Gracias por ponerte en contacto!",
-    "html": "<p>Estimado {{name}},</p><p>Gracias por ponerte en contacto conmigo. He recibido tu mensaje y me pondré en contacto contigo pronto.</p><p>Saludos cordiales,<br><br>- <i>Pablo Pineda</i> • nandous.com</p>"
+    "html": "<p>Estimado {{name}},</p><p>Gracias por ponerte en contacto conmigo. He recibido tu mensaje y me pondré en contacto contigo pronto.</p><p>Saludos cordiales,<br><br>- <i>Pablo Pineda</i> — <a href='https://nandous.com'>nandous.com</a></p>"
   },
   "meta": {
     "title": "Mi Portafolio <DEV/>",
-    "description": "¡Hola! Soy Pablo Pineda (nandou54), Desarrollador Web Full-Stack a tu servicio. ¡Pongámonos en contacto! 🚀"
+    "description": "¡Hola! Soy Pablo Pineda (nandous), Desarrollador Web Full-Stack a tu servicio. ¡Pongámonos en contacto! 🚀"
   }
 }

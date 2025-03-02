@@ -34,10 +34,10 @@
 }
 
 .base footer p {
-  font-size: 1.125em;
-  font-style: italic;
+  font-size: 1.25em;
+  margin-right: 0.5em;
 
-  transition: opacity 0.5s;
+  transition: opacity 0.2s;
 }
 
 .hidden {

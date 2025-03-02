@@ -1,47 +1,34 @@
 import sections from '@/constants/sections'
 import useAppStore from '@/state/store'
 import { useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
-
-const filteredSections = sections
-  .filter(({ noHash }) => !noHash)
-  .map(({ id }) => ({ id, intersected: false }))
+import { useEffect } from 'react'
 
 export default function useSectionObserver() {
-  const { setCurrentSection } = useAppStore()
+  const { currentSection, setCurrentSection } = useAppStore()
   const router = useRouter()
-  const [sectionsIntersection, setSectionsIntersected] = useState(filteredSections)
-
-  const currentSection = sectionsIntersection.find(({ intersected }) => intersected)?.id
 
   useEffect(() => {
-    const sectionsElements = sections.map((section) =>
-      document.getElementById(section.id)
-    )
-
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        const id = entry.target.id
-        const intersected = entry.isIntersecting
+      (entries) => {
+        const maxIntersection = Math.max(
+          ...entries.map((entry) => entry.intersectionRect.height)
+        )
+        const entry = entries.find(
+          (entry) => entry.intersectionRect.height === maxIntersection
+        )
+        if (!entry.isIntersecting) return
 
-        setSectionsIntersected((sectionsIntersection) => {
-          const newSectionsIntersection = [...sectionsIntersection]
-          const section = newSectionsIntersection.find(
-            (sectionIntersection) => sectionIntersection.id === id
-          )
-          if (section) section.intersected = intersected
-          else newSectionsIntersection.push({ id, intersected })
+        const section = sections.find(({ id }) => id === entry.target.id)
 
-          return newSectionsIntersection
-        })
+        if (section) setCurrentSection(section.id)
       },
-      { threshold: 0.3 }
+      { threshold: 0.4 }
     )
 
-    sectionsElements
-      .filter((element) => element != null)
+    sections
+      .map((section) => document.getElementById(section.id))
       .forEach((element) => {
-        observer.observe(element)
+        if (element != null) observer.observe(element)
       })
 
     return () => {
