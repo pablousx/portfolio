@@ -32,7 +32,7 @@ export default function Showcase() {
       initialIndex,
       images,
       onImageChange: (newImageIndex) => {
-        ref.current.resetTransform()
+        handleResetTransform()
         if (onIndexChange) onIndexChange(newImageIndex)
       }
     })
@@ -41,9 +41,13 @@ export default function Showcase() {
 
   const handleClose = useCallback(() => {
     closeShowcase()
-    ref.current?.resetTransform()
+    handleResetTransform()
     resetCarrousel()
   }, [closeShowcase, ref, resetCarrousel])
+
+  const handleResetTransform = useCallback(() => {
+    ref.current?.resetTransform()
+  }, [])
 
   useEffect(() => {
     if (!open) return
@@ -126,22 +130,29 @@ export default function Showcase() {
             />
           </div>
           <footer onClick={(ev) => ev.stopPropagation()}>
-            <p>{(scale * 100).toFixed(0)}%</p>
-            <Icon src='zoom' lightColor />
-            <span className={styles.buttons}>
-              <IconButton
-                src='minus'
-                iconProps={{ lightColor: true, border: true }}
-                title={aria.zoomOut}
-                onClick={() => ref.current?.zoomOut(0.2)}
-              />
-              <IconButton
-                src='plus'
-                iconProps={{ lightColor: true, border: true }}
-                title={aria.zoomIn}
-                onClick={() => ref.current?.zoomIn(0.2)}
-              />
-            </span>
+            <IconButton
+              className={styles.zoomOut}
+              src='minus'
+              iconProps={{ lightColor: true, border: true }}
+              title={aria.zoomOut}
+              onClick={() => ref.current?.zoomOut(0.2)}
+            />
+            <button
+              type='button'
+              className={styles.zoomLabel}
+              onClick={handleResetTransform}
+              title={aria.zoomReset}
+            >
+              <p>{(scale * 100).toFixed(0)}%</p>
+              <Icon src='zoom' lightColor />
+            </button>
+            <IconButton
+              className={styles.zoomIn}
+              src='plus'
+              iconProps={{ lightColor: true, border: true }}
+              title={aria.zoomIn}
+              onClick={() => ref.current?.zoomIn(0.2)}
+            />
           </footer>
         </div>
       </TransformWrapper>

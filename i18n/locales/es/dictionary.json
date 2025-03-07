@@ -35,13 +35,22 @@
     "websiteButton": "Sitio web",
     "content": [
       {
+        "year": 2024,
+        "icon": "lomax",
+        "name": "Lomax Technologies",
+        "description": "Desarrollo de software <u>a la medida</u> para optimizar procesos, impulsar la innovación y mejorar la eficiencia empresarial con <u>soluciones tecnológicas avanzadas</u>.",
+        "website": "https://lomax.com.gt",
+        "skills": ["Vue.js", "Ruby", "PostgreSQL", "AWS", "Cloudflare"],
+        "images": []
+      },
+      {
         "year": 2023,
         "icon": "koloempresas",
         "name": "KOLO Empresas",
         "description": "<u>ERP</u> que permite al pequeño y mediano empresario <u>manejar, crece e innovar su empresa</u> de manera accesible y personalizable.",
         "website": "https://info.kolo-app.com",
         "skills": [
-          "React",
+          "React.js",
           "Redux",
           "TypeScript",
           "Java",
@@ -64,7 +73,7 @@
         "description": "<u>Juego de preguntas en línea</u>. Tiene una interfaz cómoda y sencilla para proveer una <u>divertida</u> y <u>educativa</u> experiencia.",
         "website": "https://quiz.nandous.com/",
         "code": "https://github.com/nandou54/quiz-game",
-        "skills": ["React", "Redux", "HTML5", "CSS", "Vite.js"],
+        "skills": ["React.js", "Redux", "HTML5", "CSS", "Vite.js"],
         "images": [
           {
             "src": "projects/quiz-game/img1.jpg",
@@ -126,7 +135,7 @@
         "description": "<u>Intérprete de JOLC</u>, un lenguaje de programación derivado de <u>Julia</u>, ejecutable en la web. Facilita el debug del lenguaje mediante reportes.",
         "website": "https://jolc.nandous.com/",
         "code": "https://github.com/nandou54/jolc",
-        "skills": ["React", "Redux", "Python", "HTML5", "CSS"],
+        "skills": ["React.js", "Redux", "Python", "HTML5", "CSS"],
         "images": [
           {
             "src": "projects/jolc/img1.jpg",
@@ -155,8 +164,12 @@
             "icon": "nextjs"
           },
           {
-            "name": "React",
+            "name": "React.js",
             "icon": "reactjs"
+          },
+          {
+            "name": "Vue.js",
+            "icon": "vuejs"
           },
           {
             "name": "JavaScript",
@@ -197,8 +210,8 @@
             "contrast": true
           },
           {
-            "name": "TypeScript",
-            "icon": "typescript"
+            "name": "Ruby",
+            "icon": "ruby"
           },
           {
             "name": "Python",
@@ -207,10 +220,6 @@
           {
             "name": "Java",
             "icon": "java"
-          },
-          {
-            "name": "GO",
-            "icon": "go"
           },
           {
             "name": "Linux",
@@ -264,12 +273,12 @@
             "icon": "mysql"
           },
           {
-            "name": "SQL Server",
-            "icon": "sqlserver"
+            "name": "PostgreSQL",
+            "icon": "postgresql"
           },
           {
-            "name": "Oracle SQL",
-            "icon": "oraclesql"
+            "name": "SQL Server",
+            "icon": "sqlserver"
           },
           {
             "name": "Redis",
@@ -417,7 +426,8 @@
     "toggleLocale": "Switch to english",
     "toggleTheme": "Cambiar tema oscuro",
     "zoomIn": "Acercar",
-    "zoomOut": "Alejar"
+    "zoomOut": "Alejar",
+    "zoomReset": "Restablecer zoom"
   },
   "email": {
     "subject": "¡Gracias por ponerte en contacto!",

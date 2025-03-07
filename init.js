@@ -23,7 +23,7 @@ const handleImages = async (dictionary) => {
         delete image.ignorePlaceholder
         newDictionary.image = image
       } else newDictionary.image = await getPlaceholder(image)
-    if (images) {
+    if (images?.length > 0) {
       images[0] = await getPlaceholder(images[0])
       newDictionary.images = images
     }

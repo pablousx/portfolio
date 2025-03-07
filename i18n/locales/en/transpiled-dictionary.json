@@ -34,13 +34,27 @@
     "websiteButton": "Website",
     "content": [
       {
+        "year": 2024,
+        "icon": "lomax",
+        "name": "Lomax Technologies",
+        "description": "<u>Tailor-made</u> software development to optimize processes, drive innovation, and enhance business efficiency with <u>advanced technological solutions</u>.",
+        "website": "https://lomax.com.gt",
+        "skills": [
+          "Vue.js",
+          "Ruby",
+          "PostgreSQL",
+          "AWS",
+          "Cloudflare"
+        ]
+      },
+      {
         "year": 2023,
         "icon": "koloempresas",
         "name": "KOLO Companies",
         "description": "<u>ERP</u> that allows small and medium-sized entrepreneurs to <u>manage, grow and innovate their company</u> in an accessible and customizable way.",
         "website": "https://info.kolo-app.com",
         "skills": [
-          "React",
+          "React.js",
           "Redux",
           "TypeScript",
           "Java",
@@ -65,7 +79,7 @@
         "website": "https://quiz.nandous.com/",
         "code": "https://github.com/nandou54/quiz-game",
         "skills": [
-          "React",
+          "React.js",
           "Redux",
           "HTML5",
           "CSS",
@@ -140,7 +154,7 @@
         "website": "https://jolc.nandous.com/",
         "code": "https://github.com/nandou54/jolc",
         "skills": [
-          "React",
+          "React.js",
           "Redux",
           "Python",
           "HTML5",
@@ -176,8 +190,12 @@
             "icon": "nextjs"
           },
           {
-            "name": "React",
+            "name": "React.js",
             "icon": "reactjs"
+          },
+          {
+            "name": "Vue.js",
+            "icon": "vuejs"
           },
           {
             "name": "JavaScript",
@@ -218,8 +236,8 @@
             "contrast": true
           },
           {
-            "name": "TypeScript",
-            "icon": "typescript"
+            "name": "Ruby",
+            "icon": "ruby"
           },
           {
             "name": "Python",
@@ -228,10 +246,6 @@
           {
             "name": "Java",
             "icon": "java"
-          },
-          {
-            "name": "GO",
-            "icon": "go"
           },
           {
             "name": "Linux",
@@ -285,12 +299,12 @@
             "icon": "mysql"
           },
           {
-            "name": "SQL Server",
-            "icon": "sqlserver"
+            "name": "PostgreSQL",
+            "icon": "postgresql"
           },
           {
-            "name": "Oracle SQL",
-            "icon": "oraclesql"
+            "name": "SQL Server",
+            "icon": "sqlserver"
           },
           {
             "name": "Redis",
@@ -440,7 +454,8 @@
     "toggleLocale": "Cambiar a español",
     "toggleTheme": "Toggle dark theme",
     "zoomIn": "Zoom in",
-    "zoomOut": "Zoom out"
+    "zoomOut": "Zoom out",
+    "zoomReset": "Reset zoom"
   },
   "email": {
     "subject": "Thank you for reaching out!",

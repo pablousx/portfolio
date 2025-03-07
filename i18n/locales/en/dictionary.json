@@ -35,13 +35,22 @@
     "websiteButton": "Website",
     "content": [
       {
+        "year": 2024,
+        "icon": "lomax",
+        "name": "Lomax Technologies",
+        "description": "<u>Tailor-made</u> software development to optimize processes, drive innovation, and enhance business efficiency with <u>advanced technological solutions</u>.",
+        "website": "https://lomax.com.gt",
+        "skills": ["Vue.js", "Ruby", "PostgreSQL", "AWS", "Cloudflare"],
+        "images": []
+      },
+      {
         "year": 2023,
         "icon": "koloempresas",
         "name": "KOLO Companies",
         "description": "<u>ERP</u> that allows small and medium-sized entrepreneurs to <u>manage, grow and innovate their company</u> in an accessible and customizable way.",
         "website": "https://info.kolo-app.com",
         "skills": [
-          "React",
+          "React.js",
           "Redux",
           "TypeScript",
           "Java",
@@ -64,7 +73,7 @@
         "description": "<u>Quiz game online</u>. The GUI aims to be comfortable and simple, to provide <u>knowledge</u> and <u>fun</u> at the same time!",
         "website": "https://quiz.nandous.com/",
         "code": "https://github.com/nandou54/quiz-game",
-        "skills": ["React", "Redux", "HTML5", "CSS", "Vite.js"],
+        "skills": ["React.js", "Redux", "HTML5", "CSS", "Vite.js"],
         "images": [
           {
             "src": "projects/quiz-game/img1.jpg",
@@ -126,7 +135,7 @@
         "description": "<u>Web interpreter</u> for a programming language derived from <u>Julia</u>, named <u>JOLC</u>. Eases the debug of the language via AST, error and symbols reports.",
         "website": "https://jolc.nandous.com/",
         "code": "https://github.com/nandou54/jolc",
-        "skills": ["React", "Redux", "Python", "HTML5", "CSS", "Vite.js"],
+        "skills": ["React.js", "Redux", "Python", "HTML5", "CSS", "Vite.js"],
         "images": [
           {
             "src": "projects/jolc/img1.jpg",
@@ -155,8 +164,12 @@
             "icon": "nextjs"
           },
           {
-            "name": "React",
+            "name": "React.js",
             "icon": "reactjs"
+          },
+          {
+            "name": "Vue.js",
+            "icon": "vuejs"
           },
           {
             "name": "JavaScript",
@@ -197,8 +210,8 @@
             "contrast": true
           },
           {
-            "name": "TypeScript",
-            "icon": "typescript"
+            "name": "Ruby",
+            "icon": "ruby"
           },
           {
             "name": "Python",
@@ -207,10 +220,6 @@
           {
             "name": "Java",
             "icon": "java"
-          },
-          {
-            "name": "GO",
-            "icon": "go"
           },
           {
             "name": "Linux",
@@ -264,12 +273,12 @@
             "icon": "mysql"
           },
           {
-            "name": "SQL Server",
-            "icon": "sqlserver"
+            "name": "PostgreSQL",
+            "icon": "postgresql"
           },
           {
-            "name": "Oracle SQL",
-            "icon": "oraclesql"
+            "name": "SQL Server",
+            "icon": "sqlserver"
           },
           {
             "name": "Redis",
@@ -417,7 +426,8 @@
     "toggleLocale": "Cambiar a español",
     "toggleTheme": "Toggle dark theme",
     "zoomIn": "Zoom in",
-    "zoomOut": "Zoom out"
+    "zoomOut": "Zoom out",
+    "zoomReset": "Reset zoom"
   },
   "email": {
     "subject": "Thank you for reaching out!",

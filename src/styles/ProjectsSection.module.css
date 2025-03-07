@@ -9,11 +9,8 @@
 
 .base::before {
   content: '';
-  background-image: radial-gradient(
-      15em at 75% 15em,
-      var(--dimmer-alt-accent-color),
-      transparent
-    ),
+  background-image:
+    radial-gradient(15em at 75% 15em, var(--dimmer-alt-accent-color), transparent),
     radial-gradient(25em at 35% 45em, var(--dimmer-accent-color), transparent);
   overflow: visible;
 
@@ -121,12 +118,18 @@
   width: calc(100% + 1em);
   height: 1.5em;
 }
-
 .projects {
   margin-right: 4.5em;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1em;
+}
+
+.projects:has(> :only-child) {
+  grid-template-columns: 1fr;
+}
+
+.projects > :only-child {
 }
 
 @media (max-width: 700px) {

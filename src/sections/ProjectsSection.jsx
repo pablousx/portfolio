@@ -17,6 +17,7 @@ export default async function ProjectsSection({ id }) {
     (allSkills, skillGroup) => [...allSkills, ...skillGroup.skills],
     []
   )
+  console.log('🚀 | allSkills:', allSkills)
 
   const projectsPerYear = projects
     .reduce((acc, project) => {

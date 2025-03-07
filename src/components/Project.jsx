@@ -35,7 +35,7 @@ export default async function Project({
           ))}
         </div>
       </header>
-      <ImageCarrousel images={images} height={213} width={426} />
+      {images.length > 0 && <ImageCarrousel images={images} height={213} width={426} />}
       <footer>
         {code && (
           <Link asButton variant='secondary' href={code} isExternal decoration={false}>

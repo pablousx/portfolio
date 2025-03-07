@@ -15,11 +15,13 @@ import zoom from '@icons/general/zoom-icon.svg'
 
 import jolc from '@icons/projects/jolc-icon.svg'
 import koloempresas from '@icons/projects/kolo-empresas-icon.svg'
+import lomax from '@icons/projects/lomax-icon.svg'
 import minitranslator from '@icons/projects/mini-translator-icon.svg'
 import quizgame from '@icons/projects/quiz-game-icon.svg'
 
 import nextjs from '@icons/skills/frontend/nextjs.svg'
 import reactjs from '@icons/skills/frontend/reactjs.svg'
+import vuejs from '@icons/skills/frontend/vuejs.svg'
 import javascript from '@icons/skills/frontend/javascript.svg'
 import css from '@icons/skills/frontend/css.svg'
 import html5 from '@icons/skills/frontend/html5.svg'
@@ -29,6 +31,7 @@ import redux from '@icons/skills/frontend/redux.svg'
 
 import nodejs from '@icons/skills/backend/nodejs.svg'
 import expressjs from '@icons/skills/backend/expressjs.svg'
+import ruby from '@icons/skills/backend/ruby.svg'
 import python from '@icons/skills/backend/python.svg'
 import java from '@icons/skills/backend/java.svg'
 import go from '@icons/skills/backend/go.svg'
@@ -44,6 +47,7 @@ import netlify from '@icons/skills/cloud/netlify.svg'
 import oraclecloud from '@icons/skills/cloud/oraclecloud.svg'
 
 import mysql from '@icons/skills/database/mysql.svg'
+import postgresql from '@icons/skills/database/postgresql.svg'
 import sqlserver from '@icons/skills/database/sqlserver.svg'
 import oraclesql from '@icons/skills/database/oraclesql.svg'
 import redis from '@icons/skills/database/redis.svg'
@@ -80,6 +84,7 @@ const ICONS = {
   zoom,
   jolc,
   koloempresas,
+  lomax,
   minitranslator,
   quizgame,
   aws,
@@ -88,6 +93,7 @@ const ICONS = {
   cypressio,
   docker,
   expressjs,
+  ruby,
   firebase,
   gcp,
   git,
@@ -101,6 +107,7 @@ const ICONS = {
   linux,
   mongodb,
   mysql,
+  postgresql,
   netlify,
   nextjs,
   nginx,
@@ -111,6 +118,7 @@ const ICONS = {
   playwright,
   python,
   reactjs,
+  vuejs,
   redis,
   redux,
   slack,
