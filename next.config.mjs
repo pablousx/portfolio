@@ -22,27 +22,25 @@ const nextConfig = {
 
     return config
   },
-  experimental: {
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: [
-            {
-              loader: '@svgr/webpack',
-              options: {
-                svgoConfig: {
-                  plugins: [
-                    'preset-default',
-                    'removeXMLNS',
-                    'removeUnknownsAndDefaults',
-                    'prefixIds'
-                  ]
-                }
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: [
+          {
+            loader: '@svgr/webpack',
+            options: {
+              svgoConfig: {
+                plugins: [
+                  'preset-default',
+                  'removeXMLNS',
+                  'removeUnknownsAndDefaults',
+                  'prefixIds'
+                ]
               }
             }
-          ],
-          as: '*.js'
-        }
+          }
+        ],
+        as: '*.js'
       }
     }
   }

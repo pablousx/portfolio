@@ -67,7 +67,7 @@
           {
             "src": "projects/kolo-empresas/img1.jpg",
             "alt": "Banner de KOLO Empresas",
-            "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGOIrLl17OX/uvnvGURjGfrX/9/98D+DQTWDaCwAuuwM0dpLl70AAAAASUVORK5CYII="
+            "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGOIrLl17OX/uvnvGURjGfrX/9/14D+DQTWDaCwAutsMz4Y+4ScAAAAASUVORK5CYII="
           }
         ]
       },
@@ -89,7 +89,7 @@
           {
             "src": "projects/quiz-game/img1.jpg",
             "alt": "Banner de Quiz Game",
-            "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGM4e+i/uHoag6Dv9af/GRbN/1VWcbq14/bmLf8BrM8OjnJRudsAAAAASUVORK5CYII="
+            "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGM4svO/uHoaA6fH9af/GWbP+lpWcbq14/bmLf8BqXQOXsN3ObYAAAAASUVORK5CYII="
           },
           {
             "src": "projects/quiz-game/img2.jpg",
@@ -130,7 +130,7 @@
           {
             "src": "projects/mini-translator/img1.jpg",
             "alt": "Banner de Mini Translator",
-            "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGOoqJy2fv3lH9//5+b2MgiJ6fj65hUXTe/u2gAAsnEMq8GJkhgAAAAASUVORK5CYII="
+            "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGOoqJy2fv3lT+//5+b2MgiJ6fj65hUXTe/u2gAAsW8MnWi5G8UAAAAASUVORK5CYII="
           },
           {
             "src": "projects/mini-translator/img2.jpg",
@@ -164,7 +164,7 @@
           {
             "src": "projects/jolc/img1.jpg",
             "alt": "Banner de JOLC",
-            "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIklEQVR4nGPg5FaXVbB6/OG/Z3A2A6+QloCg7szFh+IzWwFiswhu1OV4xwAAAABJRU5ErkJggg=="
+            "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIklEQVR4nGNg51KTVbB6/OG/Z3A2A6+QloCg7szFh+IzWwFiUghqcIDEcAAAAABJRU5ErkJggg=="
           },
           {
             "src": "projects/jolc/img2.jpg",
@@ -384,7 +384,7 @@
           {
             "src": "about-me/usac/img1.jpg",
             "alt": "Universidad de San Carlos de Guatemala, Campus Central",
-            "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMklEQVR4nAEnANj/AE2y/0+v/5nU/9by/wDE5f+83v/i+v+jq6MAIy04GhgUMjY8CAcA9e0UvYt44mIAAAAASUVORK5CYII="
+            "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMklEQVR4nAEnANj/AFGz/1a0/5/Z/934/wDK6/+/5P/o//+nr6gAIy44GhkVMzg9CAcA/rkVGjNyqLMAAAAASUVORK5CYII="
           },
           {
             "src": "about-me/usac/img2.jpg",
@@ -398,7 +398,7 @@
           {
             "src": "about-me/guatemala/img1.jpg",
             "alt": "Guatemala, Arco de Santa Catalina",
-            "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMElEQVR4nGPQEWDg6lu/+v//qw/uM0RYCxRmu21ZED2l1J3BRE1YxdjU0FxDkIEBADR0DR+RXyM9AAAAAElFTkSuQmCC"
+            "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMElEQVR4nGPQFmDg6lu/+v//qw/uM4RZ8hVmO29aFDOl1J3BWFlIxdjUwExDgIEBADNMDQ7gyE2BAAAAAElFTkSuQmCC"
           },
           {
             "src": "about-me/guatemala/img2.jpg",
