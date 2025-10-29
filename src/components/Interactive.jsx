@@ -8,15 +8,14 @@ import useInteractivenessTracker from '@/hooks/useInteractivenessTracker'
 import useSectionObserver from '@/hooks/useSectionObserver'
 import useTopObserver from '@/hooks/useTopObserver'
 import useAppStore from '@/state/store'
-import { useLayoutEffect, useRef } from 'react'
+import { useLayoutEffect } from 'react'
 import { ClickToComponent } from 'click-to-react-component'
 
 export default function Interactive({ children }) {
   const { theme } = useAppStore()
-  const layoutRef = useRef()
 
   useInteractivenessTracker()
-  useInteractiveLayout(layoutRef.current)
+  useInteractiveLayout()
   useTopObserver()
   useSectionObserver()
 
@@ -29,7 +28,6 @@ export default function Interactive({ children }) {
       {children}
       <div
         id='layout'
-        ref={layoutRef}
         className={clsx(styles.base, 'no-select')}
         aria-hidden
         role='presentation'

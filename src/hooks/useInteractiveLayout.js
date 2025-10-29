@@ -91,23 +91,22 @@ const alterSize = debounce(({ elements, callback }) => {
   if (callback) callback()
 }, 300)
 
-export default function useInteractiveLayout(layoutElement) {
+export default function useInteractiveLayout() {
   const elements = getElements()
 
-  const refreshLayoutElements = useCallback(
-    ({ elements }) => {
-      layoutElement.style.opacity = 0
-      layoutElement.style.transition = 'none'
-      alterSize({
-        elements,
-        callback: () => {
-          layoutElement.style.opacity = null
-          layoutElement.style.transition = null
-        }
-      })
-    },
-    [layoutElement]
-  )
+  const refreshLayoutElements = useCallback(({ elements }) => {
+    const layoutElement = document.getElementById('layout')
+
+    layoutElement.style.opacity = 0
+    layoutElement.style.transition = 'none'
+    alterSize({
+      elements,
+      callback: () => {
+        layoutElement.style.opacity = null
+        layoutElement.style.transition = null
+      }
+    })
+  }, [])
 
   const [windowWidth, setWindowWidth] = useState()
 
@@ -137,17 +136,19 @@ export default function useInteractiveLayout(layoutElement) {
   )
 
   useEffect(() => {
-    if (!layoutElement) return
+    // const layoutElement = document.getElementById('layout')
 
-    setWindowWidth(window.innerWidth)
+    // setWindowWidth(window.innerWidth)
     window.addEventListener('resize', handleWindowResize)
 
     return () => window.removeEventListener('resize', handleWindowResize)
-  }, [layoutElement, handleWindowResize])
+  }, [handleWindowResize])
 
   useEffect(() => {
     setTimeout(() => {
-      if (!layoutElement) return
+      // if (!layoutElement) return
+
+      const layoutElement = document.getElementById('layout')
 
       const newElements = Array.from(elements).filter(
         (element) => !element.interactiveElement
@@ -179,5 +180,5 @@ export default function useInteractiveLayout(layoutElement) {
 
       refreshLayoutElements({ elements: newElements })
     }, 800)
-  }, [layoutElement, elements, refreshLayoutElements])
+  }, [elements, refreshLayoutElements])
 }

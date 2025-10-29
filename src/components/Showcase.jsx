@@ -27,6 +27,10 @@ export default function Showcase() {
   const [scale, setScale] = useState(initialScale)
   const { open, images, index: initialIndex, onIndexChange } = showcase
 
+  const handleResetTransform = useCallback(() => {
+    ref.current?.resetTransform()
+  }, [])
+
   const { image, imageIndex, singleImage, handleImageChange, resetCarrousel } =
     useCarrousel({
       initialIndex,
@@ -43,11 +47,7 @@ export default function Showcase() {
     closeShowcase()
     handleResetTransform()
     resetCarrousel()
-  }, [closeShowcase, ref, resetCarrousel])
-
-  const handleResetTransform = useCallback(() => {
-    ref.current?.resetTransform()
-  }, [])
+  }, [closeShowcase, handleResetTransform, resetCarrousel])
 
   useEffect(() => {
     if (!open) return

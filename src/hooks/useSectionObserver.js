@@ -34,7 +34,7 @@ export default function useSectionObserver() {
     return () => {
       observer.disconnect()
     }
-  }, [])
+  }, [setCurrentSection])
 
   useEffect(() => {
     if (!currentSection) return
