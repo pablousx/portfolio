@@ -1,3 +1,5 @@
+import { ReactScan } from '@/components/ReactScan'
+
 const themeColor = '#7c7edf'
 
 export const viewport = {
@@ -14,5 +16,10 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  return children
+  return (
+    <>
+      <ReactScan />
+      {children}
+    </>
+  )
 }
