@@ -3,7 +3,7 @@ import { createI18nMiddleware } from 'next-international/middleware'
 
 const I18nMiddleware = createI18nMiddleware(i18n)
 
-export function middleware(request) {
+export function proxy(request) {
   if (request.method !== 'GET') return
 
   return I18nMiddleware(request)

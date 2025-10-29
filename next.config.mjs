@@ -43,6 +43,9 @@ const nextConfig = {
         as: '*.js'
       }
     }
+  },
+  images: {
+    qualities: [75, 90]
   }
 }
 

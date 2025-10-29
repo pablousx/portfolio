@@ -9,6 +9,7 @@ import useSectionObserver from '@/hooks/useSectionObserver'
 import useTopObserver from '@/hooks/useTopObserver'
 import useAppStore from '@/state/store'
 import { useLayoutEffect, useRef } from 'react'
+import { ClickToComponent } from 'click-to-react-component'
 
 export default function Interactive({ children }) {
   const { theme } = useAppStore()
@@ -33,6 +34,7 @@ export default function Interactive({ children }) {
         aria-hidden
         role='presentation'
       />
+      <ClickToComponent />
     </>
   )
 }
