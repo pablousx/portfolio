@@ -5,14 +5,18 @@ import {
   NAME_MAX_LENGTH,
   SUBJECT_MAX_LENGTH
 } from '@/constants/patterns'
-import getDictionary from 'i18n/server'
-import { sendEmail } from 'lib/send-email'
+import getDictionary, { getCurrentLocale } from 'i18n/server'
+import { Resend } from 'resend'
 
-const EMAIL = process.env.SMTP_EMAIL
+const resend = new Resend(process.env.RESEND_API_KEY)
 
-const sanitize = (str) => str.replace(/</g, '&lt;').replace(/>/g, '&gt;')
+const RESEND_EMAIL = process.env.RESEND_EMAIL
+const MY_EMAIL = process.env.MY_EMAIL
+
+const sanitize = (str) => str.replaceAll(/</g, '&lt;').replaceAll(/>/g, '&gt;')
 
 export async function POST(request) {
+  const locale = await getCurrentLocale()
   const dictionary = await getDictionary('email')
   const { subject: cxSubject, html: cxHtml } = dictionary
 
@@ -34,19 +38,22 @@ export async function POST(request) {
       return new Response(null, { status: 400 })
 
     Promise.all([
-      await sendEmail({
+      resend.emails.send({
+        from: RESEND_EMAIL,
         to: email,
         subject: cxSubject,
-        html: cxHtml.replace('{{name}}', name)
+        html: cxHtml.replaceAll('{{name}}', name)
       }),
-
-      await sendEmail({
-        to: EMAIL,
-        subject,
-        html: `Solicitud de contacto:
-          <p><strong>Correo:</strong> ${email}</p>
-          <p><strong>Nombre:</strong> ${name}</p>
-          <p>${message.replace('\n', '<br/>')}</p>
+      resend.emails.send({
+        from: RESEND_EMAIL,
+        to: MY_EMAIL,
+        subject: `[Portfolio] Nuevo mensaje de ${name}: ${subject}`,
+        html: `
+          <p><strong>Versión:</strong> ${locale}</p>
+          <p><strong>Asunto:</strong> ${subject}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Name:</strong> ${name}</p>
+          <p>${message.replaceAll('\n', '<br/>')}</p>
         `
       })
     ])

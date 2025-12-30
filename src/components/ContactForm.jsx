@@ -1,6 +1,7 @@
 'use client'
 import styles from '@/styles/ContactForm.module.css'
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import useDebouncedCallback from '@/hooks/useDebouncedCallback'
 
 import Button from '@/components/Button'
 import Hint from '@/components/Hint'
@@ -55,9 +56,19 @@ export default function ContactForm({ children }) {
     }, 500)
   }
 
+  const saveToLocalStorage = useCallback((data) => {
+    localStorage.setItem('contact-form', JSON.stringify(data))
+  }, [])
+
+  const debouncedSave = useDebouncedCallback(saveToLocalStorage, 500)
+
   const handleChange = () => {
     setSuccess(false)
     setError()
+
+    const formData = new FormData(formRef.current)
+    const data = Object.fromEntries(formData)
+    debouncedSave(data)
   }
 
   const handleSubmit = (ev) => {
@@ -78,6 +89,7 @@ export default function ContactForm({ children }) {
         if (response.ok === false) throw response
 
         setSuccess(true)
+        localStorage.removeItem('contact-form')
       })
       .catch((error) => {
         const status = error.status
@@ -93,6 +105,22 @@ export default function ContactForm({ children }) {
         setSending(false)
       })
   }
+
+  useEffect(() => {
+    const saved = localStorage.getItem('contact-form')
+    if (saved) {
+      try {
+        const data = JSON.parse(saved)
+        for (const [key, value] of Object.entries(data)) {
+          if (formRef.current.elements[key]) {
+            formRef.current.elements[key].value = value
+          }
+        }
+      } catch (error) {
+        console.error('Failed to load form data from local storage', error)
+      }
+    }
+  }, [])
 
   useEffect(() => {
     if (!isFocused) return
