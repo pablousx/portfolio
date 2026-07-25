@@ -30,6 +30,23 @@ export interface ProjectData {
   year: number
 }
 
+export interface ExperienceData {
+  company: string
+  description: string
+  highlights: string[]
+  icon: IconName
+  period: string
+  role: string
+}
+
+export interface CredentialData {
+  badge: string
+  highlights: string[]
+  institution: string
+  name: string
+  period: string
+}
+
 export interface Dictionary {
   'about-me': {
     content: Array<{ images?: ImageData[]; text: string }>
@@ -75,6 +92,14 @@ export interface Dictionary {
     messageText: string
     title: string
   }
+  credentials: {
+    certificationLabel: string
+    certifications: CredentialData[]
+    education: CredentialData[]
+    educationLabel: string
+    intro: string
+    title: string
+  }
   contacts: Array<{
     icon: IconName
     name: string
@@ -84,6 +109,11 @@ export interface Dictionary {
   email: {
     html: string
     subject: string
+  }
+  experience: {
+    content: ExperienceData[]
+    intro: string
+    title: string
   }
   landing: {
     cvButton: string
@@ -107,6 +137,16 @@ export interface Dictionary {
   quote: {
     author: string
     text: string
+  }
+  resume: {
+    contactLabel: string
+    fileName: string
+    location: string
+    portfolioLabel: string
+    profile: string
+    profileLabel: string
+    skillsLabel: string
+    title: string
   }
   skills: {
     content: Array<{ name: string; skills: SkillData[] }>

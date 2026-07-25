@@ -5,4 +5,6 @@ trustPolicyExclude:
   - semver@6.3.1
 
 allowBuilds:
+  '@parcel/watcher': false
+  '@swc/core': false
   sharp: true

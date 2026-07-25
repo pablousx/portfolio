@@ -1,6 +1,8 @@
 export type SectionId =
   | 'about-me'
   | 'contact'
+  | 'credentials'
+  | 'experience'
   | 'landing'
   | 'projects'
   | 'quote'

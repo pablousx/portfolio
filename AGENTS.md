@@ -6,7 +6,7 @@ validating the project.
 ## Project overview
 
 This is Pablo Pineda's bilingual portfolio. It is a single-package Next.js App Router
-application using React 19, JavaScript, CSS Modules, `next-international`, Zustand, and
+application using React 19, JavaScript, CSS Modules, `next-intl`, Zustand, and
 the React Compiler.
 
 The supported locales are English (`en`) and Spanish (`es`). Both localized routes must
@@ -36,8 +36,7 @@ to make an install pass.
 ## Common commands
 
 ```sh
-pnpm dev                # Generate dictionaries, watch source dictionaries, start Next
-pnpm generate:locales   # Regenerate localized build artifacts
+pnpm dev                # Start Next development server
 pnpm lint               # Oxlint; warnings fail the command
 pnpm lint:fix           # Apply safe Oxlint fixes
 pnpm format             # Write formatting with Oxfmt
@@ -45,7 +44,7 @@ pnpm format:check       # Check formatting without writes
 pnpm doctor:react       # Local, non-uploading React Doctor audit
 pnpm doctor:score       # Remote score; requires permission to share audit metadata
 pnpm check              # Lint + format check + local React Doctor
-pnpm build              # Regenerate dictionaries and make a production build
+pnpm build              # Make a production build
 pnpm test:e2e           # Playwright against an existing production build
 ```
 
@@ -62,11 +61,9 @@ or installing Playwright browsers may require environment approval.
 - `src/state/`: Zustand client state.
 - `src/styles/`: component and section CSS Modules.
 - `src/constants/`: shared UI constants and validation rules.
-- `i18n/locales/*/dictionary.json`: human-authored locale sources.
-- `i18n/locales/*/transpiled-dictionary.json`: generated locale artifacts.
+- `i18n/locales/*/dictionary.json`: next-intl message sources.
 - `i18n/server.js` and `i18n/client.js`: explicit server/client translation APIs.
 - `public/`: static images, SVG icons, and downloadable assets.
-- `scripts/dev.mjs`: locale watcher and Next development process.
 - `tests/e2e/`: Playwright behavior tests.
 
 The `@/*` alias resolves to `src/*`; `@icons/*` resolves to `public/icons/*`.
@@ -131,13 +128,8 @@ as any other repository work.
 
 ### Internationalization
 
-- Never directly author `transpiled-dictionary.json`.
 - Edit every affected `dictionary.json` source. User-facing additions normally require
   both English and Spanish values.
-- Run `pnpm generate:locales` after locale or placeholder-image changes and commit the
-  regenerated artifacts.
-- The generator also creates image placeholders and formats its JSON with Oxfmt. Do not
-  replace it with ad hoc scripts.
 - Preserve both `/en` and `/es`, locale switching, localized metadata, and CV assets.
 
 ### API and secrets

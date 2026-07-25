@@ -5,8 +5,16 @@ import Interactive from '@/components/Interactive'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Showcase from '@/components/Showcase'
+import { setRequestLocale } from 'next-intl/server'
 
-export default async function Page() {
+interface PageProps {
+  params: Promise<{ locale: string }>
+}
+
+export default async function Page({ params }: PageProps) {
+  const { locale } = await params
+  setRequestLocale(locale)
+
   return (
     <Interactive>
       <main className={styles.base}>

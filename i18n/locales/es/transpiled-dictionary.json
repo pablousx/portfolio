@@ -14,7 +14,7 @@
     "presentation": "Creando experiencias digitales <strong>inolvidables</strong>.",
     "email": "me@pablousx.vercel.app",
     "emailButton": "Copia mi email",
-    "cvButton": "¡Descarga mi CV!",
+    "cvButton": "Generar mi CV",
     "image": { "src": "landing/profile-photo.png", "alt": "Mi foto" }
   },
   "projects": {
@@ -255,6 +255,62 @@
       }
     ]
   },
+  "experience": {
+    "title": "Experiencia",
+    "intro": "Construyo software duradero conectando el pensamiento de producto, la disciplina de ingeniería y la realidad de las personas que lo utilizan.",
+    "content": [
+      {
+        "period": "Septiembre de 2024 — Actualidad",
+        "icon": "lomax",
+        "role": "Desarrollador Web Full-Stack Senior",
+        "company": "Lomax Technologies S.A.",
+        "description": "Sistemas empresariales a la medida, diseñados alrededor del modelo operativo de cada cliente.",
+        "highlights": [
+          "Lidero el desarrollo de sistemas de gestión de objetivos empresariales.",
+          "Desarrollo y optimizo herramientas internas utilizadas por múltiples clientes."
+        ]
+      },
+      {
+        "period": "Febrero de 2022 — Noviembre de 2023",
+        "icon": "koloempresas",
+        "role": "Desarrollador Web Full-Stack",
+        "company": "KOLO S.A.",
+        "description": "Una plataforma ERP adaptada a los flujos de ventas, compras, inventario y reportes de cada empresa.",
+        "highlights": [
+          "Desarrollé y optimicé funcionalidades utilizadas por empresas en áreas operativas esenciales.",
+          "Mejoré las prácticas de entrega mediante herramientas, CI/CD, estándares de código y patrones de UI/UX."
+        ]
+      }
+    ]
+  },
+  "credentials": {
+    "title": "Credenciales",
+    "intro": "La formación académica me dio los fundamentos. Enseñar, construir y aprender en público los convirtió en una práctica.",
+    "educationLabel": "Educación",
+    "education": [
+      {
+        "period": "10.º semestre",
+        "badge": "USAC",
+        "name": "Ingeniería en Ciencias y Sistemas",
+        "institution": "Universidad de San Carlos de Guatemala",
+        "highlights": [
+          "Reconocimiento por excelencia académica.",
+          "Organizador del Congreso de Estudiantes de Ciencias y Sistemas.",
+          "Auxiliar de cátedra y mentor de estudiantes."
+        ]
+      }
+    ],
+    "certificationLabel": "Certificación",
+    "certifications": [
+      {
+        "period": "Otorgado en enero de 2024",
+        "badge": "C2",
+        "name": "Certificado de inglés EF SET · 78/100",
+        "institution": "EF Standard English Test",
+        "highlights": ["Nivel C2 competente según el Marco Común Europeo de Referencia."]
+      }
+    ]
+  },
   "contact": {
     "title": "¡Contáctame!",
     "messageText": "O envíame un mensaje",
@@ -280,6 +336,16 @@
   "quote": {
     "author": "Frank Herbert",
     "text": "El misterio de la <u>vida</u> no es un problema a resolver, sino una realidad a <strong>experimentar</strong>"
+  },
+  "resume": {
+    "title": "Desarrollador Web Full-Stack Senior",
+    "location": "Ciudad de Guatemala, Guatemala",
+    "profileLabel": "Perfil",
+    "profile": "Desarrollador full-stack que transforma flujos empresariales complejos en productos digitales claros y confiables. Experiencia en producto, sistemas front-end, APIs, datos, nube y prácticas de ingeniería.",
+    "contactLabel": "Contacto",
+    "portfolioLabel": "Portafolio web",
+    "skillsLabel": "Skills principales",
+    "fileName": "Pablo-Pineda-CV-es.pdf"
   },
   "aria": {
     "available": "Disponible",

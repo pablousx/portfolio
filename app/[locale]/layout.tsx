@@ -3,10 +3,11 @@ import './global.css'
 
 import { bodyFont, titleFont } from 'app/fonts'
 import clsx from 'clsx/lite'
-import getDictionary, { getStaticParams } from 'i18n/server'
-import { setStaticParamsLocale } from 'next-international/server'
-import { locales } from 'i18n/config'
+import { loadDictionary, locales } from 'i18n/config'
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import { hasLocale, NextIntlClientProvider } from 'next-intl'
+import { setRequestLocale } from 'next-intl/server'
 import type { ReactNode } from 'react'
 
 import ProductionInsights from '@/components/ProductionInsights'
@@ -19,10 +20,11 @@ interface LocaleLayoutProps {
 export async function generateMetadata({
   params
 }: Pick<LocaleLayoutProps, 'params'>): Promise<Metadata> {
-  const [{ locale }, { title, description }] = await Promise.all([
-    params,
-    getDictionary('meta')
-  ])
+  const { locale } = await params
+  if (!hasLocale(locales, locale)) notFound()
+
+  const { meta } = await loadDictionary(locale)
+  const { title, description } = meta
 
   const languages: Record<string, string> = {}
   for (const supportedLocale of locales) {
@@ -59,17 +61,19 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  return getStaticParams()
+  return locales.map((locale) => ({ locale }))
 }
 
 export default async function LocaleLayout({ params, children }: LocaleLayoutProps) {
   const { locale } = await params
-  setStaticParamsLocale(locale)
+  if (!hasLocale(locales, locale)) notFound()
+
+  setRequestLocale(locale)
 
   return (
     <html lang={locale} translate='no'>
       <body className={clsx(titleFont.variable, bodyFont.variable)} top='true'>
-        {children}
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
         <ProductionInsights />
       </body>
     </html>

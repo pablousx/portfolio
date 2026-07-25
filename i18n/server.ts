@@ -1,12 +1,9 @@
 'use server'
 
-import { dictionaries, localeLoaders } from 'i18n/config'
-import { createI18nServer } from 'next-international/server'
 import type { Dictionary } from '@/types/content'
+import { getLocale, getMessages } from 'next-intl/server'
 
-const { getCurrentLocale, getStaticParams } = createI18nServer(localeLoaders)
-
-export { getCurrentLocale, getStaticParams }
+export { getLocale as getCurrentLocale }
 
 export default async function getDictionary(): Promise<Dictionary>
 export default async function getDictionary<Scope extends keyof Dictionary>(
@@ -15,8 +12,7 @@ export default async function getDictionary<Scope extends keyof Dictionary>(
 export default async function getDictionary<Scope extends keyof Dictionary>(
   scope?: Scope
 ) {
-  const locale = await getCurrentLocale()
-  const dictionary = dictionaries[locale]
+  const dictionary = (await getMessages()) as Dictionary
 
   return scope ? dictionary[scope] : dictionary
 }

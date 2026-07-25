@@ -1,5 +1,7 @@
 import AboutMeSection from '@/sections/AboutMeSection'
 import ContactSection from '@/sections/ContactSection'
+import CredentialsSection from '@/sections/CredentialsSection'
+import ExperienceSection from '@/sections/ExperienceSection'
 import LandingSection from '@/sections/LandingSection'
 import ProjectsSection from '@/sections/ProjectsSection'
 import QuoteSection from '@/sections/QuoteSection'
@@ -23,6 +25,14 @@ const sections: SectionDefinition[] = [
   {
     id: 'projects',
     Tag: ProjectsSection
+  },
+  {
+    id: 'experience',
+    Tag: ExperienceSection
+  },
+  {
+    id: 'credentials',
+    Tag: CredentialsSection
   },
   {
     id: 'skills',

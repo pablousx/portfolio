@@ -73,7 +73,7 @@ body {
   --dimmest-alt-accent-color: hsl(var(--alt-accent), var(--dimmest));
 }
 
-body.no-scroll {
+body:is(.no-scroll, .navbar-menu-open) {
   overflow-y: hidden;
   padding-right: 1rem;
 }

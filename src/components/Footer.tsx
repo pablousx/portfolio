@@ -3,9 +3,9 @@ import styles from '@/styles/Footer.module.css'
 import Icon from '@/components/Icon'
 import Link from '@/components/Link'
 
-const year = new Date().getFullYear()
-
 export default async function Footer() {
+  const year = new Date().getFullYear()
+
   return (
     <footer className={styles.base}>
       <Link href='https://github.com/pablousx/portfolio' isExternal decoration={false}>

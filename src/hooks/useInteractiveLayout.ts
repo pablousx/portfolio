@@ -1,7 +1,6 @@
 'use client'
 
-import { debounce } from 'lib/debounce'
-import { useEffect, useEffectEvent, useRef } from 'react'
+import { useEffect } from 'react'
 
 const interactiveElementTypes = [
   {
@@ -32,23 +31,19 @@ const interactiveElementTypes = [
   }
 ]
 
+const interactiveElementSelector = interactiveElementTypes
+  .map(
+    (interactiveElementType) =>
+      `main ${
+        interactiveElementType.tag
+          ? interactiveElementType.tag
+          : `.${interactiveElementType.className}`
+      }`
+  )
+  .join(',')
+
 const getElements = (): HTMLElement[] =>
-  typeof window === 'undefined'
-    ? []
-    : Array.from(
-        document.querySelectorAll<HTMLElement>(
-          interactiveElementTypes
-            .map(
-              (interactiveElementType) =>
-                `main ${
-                  interactiveElementType.tag
-                    ? interactiveElementType.tag
-                    : `.${interactiveElementType.className}`
-                }`
-            )
-            .join(',')
-        )
-      )
+  Array.from(document.querySelectorAll<HTMLElement>(interactiveElementSelector))
 
 const getInteractiveElementType = (element: HTMLElement) => {
   return interactiveElementTypes.find((interactiveElementType) =>
@@ -58,149 +53,111 @@ const getInteractiveElementType = (element: HTMLElement) => {
   )
 }
 
-interface AlterSizeOptions {
-  callback?: () => void
-  elements?: Iterable<HTMLElement>
+const updateElementPosition = (
+  sourceElement: HTMLElement,
+  interactiveElement: HTMLElement
+) => {
+  const sourceRect = sourceElement.getBoundingClientRect()
+  const interactiveParent = interactiveElement.parentElement
+  if (!interactiveParent) return
+
+  const isInRootLayout = interactiveParent.id === 'layout'
+  const parentRect = isInRootLayout ? null : interactiveParent.getBoundingClientRect()
+
+  interactiveElement.style.width = `${sourceElement.offsetWidth}px`
+  interactiveElement.style.height = `${sourceElement.offsetHeight}px`
+  interactiveElement.style.top = `${
+    isInRootLayout
+      ? window.scrollY + sourceRect.top
+      : sourceRect.top - (parentRect?.top ?? 0) - interactiveParent.clientTop
+  }px`
+  interactiveElement.style.left = `${
+    isInRootLayout
+      ? window.scrollX + sourceRect.left
+      : sourceRect.left - (parentRect?.left ?? 0) - interactiveParent.clientLeft
+  }px`
+  interactiveElement.style.opacity = '1'
 }
 
-const alterSize = debounce(
-  ({ elements: suppliedElements, callback }: AlterSizeOptions) => {
-    const elements = suppliedElements ?? getElements()
-    const measurements: Array<{
-      height: number
-      interactiveElement: HTMLElement
-      left: number
-      top: number
-      width: number
-    }> = []
-
-    for (const sourceElement of elements) {
-      const interactiveElement = sourceElement.interactiveElement
-      if (!interactiveElement) continue
-
-      const viewportOffset = sourceElement.getBoundingClientRect()
-      const interactiveParent = interactiveElement.parentElement
-      if (!interactiveParent) continue
-
-      const isInRootLayout = interactiveParent.id === 'layout'
-      const parentViewportOffset = isInRootLayout
-        ? null
-        : interactiveParent.getBoundingClientRect()
-      const borderWidth = isInRootLayout
-        ? 0
-        : Number.parseFloat(
-            getComputedStyle(interactiveParent).getPropertyValue('border-left-width')
-          )
-
-      measurements.push({
-        interactiveElement,
-        width: sourceElement.offsetWidth,
-        height: sourceElement.offsetHeight,
-        top: isInRootLayout
-          ? document.documentElement.scrollTop + viewportOffset.top
-          : viewportOffset.top - (parentViewportOffset?.top ?? 0) - borderWidth,
-        left: isInRootLayout
-          ? viewportOffset.left
-          : viewportOffset.left - (parentViewportOffset?.left ?? 0) - borderWidth
-      })
-    }
-
-    for (const { interactiveElement, width, height, top, left } of measurements) {
-      interactiveElement.style.cssText += `;width:${width}px;height:${height}px;top:${top}px;left:${left}px;opacity:1`
-    }
-
-    if (callback) callback()
-  },
-  300
-)
-
 export default function useInteractiveLayout() {
-  const windowWidth = useRef<number | undefined>(undefined)
-
-  const refreshLayoutElements = useEffectEvent(
-    ({ elements }: { elements?: HTMLElement[] } = {}) => {
-      const layoutElement = document.getElementById('layout')
-      if (!layoutElement) return
-
-      layoutElement.style.opacity = '0'
-      layoutElement.style.transition = 'none'
-      alterSize({
-        elements,
-        callback: () => {
-          layoutElement.style.opacity = ''
-          layoutElement.style.transition = ''
-        }
-      })
-    }
-  )
-
-  const handleWindowResize = useEffectEvent(() => {
-    const newWindowWidth = window.innerWidth
-
-    const testElement = document.querySelector<HTMLElement>('main .interactive-layout')
-
-    if (testElement != null) {
-      const viewportOffset = testElement.getBoundingClientRect()
-      const offsetTop = document.documentElement.scrollTop + viewportOffset.top
-      const isSameHeight =
-        Math.abs(
-          Number(testElement.interactiveElement?.style.top.slice(0, -2)) - offsetTop
-        ) < 1
-
-      if (newWindowWidth === windowWidth.current && isSameHeight) return
-    }
-
-    windowWidth.current = newWindowWidth
-    refreshLayoutElements()
-  })
-
   useEffect(() => {
-    window.addEventListener('resize', handleWindowResize)
+    const layoutElement = document.getElementById('layout')
+    const mainElement = document.querySelector('main')
+    if (!layoutElement || !mainElement) return () => {}
 
-    return () => window.removeEventListener('resize', handleWindowResize)
-  }, [])
+    const interactiveElements = new Map<HTMLElement, HTMLElement>()
+    let animationFrame: number | undefined
 
-  useEffect(() => {
-    const initializationTimer = setTimeout(() => {
-      const layoutElement = document.getElementById('layout')
-      if (!layoutElement) return
+    const synchronizeLayout = () => {
+      animationFrame = undefined
 
-      const elements = getElements()
-      const newElements = Array.from(elements).filter(
-        (element) => !element.interactiveElement
-      )
+      const sourceElements = getElements()
+      const sourceElementSet = new Set(sourceElements)
 
-      if (newElements.length === 0) return
+      for (const [sourceElement, interactiveElement] of interactiveElements) {
+        if (sourceElementSet.has(sourceElement)) continue
 
-      for (const element of newElements) {
-        const interactiveElementType = getInteractiveElementType(element)
+        interactiveElement.remove()
+        interactiveElements.delete(sourceElement)
+      }
+
+      for (const sourceElement of sourceElements) {
+        if (interactiveElements.has(sourceElement)) continue
+
+        const interactiveElementType = getInteractiveElementType(sourceElement)
         if (!interactiveElementType) continue
 
         const interactiveElement = interactiveElementType.clone
-          ? (element.cloneNode(true) as HTMLElement)
+          ? (sourceElement.cloneNode(true) as HTMLElement)
           : document.createElement('div')
 
         if (interactiveElementType.clone)
           interactiveElement.setAttribute('aria-hidden', 'true')
-        else interactiveElement.classList.add(...element.classList)
+        else interactiveElement.classList.add(...sourceElement.classList)
 
         interactiveElement.style.opacity = '0'
 
-        element.interactiveElement = interactiveElement
+        const parentSourceElement = sourceElements.findLast(
+          (candidate) => candidate !== sourceElement && candidate.contains(sourceElement)
+        )
+        const parent = parentSourceElement
+          ? interactiveElements.get(parentSourceElement)
+          : layoutElement
 
-        const parent =
-          newElements.findLast(
-            (newElement) => newElement.contains(element) && newElement !== element
-          )?.interactiveElement ?? layoutElement
-        parent.appendChild(interactiveElement)
+        parent?.appendChild(interactiveElement)
+        interactiveElements.set(sourceElement, interactiveElement)
       }
 
-      refreshLayoutElements({ elements: newElements })
-    }, 800)
+      for (const sourceElement of sourceElements) {
+        const interactiveElement = interactiveElements.get(sourceElement)
+        if (interactiveElement) updateElementPosition(sourceElement, interactiveElement)
+      }
+    }
+
+    const scheduleSynchronization = () => {
+      if (animationFrame !== undefined) return
+
+      animationFrame = window.requestAnimationFrame(synchronizeLayout)
+    }
+
+    const resizeObserver = new ResizeObserver(scheduleSynchronization)
+    const mutationObserver = new MutationObserver(scheduleSynchronization)
+
+    resizeObserver.observe(mainElement)
+    mutationObserver.observe(mainElement, { childList: true, subtree: true })
+    window.addEventListener('resize', scheduleSynchronization)
+    synchronizeLayout()
 
     return () => {
-      clearTimeout(initializationTimer)
-      alterSize.cancel()
+      if (animationFrame !== undefined) window.cancelAnimationFrame(animationFrame)
+
+      window.removeEventListener('resize', scheduleSynchronization)
+      mutationObserver.disconnect()
+      resizeObserver.disconnect()
+
+      for (const interactiveElement of interactiveElements.values()) {
+        interactiveElement.remove()
+      }
     }
   }, [])
 }

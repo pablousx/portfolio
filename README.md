@@ -23,7 +23,7 @@ interactions that make browsing it feel less static.
 
 ## Stack
 
-Next.js App Router · React 19 · TypeScript · next-international · Zustand ·
+Next.js App Router · React 19 · TypeScript · next-intl · Zustand ·
 react-zoom-pan-pinch · Sharp · Vercel Analytics · Playwright
 
 ### Contact form
@@ -48,7 +48,6 @@ of the site.
 
 ```sh
 pnpm dev                # Start development and watch locale sources
-pnpm generate:locales   # Rebuild generated locale artifacts
 pnpm check              # Type-check, lint, format, and run project audits
 pnpm build              # Create a production build
 pnpm test:e2e           # Run browser tests after building
@@ -57,13 +56,7 @@ pnpm test:e2e           # Run browser tests after building
 ## Editing content
 
 Locale copy lives in `i18n/locales/en/dictionary.json` and
-`i18n/locales/es/dictionary.json`. After changing either dictionary, run:
-
-```sh
-pnpm generate:locales
-```
-
-The generated `transpiled-dictionary.json` files should not be edited by hand.
+`i18n/locales/es/dictionary.json`. `next-intl` loads these message files directly.
 
 ## License
 

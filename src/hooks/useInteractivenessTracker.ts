@@ -1,64 +1,75 @@
 'use client'
 
-import { debounce } from 'lib/debounce'
 import { useEffect } from 'react'
-
-const updatePosition = (x: number | null, y: number | null) => {
-  const element = document.getElementById('layout')
-  if (!element) return
-
-  if (x != null) element.style.setProperty('--x', `${x}px`)
-  if (y != null) element.style.setProperty('--y', `${y}px`)
-}
 
 export default function useInteractivenessTracker() {
   useEffect(() => {
-    const isCoarse = window.matchMedia('(pointer: coarse)').matches
+    const layoutElement = document.getElementById('layout')
+    if (!layoutElement) return () => {}
 
-    if (isCoarse) {
-      let updateTimer: ReturnType<typeof setTimeout> | undefined
-      const handleTrackInteractiveness = () => {
-        const y = document.documentElement.scrollTop + window.screen.height / 2
+    const pointerQuery = window.matchMedia('(pointer: coarse)')
+    let animationFrame: number | undefined
+    let nextPosition: { x: number | null; y: number | null } | undefined
 
-        clearTimeout(updateTimer)
-        updateTimer = setTimeout(() => updatePosition(null, y), 200)
-      }
+    const updatePosition = () => {
+      animationFrame = undefined
+      if (!nextPosition) return
 
-      handleTrackInteractiveness()
+      const { x, y } = nextPosition
+      nextPosition = undefined
 
-      window.addEventListener('scroll', handleTrackInteractiveness)
-
-      return () => {
-        clearTimeout(updateTimer)
-        window.removeEventListener('scroll', handleTrackInteractiveness)
-      }
+      if (x != null) layoutElement.style.setProperty('--x', `${x}px`)
+      if (y != null) layoutElement.style.setProperty('--y', `${y}px`)
     }
 
-    const element = document.body
-    if (!element) return
+    const schedulePositionUpdate = (x: number | null, y: number | null) => {
+      nextPosition = { x, y }
+      if (animationFrame !== undefined) return
 
-    const handleTrackInteractiveness = (e: MouseEvent) => {
-      const { x, y } = element.getBoundingClientRect()
-      updatePosition(e.clientX - x, e.clientY - y)
+      animationFrame = window.requestAnimationFrame(updatePosition)
     }
 
-    const debouncedHandleTrackInteractiveness = debounce((e: WheelEvent) => {
-      handleTrackInteractiveness(e)
-    }, 100)
+    const trackCoarsePointer = () => {
+      schedulePositionUpdate(null, window.scrollY + window.innerHeight / 2)
+    }
 
-    element.addEventListener('mousemove', handleTrackInteractiveness)
-    element.addEventListener('pointermove', handleTrackInteractiveness)
-    element.addEventListener('wheel', debouncedHandleTrackInteractiveness, {
-      passive: true
-    })
+    const trackFinePointer = (event: MouseEvent) => {
+      const layoutRect = layoutElement.getBoundingClientRect()
+      schedulePositionUpdate(
+        event.clientX - layoutRect.left,
+        event.clientY - layoutRect.top
+      )
+    }
+
+    const handleScroll = () => {
+      if (pointerQuery.matches) trackCoarsePointer()
+    }
+
+    const handlePointerMove = (event: PointerEvent) => {
+      if (!pointerQuery.matches) trackFinePointer(event)
+    }
+
+    const handleWheel = (event: WheelEvent) => {
+      if (!pointerQuery.matches) trackFinePointer(event)
+    }
+
+    const handlePointerChange = () => {
+      if (pointerQuery.matches) trackCoarsePointer()
+    }
+
+    if (pointerQuery.matches) trackCoarsePointer()
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    document.addEventListener('pointermove', handlePointerMove)
+    window.addEventListener('wheel', handleWheel, { passive: true })
+    pointerQuery.addEventListener('change', handlePointerChange)
 
     return () => {
-      if (!element) return
-
-      element.removeEventListener('mousemove', handleTrackInteractiveness)
-      element.removeEventListener('pointermove', handleTrackInteractiveness)
-      element.removeEventListener('wheel', debouncedHandleTrackInteractiveness)
-      debouncedHandleTrackInteractiveness.cancel()
+      window.removeEventListener('scroll', handleScroll)
+      document.removeEventListener('pointermove', handlePointerMove)
+      window.removeEventListener('wheel', handleWheel)
+      pointerQuery.removeEventListener('change', handlePointerChange)
+      if (animationFrame !== undefined) window.cancelAnimationFrame(animationFrame)
     }
   }, [])
 }

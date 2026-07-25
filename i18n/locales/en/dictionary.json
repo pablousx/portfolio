@@ -22,7 +22,7 @@
     "presentation": "Creating <strong>unforgettable</strong> digital experiences.",
     "email": "me@pablousx.vercel.app",
     "emailButton": "Copy my email",
-    "cvButton": "Download my CV!",
+    "cvButton": "Generate my CV",
     "image": {
       "src": "landing/profile-photo.png",
       "alt": "My photo",
@@ -385,6 +385,64 @@
       }
     ]
   },
+  "experience": {
+    "title": "Experience",
+    "intro": "I build durable software by connecting product thinking, engineering discipline, and the realities of the people using it.",
+    "content": [
+      {
+        "period": "September 2024 — Present",
+        "icon": "lomax",
+        "role": "Senior Full-Stack Web Developer",
+        "company": "Lomax Technologies S.A.",
+        "description": "Tailor-made enterprise systems designed around each client’s operating model.",
+        "highlights": [
+          "Lead the development of business goal management systems.",
+          "Build and optimize internal tools used across multiple clients."
+        ]
+      },
+      {
+        "period": "February 2022 — November 2023",
+        "icon": "koloempresas",
+        "role": "Full-Stack Web Developer",
+        "company": "KOLO S.A.",
+        "description": "An ERP platform adapted to the sales, purchasing, inventory, and reporting workflows of each company.",
+        "highlights": [
+          "Developed and optimized features used by companies across essential operating areas.",
+          "Improved delivery practices through tooling, CI/CD, coding standards, and UI/UX patterns."
+        ]
+      }
+    ]
+  },
+  "credentials": {
+    "title": "Credentials",
+    "intro": "Formal study gave me the fundamentals. Teaching, building, and learning in public turned them into a practice.",
+    "educationLabel": "Education",
+    "education": [
+      {
+        "period": "10th semester",
+        "badge": "USAC",
+        "name": "Computer Science & Systems Engineering",
+        "institution": "University of San Carlos of Guatemala",
+        "highlights": [
+          "Recognized for academic excellence.",
+          "Organizer for the Congress of Science and Systems Students.",
+          "Teaching assistant and peer mentor."
+        ]
+      }
+    ],
+    "certificationLabel": "Certification",
+    "certifications": [
+      {
+        "period": "Awarded January 2024",
+        "badge": "C2",
+        "name": "EF SET English Certificate · 78/100",
+        "institution": "EF Standard English Test",
+        "highlights": [
+          "C2 Proficient according to the Common European Framework of Reference."
+        ]
+      }
+    ]
+  },
   "contact": {
     "title": "Contact me!",
     "messageText": "Or send me a message",
@@ -410,6 +468,16 @@
   "quote": {
     "author": "Frank Herbert",
     "text": "The mystery of <u>life</u> is not a problem to be solved, but a reality to be <strong>experienced</strong>"
+  },
+  "resume": {
+    "title": "Senior Full-Stack Web Developer",
+    "location": "Guatemala City, Guatemala",
+    "profileLabel": "Profile",
+    "profile": "Full-stack developer who turns complex business workflows into clear, reliable digital products. Experienced across product delivery, front-end systems, APIs, data, cloud infrastructure, and engineering practices.",
+    "contactLabel": "Contact",
+    "portfolioLabel": "Web portfolio",
+    "skillsLabel": "Selected skills",
+    "fileName": "Pablo-Pineda-CV-en.pdf"
   },
   "aria": {
     "available": "Available",

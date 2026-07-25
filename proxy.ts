@@ -1,15 +1,9 @@
-import { i18n } from 'i18n/config'
-import { createI18nMiddleware } from 'next-international/middleware'
-import type { NextRequest } from 'next/server'
+import createMiddleware from 'next-intl/middleware'
 
-const I18nMiddleware = createI18nMiddleware(i18n)
+import { routing } from './i18n/routing'
 
-export function proxy(request: NextRequest) {
-  if (request.method !== 'GET') return
-
-  return I18nMiddleware(request)
-}
+export default createMiddleware(routing)
 
 export const config = {
-  matcher: ['/((?!api|static|.*\\..*|_next|favicon.ico|robots.txt).*)']
+  matcher: '/((?!api|static|send-email|_next|_vercel|.*\\..*).*)'
 }

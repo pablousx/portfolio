@@ -3,14 +3,14 @@
 import styles from '@/styles/Button.module.css'
 
 import clsx from 'clsx/lite'
-import type { ComponentPropsWithoutRef } from 'react'
+import type { ComponentPropsWithRef } from 'react'
 
 const classNameByVariant = {
   primary: `${styles.primary} interactive-button-primary`,
   secondary: `${styles.secondary} interactive-border`
 } as const
 
-export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
+export interface ButtonProps extends ComponentPropsWithRef<'button'> {
   loading?: boolean
   variant?: keyof typeof classNameByVariant
 }
@@ -23,6 +23,7 @@ export default function Button({
   children,
   disabled = false,
   loading = false,
+  ref,
   ...props
 }: ButtonProps) {
   return (
@@ -38,6 +39,7 @@ export default function Button({
       type={type}
       onClick={onClick}
       disabled={disabled || loading}
+      ref={ref}
       {...props}
     >
       {children}

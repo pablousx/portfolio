@@ -1,5 +1,4 @@
-import fs from 'fs/promises'
-import path from 'path'
+import { loadDictionary, locales, type Locale } from 'i18n/config'
 
 interface RouteContext {
   params: Promise<{ locale: string }>
@@ -7,14 +6,25 @@ interface RouteContext {
 
 export async function GET(_request: Request, { params }: RouteContext) {
   const { locale } = await params
+  if (!locales.includes(locale as Locale)) {
+    return new Response('Unsupported locale', { status: 404 })
+  }
 
-  const filePath = path.resolve(`i18n/locales/${locale}`, 'cv.pdf')
-  const file = await fs.readFile(filePath)
+  const [dictionary, { renderToBuffer }, { default: CvDocument }] = await Promise.all([
+    loadDictionary(locale as Locale),
+    import('@react-pdf/renderer'),
+    import('@/cv/CvDocument')
+  ])
+  const document = CvDocument({ dictionary })
+  const file = await renderToBuffer(document)
 
-  return new Response(file, {
+  return new Response(new Uint8Array(file), {
     headers: {
+      'Cache-Control': 'public, max-age=0, must-revalidate',
       'Content-Type': 'application/pdf',
-      'Content-Disposition': 'attachment; filename=Pablo Pineda - CV.pdf'
+      'Content-Disposition': `attachment; filename="${dictionary.resume.fileName}"`
     }
   })
 }
+
+export const runtime = 'nodejs'
