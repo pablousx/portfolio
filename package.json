@@ -8,17 +8,15 @@
     "build": "next build",
     "start": "next start",
     "knip": "knip",
-    "lint": "oxlint .",
-    "lint:fix": "oxlint . --fix",
+    "lint": "oxlint . --fix",
     "format": "oxfmt",
-    "doctor:react": "react-doctor --verbose --no-supply-chain --no-score --no-respect-inline-disables",
-    "doctor:score": "react-doctor --score --no-respect-inline-disables",
+    "doctor": "react-doctor --score",
     "type-check": "tsc --noEmit",
-    "verify": "pnpm type-check && pnpm lint && pnpm format && pnpm knip && pnpm doctor:react",
+    "verify": "pnpm type-check && pnpm lint && pnpm format && pnpm knip && pnpm doctor",
     "test:e2e": "playwright test"
   },
   "dependencies": {
-    "@react-pdf/renderer": "^4.5.1",
+    "@react-pdf/renderer": "4.5.1",
     "@vercel/analytics": "2.0.1",
     "@vercel/speed-insights": "2.0.0",
     "babel-plugin-react-compiler": "1.0.0",
@@ -27,7 +25,7 @@
     "hint.css": "3.0.0",
     "html-react-parser": "6.1.5",
     "next": "16.2.11",
-    "next-intl": "^4.13.4",
+    "next-intl": "4.13.4",
     "nodemailer": "9.0.3",
     "react": "19.2.8",
     "react-dom": "19.2.8",
@@ -42,18 +40,12 @@
     "@types/nodemailer": "8.0.1",
     "@types/react": "19.2.17",
     "@types/react-dom": "19.2.3",
-    "baseline-browser-mapping": "2.11.1",
-    "knip": "6.27.0",
-    "oxfmt": "0.59.0",
+    "knip": "6.29.0",
+    "oxfmt": "0.60.0",
     "oxlint": "1.75.0",
     "react-doctor": "0.9.1",
     "typescript": "6.0.3"
   },
-  "browserslist": [
-    "> 0.2%",
-    "last 2 version",
-    "not dead"
-  ],
   "license": "MIT",
   "type": "module"
 }

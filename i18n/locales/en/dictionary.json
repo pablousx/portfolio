@@ -8,7 +8,7 @@
     {
       "name": "Email",
       "icon": "email",
-      "url": "mailto:me@pablousx.vercel.app"
+      "url": "mailto:pablo@steralynx.com"
     },
     {
       "name": "GitHub",
@@ -20,13 +20,12 @@
     "title": "Home",
     "name": "Pablo Pineda",
     "presentation": "Creating <strong>unforgettable</strong> digital experiences.",
-    "email": "me@pablousx.vercel.app",
+    "email": "pablo@steralynx.com",
     "emailButton": "Copy my email",
-    "cvButton": "Generate my CV",
+    "cvButton": "Download my CV",
     "image": {
       "src": "landing/profile-photo.png",
-      "alt": "My photo",
-      "ignorePlaceholder": true
+      "alt": "My photo"
     }
   },
   "projects": {

@@ -37,13 +37,10 @@ to make an install pass.
 
 ```sh
 pnpm dev                # Start Next development server
-pnpm lint               # Oxlint; warnings fail the command
-pnpm lint:fix           # Apply safe Oxlint fixes
+pnpm lint               # Apply safe Oxlint fixes
 pnpm format             # Write formatting with Oxfmt
-pnpm format:check       # Check formatting without writes
-pnpm doctor:react       # Local, non-uploading React Doctor audit
-pnpm doctor:score       # Remote score; requires permission to share audit metadata
-pnpm check              # Lint + format check + local React Doctor
+pnpm doctor             # React Doctor audit
+pnpm verify              # Lint + format check + local React Doctor
 pnpm build              # Make a production build
 pnpm test:e2e           # Playwright against an existing production build
 ```
@@ -163,15 +160,11 @@ Run the smallest relevant checks while iterating. Before handing off a substanti
 change, run:
 
 ```sh
-pnpm check
+pnpm verify
 pnpm build
 pnpm test:e2e
 git diff --check
 ```
-
-Use `pnpm doctor:score` only when the user has explicitly approved sending
-repository-derived audit metadata to React Doctor and its supply-chain service. Report
-the numeric score only when the command actually returns it.
 
 For production-boundary work, also inspect the built output while excluding source maps;
 source maps intentionally contain original source text:

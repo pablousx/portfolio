@@ -2,8 +2,6 @@
   "$schema": "https://unpkg.com/knip@6/schema.json",
   "ignoreDependencies": [
     // Referenced as a loader string by both webpack and Turbopack in next.config.ts.
-    "@svgr/webpack",
-    // Kept current explicitly so Next.js uses an up-to-date browser compatibility database.
-    "baseline-browser-mapping"
+    "@svgr/webpack"
   ]
 }
