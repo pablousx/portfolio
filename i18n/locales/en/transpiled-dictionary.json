@@ -3,30 +3,19 @@
     {
       "name": "LinkedIn",
       "icon": "linkedin",
-      "url": "https://www.linkedin.com/in/nandous"
+      "url": "https://www.linkedin.com/in/pablousx"
     },
-    {
-      "name": "Email",
-      "icon": "email",
-      "url": "mailto:me@nandous.com"
-    },
-    {
-      "name": "GitHub",
-      "icon": "github",
-      "url": "https://github.com/nandou54"
-    }
+    { "name": "Email", "icon": "email", "url": "mailto:me@pablousx.vercel.app" },
+    { "name": "GitHub", "icon": "github", "url": "https://github.com/pablousx" }
   ],
   "landing": {
     "title": "Home",
     "name": "Pablo Pineda",
     "presentation": "Creating <strong>unforgettable</strong> digital experiences.",
-    "email": "me@nandous.com",
+    "email": "me@pablousx.vercel.app",
     "emailButton": "Copy my email",
     "cvButton": "Download my CV!",
-    "image": {
-      "src": "landing/profile-photo.png",
-      "alt": "My photo"
-    }
+    "image": { "src": "landing/profile-photo.png", "alt": "My photo" }
   },
   "projects": {
     "title": "Projects",
@@ -39,13 +28,7 @@
         "name": "Lomax Technologies",
         "description": "<u>Tailor-made</u> software development to optimize processes, drive innovation, and enhance business efficiency with <u>advanced technological solutions</u>.",
         "website": "https://lomax.com.gt",
-        "skills": [
-          "Vue.js",
-          "Ruby",
-          "PostgreSQL",
-          "AWS",
-          "Cloudflare"
-        ]
+        "skills": ["Vue.js", "Ruby", "PostgreSQL", "AWS", "Cloudflare"]
       },
       {
         "year": 2023,
@@ -67,7 +50,7 @@
           {
             "src": "projects/kolo-empresas/img1.jpg",
             "alt": "KOLO Companies banner",
-            "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGOIrLl17OX/uvnvGURjGfrX/9/14D+DQTWDaCwAutsMz4Y+4ScAAAAASUVORK5CYII="
+            "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVQImWOIrLl17OX/uvnvGURjGfrX/9/14D+DQTWDaCwAutsMzwQjL3kAAAAASUVORK5CYII="
           }
         ]
       },
@@ -76,20 +59,14 @@
         "icon": "quizgame",
         "name": "Quiz Game",
         "description": "<u>Quiz game online</u>. The GUI aims to be comfortable and simple, to provide <u>knowledge</u> and <u>fun</u> at the same time!",
-        "website": "https://quiz.nandous.com/",
-        "code": "https://github.com/nandou54/quiz-game",
-        "skills": [
-          "React.js",
-          "Redux",
-          "HTML5",
-          "CSS",
-          "Vite.js"
-        ],
+        "website": "https://quiz.pablousx.vercel.app/",
+        "code": "https://github.com/pablousx/quiz-game",
+        "skills": ["React.js", "Redux", "HTML5", "CSS", "Vite.js"],
         "images": [
           {
             "src": "projects/quiz-game/img1.jpg",
             "alt": "Quiz Game banner",
-            "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGM4svO/uHoaA6fH9af/GWbP+lpWcbq14/bmLf8BqXQOXsN3ObYAAAAASUVORK5CYII="
+            "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVQImWM4svO/uHoaA6fH9af/GWbP+lpWcbq14/bmLf8BqXQOXkFq9+gAAAAASUVORK5CYII="
           },
           {
             "src": "projects/quiz-game/img2.jpg",
@@ -118,19 +95,14 @@
         "icon": "minitranslator",
         "name": "Mini Translator",
         "description": "<u>Real-time minimalistic translation tool</u>. Mini Translator eases the translation between <u>100+ languages</u>, as well as text spelling.",
-        "website": "https://translator.nandous.com/",
-        "code": "https://github.com/nandou54/mini-translator",
-        "skills": [
-          "JavaScript",
-          "HTML5",
-          "CSS",
-          "Vite.js"
-        ],
+        "website": "https://translator.pablousx.vercel.app/",
+        "code": "https://github.com/pablousx/mini-translator",
+        "skills": ["JavaScript", "HTML5", "CSS", "Vite.js"],
         "images": [
           {
             "src": "projects/mini-translator/img1.jpg",
             "alt": "Mini Translator banner",
-            "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGOoqJy2fv3lT+//5+b2MgiJ6fj65hUXTe/u2gAAsW8MnWi5G8UAAAAASUVORK5CYII="
+            "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVQImWOoqJy2fv3lT+//5+b2MgiJ6fj65hUXTe/u2gAAsW8Mneqk1ZsAAAAASUVORK5CYII="
           },
           {
             "src": "projects/mini-translator/img2.jpg",
@@ -151,21 +123,14 @@
         "icon": "jolc",
         "name": "JOLC",
         "description": "<u>Web interpreter</u> for a programming language derived from <u>Julia</u>, named <u>JOLC</u>. Eases the debug of the language via AST, error and symbols reports.",
-        "website": "https://jolc.nandous.com/",
-        "code": "https://github.com/nandou54/jolc",
-        "skills": [
-          "React.js",
-          "Redux",
-          "Python",
-          "HTML5",
-          "CSS",
-          "Vite.js"
-        ],
+        "website": "https://jolc.pablousx.vercel.app/",
+        "code": "https://github.com/pablousx/jolc",
+        "skills": ["React.js", "Redux", "Python", "HTML5", "CSS", "Vite.js"],
         "images": [
           {
             "src": "projects/jolc/img1.jpg",
             "alt": "JOLC banner",
-            "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIklEQVR4nGNg51KTVbB6/OG/Z3A2A6+QloCg7szFh+IzWwFiUghqcIDEcAAAAABJRU5ErkJggg=="
+            "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIklEQVQImWNg51KTVbB6/OG/Z3A2A6+QloCg7szFh+IzWwFiUghqZbpbJgAAAABJRU5ErkJggg=="
           },
           {
             "src": "projects/jolc/img2.jpg",
@@ -185,190 +150,70 @@
       {
         "name": "Front-End",
         "skills": [
-          {
-            "name": "Next.js",
-            "icon": "nextjs"
-          },
-          {
-            "name": "React.js",
-            "icon": "reactjs"
-          },
-          {
-            "name": "Vue.js",
-            "icon": "vuejs"
-          },
-          {
-            "name": "JavaScript",
-            "icon": "javascript"
-          },
-          {
-            "name": "CSS",
-            "icon": "css"
-          },
-          {
-            "name": "HTML5",
-            "icon": "html5"
-          },
-          {
-            "name": "TypeScript",
-            "icon": "typescript"
-          },
-          {
-            "name": "Vite.js",
-            "icon": "vitejs"
-          },
-          {
-            "name": "Redux",
-            "icon": "redux"
-          }
+          { "name": "Next.js", "icon": "nextjs" },
+          { "name": "React.js", "icon": "reactjs" },
+          { "name": "Vue.js", "icon": "vuejs" },
+          { "name": "JavaScript", "icon": "javascript" },
+          { "name": "CSS", "icon": "css" },
+          { "name": "HTML5", "icon": "html5" },
+          { "name": "TypeScript", "icon": "typescript" },
+          { "name": "Vite.js", "icon": "vitejs" },
+          { "name": "Redux", "icon": "redux" }
         ]
       },
       {
         "name": "Back-End",
         "skills": [
-          {
-            "name": "Node.js",
-            "icon": "nodejs"
-          },
-          {
-            "name": "Express.js",
-            "icon": "expressjs",
-            "contrast": true
-          },
-          {
-            "name": "Ruby",
-            "icon": "ruby"
-          },
-          {
-            "name": "Python",
-            "icon": "python"
-          },
-          {
-            "name": "Java",
-            "icon": "java"
-          },
-          {
-            "name": "Linux",
-            "icon": "linux"
-          },
-          {
-            "name": "Nginx",
-            "icon": "nginx"
-          }
+          { "name": "Node.js", "icon": "nodejs" },
+          { "name": "Express.js", "icon": "expressjs", "contrast": true },
+          { "name": "Ruby", "icon": "ruby" },
+          { "name": "Python", "icon": "python" },
+          { "name": "Java", "icon": "java" },
+          { "name": "Linux", "icon": "linux" },
+          { "name": "Nginx", "icon": "nginx" }
         ]
       },
       {
         "name": "Cloud",
         "skills": [
-          {
-            "name": "AWS",
-            "icon": "aws"
-          },
-          {
-            "name": "Vercel",
-            "icon": "vercel",
-            "contrast": true
-          },
-          {
-            "name": "Firebase",
-            "icon": "firebase"
-          },
-          {
-            "name": "Cloudflare",
-            "icon": "cloudflare"
-          },
-          {
-            "name": "Google Cloud Platform",
-            "icon": "gcp"
-          },
-          {
-            "name": "Netlify",
-            "icon": "netlify"
-          },
-          {
-            "name": "Oracle Cloud",
-            "icon": "oraclecloud"
-          }
+          { "name": "AWS", "icon": "aws" },
+          { "name": "Vercel", "icon": "vercel", "contrast": true },
+          { "name": "Firebase", "icon": "firebase" },
+          { "name": "Cloudflare", "icon": "cloudflare" },
+          { "name": "Google Cloud Platform", "icon": "gcp" },
+          { "name": "Netlify", "icon": "netlify" },
+          { "name": "Oracle Cloud", "icon": "oraclecloud" }
         ]
       },
       {
         "name": "Database",
         "skills": [
-          {
-            "name": "MySQL",
-            "icon": "mysql"
-          },
-          {
-            "name": "PostgreSQL",
-            "icon": "postgresql"
-          },
-          {
-            "name": "SQL Server",
-            "icon": "sqlserver"
-          },
-          {
-            "name": "Redis",
-            "icon": "redis"
-          },
-          {
-            "name": "MongoDB",
-            "icon": "mongodb"
-          }
+          { "name": "MySQL", "icon": "mysql" },
+          { "name": "PostgreSQL", "icon": "postgresql" },
+          { "name": "SQL Server", "icon": "sqlserver" },
+          { "name": "Redis", "icon": "redis" },
+          { "name": "MongoDB", "icon": "mongodb" }
         ]
       },
       {
         "name": "Testing",
         "skills": [
-          {
-            "name": "Playwright",
-            "icon": "playwright"
-          },
-          {
-            "name": "Cypress.io",
-            "icon": "cypressio"
-          }
+          { "name": "Playwright", "icon": "playwright" },
+          { "name": "Cypress.io", "icon": "cypressio" }
         ]
       },
       {
         "name": "Tools",
         "skills": [
-          {
-            "name": "Docker",
-            "icon": "docker"
-          },
-          {
-            "name": "Git",
-            "icon": "git"
-          },
-          {
-            "name": "Notion",
-            "icon": "notion"
-          },
-          {
-            "name": "VS Code",
-            "icon": "vscode"
-          },
-          {
-            "name": "JetBrains",
-            "icon": "jetbrains"
-          },
-          {
-            "name": "Jira",
-            "icon": "jira"
-          },
-          {
-            "name": "Kubernetes",
-            "icon": "kubernetes"
-          },
-          {
-            "name": "Slack",
-            "icon": "slack"
-          },
-          {
-            "name": "WordPress",
-            "icon": "wordpress",
-            "contrast": true
-          }
+          { "name": "Docker", "icon": "docker" },
+          { "name": "Git", "icon": "git" },
+          { "name": "Notion", "icon": "notion" },
+          { "name": "VS Code", "icon": "vscode" },
+          { "name": "JetBrains", "icon": "jetbrains" },
+          { "name": "Jira", "icon": "jira" },
+          { "name": "Kubernetes", "icon": "kubernetes" },
+          { "name": "Slack", "icon": "slack" },
+          { "name": "WordPress", "icon": "wordpress", "contrast": true }
         ]
       }
     ]
@@ -385,7 +230,7 @@
           {
             "src": "about-me/usac/img1.jpg",
             "alt": "University of San Carlos of Guatemala, Central Campus",
-            "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMklEQVR4nAEnANj/AFGz/1a0/5/Z/934/wDK6/+/5P/o//+nr6gAIy44GhkVMzg9CAcA/rkVGjNyqLMAAAAASUVORK5CYII="
+            "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMklEQVQImQEnANj/AFGz/1a0/5/Z/934/wDK6/+/5P/o//+nr6gAIy44GhkVMzg9CAcA/rkVGiYeLrwAAAAASUVORK5CYII="
           },
           {
             "src": "about-me/usac/img2.jpg",
@@ -399,16 +244,10 @@
           {
             "src": "about-me/guatemala/img1.jpg",
             "alt": "Guatemala, Santa Catalina Arch",
-            "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMElEQVR4nGPQFmDg6lu/+v//qw/uM4RZ8hVmO29aFDOl1J3BWFlIxdjUwExDgIEBADNMDQ7gyE2BAAAAAElFTkSuQmCC"
+            "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMElEQVQImWPQFmDg6lu/+v//qw/uM4RZ8hVmO29aFDOl1J3BWFlIxdjUwExDgIEBADNMDQ4toy2+AAAAAElFTkSuQmCC"
           },
-          {
-            "src": "about-me/guatemala/img2.jpg",
-            "alt": "Guatemala, Guatemala City"
-          },
-          {
-            "src": "about-me/guatemala/img3.jpg",
-            "alt": "Guatemala, Lake Atitlan"
-          }
+          { "src": "about-me/guatemala/img2.jpg", "alt": "Guatemala, Guatemala City" },
+          { "src": "about-me/guatemala/img3.jpg", "alt": "Guatemala, Lake Atitlan" }
         ]
       }
     ]
@@ -459,10 +298,10 @@
   },
   "email": {
     "subject": "Thank you for reaching out!",
-    "html": "<p>Dear {{name}},</p><p>Thank you for getting in touch with me. I have received your message and will be in contact with you soon.</p><p>Best regards,<br><br>- <i>Pablo Pineda</i> — <a href='https://nandous.com'>nandous.com</a></p>"
+    "html": "<p>Dear {{name}},</p><p>Thank you for getting in touch with me. I have received your message and will be in contact with you soon.</p><p>Best regards,<br><br>- <i>Pablo Pineda</i> — <a href='https://pablousx.vercel.app'>pablousx.vercel.app</a></p>"
   },
   "meta": {
     "title": "My <DEV/> Portfolio",
-    "description": "Hi! I'm Pablo Pineda (nandous), a Full-Stack Web Developer at your disposal. Let's get in touch! 🚀"
+    "description": "Hi! I'm Pablo Pineda (@pablousx), a Full-Stack Web Developer at your disposal. Let's get in touch! 🚀"
   }
 }

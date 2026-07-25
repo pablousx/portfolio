@@ -1,0 +1,8 @@
+minimumReleaseAge: 1440
+minimumReleaseAgeStrict: false
+trustPolicy: no-downgrade
+trustPolicyExclude:
+  - semver@6.3.1
+
+allowBuilds:
+  sharp: true

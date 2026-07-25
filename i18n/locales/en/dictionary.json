@@ -3,24 +3,24 @@
     {
       "name": "LinkedIn",
       "icon": "linkedin",
-      "url": "https://www.linkedin.com/in/nandous"
+      "url": "https://www.linkedin.com/in/pablousx"
     },
     {
       "name": "Email",
       "icon": "email",
-      "url": "mailto:me@nandous.com"
+      "url": "mailto:me@pablousx.vercel.app"
     },
     {
       "name": "GitHub",
       "icon": "github",
-      "url": "https://github.com/nandou54"
+      "url": "https://github.com/pablousx"
     }
   ],
   "landing": {
     "title": "Home",
     "name": "Pablo Pineda",
     "presentation": "Creating <strong>unforgettable</strong> digital experiences.",
-    "email": "me@nandous.com",
+    "email": "me@pablousx.vercel.app",
     "emailButton": "Copy my email",
     "cvButton": "Download my CV!",
     "image": {
@@ -71,8 +71,8 @@
         "icon": "quizgame",
         "name": "Quiz Game",
         "description": "<u>Quiz game online</u>. The GUI aims to be comfortable and simple, to provide <u>knowledge</u> and <u>fun</u> at the same time!",
-        "website": "https://quiz.nandous.com/",
-        "code": "https://github.com/nandou54/quiz-game",
+        "website": "https://quiz.pablousx.vercel.app/",
+        "code": "https://github.com/pablousx/quiz-game",
         "skills": ["React.js", "Redux", "HTML5", "CSS", "Vite.js"],
         "images": [
           {
@@ -106,8 +106,8 @@
         "icon": "minitranslator",
         "name": "Mini Translator",
         "description": "<u>Real-time minimalistic translation tool</u>. Mini Translator eases the translation between <u>100+ languages</u>, as well as text spelling.",
-        "website": "https://translator.nandous.com/",
-        "code": "https://github.com/nandou54/mini-translator",
+        "website": "https://translator.pablousx.vercel.app/",
+        "code": "https://github.com/pablousx/mini-translator",
         "skills": ["JavaScript", "HTML5", "CSS", "Vite.js"],
         "images": [
           {
@@ -133,8 +133,8 @@
         "icon": "jolc",
         "name": "JOLC",
         "description": "<u>Web interpreter</u> for a programming language derived from <u>Julia</u>, named <u>JOLC</u>. Eases the debug of the language via AST, error and symbols reports.",
-        "website": "https://jolc.nandous.com/",
-        "code": "https://github.com/nandou54/jolc",
+        "website": "https://jolc.pablousx.vercel.app/",
+        "code": "https://github.com/pablousx/jolc",
         "skills": ["React.js", "Redux", "Python", "HTML5", "CSS", "Vite.js"],
         "images": [
           {
@@ -431,10 +431,10 @@
   },
   "email": {
     "subject": "Thank you for reaching out!",
-    "html": "<p>Dear {{name}},</p><p>Thank you for getting in touch with me. I have received your message and will be in contact with you soon.</p><p>Best regards,<br><br>- <i>Pablo Pineda</i> — <a href='https://nandous.com'>nandous.com</a></p>"
+    "html": "<p>Dear {{name}},</p><p>Thank you for getting in touch with me. I have received your message and will be in contact with you soon.</p><p>Best regards,<br><br>- <i>Pablo Pineda</i> — <a href='https://pablousx.vercel.app'>pablousx.vercel.app</a></p>"
   },
   "meta": {
     "title": "My <DEV/> Portfolio",
-    "description": "Hi! I'm Pablo Pineda (nandous), a Full-Stack Web Developer at your disposal. Let's get in touch! 🚀"
+    "description": "Hi! I'm Pablo Pineda (@pablousx), a Full-Stack Web Developer at your disposal. Let's get in touch! 🚀"
   }
 }

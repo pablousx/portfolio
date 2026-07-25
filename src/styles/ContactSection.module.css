@@ -1,10 +1,7 @@
 .base::before {
   content: '';
-  background-image: radial-gradient(
-      18em at 70% 18em,
-      var(--dimmer-accent-color),
-      transparent
-    ),
+  background-image:
+    radial-gradient(18em at 70% 18em, var(--dimmer-accent-color), transparent),
     radial-gradient(36em 15em at 60% 35em, var(--dimmest-alt-accent-color), transparent);
 
   width: 100%;

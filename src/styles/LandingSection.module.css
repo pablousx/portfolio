@@ -10,11 +10,8 @@ header.base {
 
 .base::before {
   content: '';
-  background-image: radial-gradient(
-      15em at 70% 35em,
-      var(--dimmer-alt-accent-color),
-      transparent
-    ),
+  background-image:
+    radial-gradient(15em at 70% 35em, var(--dimmer-alt-accent-color), transparent),
     radial-gradient(25em at 30% 40em, var(--dimmer-accent-color), transparent);
   overflow: visible;
 
@@ -85,11 +82,8 @@ header.base {
   }
 
   .base::before {
-    background-image: radial-gradient(
-        15em 9em at 50% 9em,
-        var(--dimmer-alt-accent-color),
-        transparent
-      ),
+    background-image:
+      radial-gradient(15em 9em at 50% 9em, var(--dimmer-alt-accent-color), transparent),
       radial-gradient(20em 15em at 45% 27em, var(--dimmer-accent-color), transparent);
   }
 

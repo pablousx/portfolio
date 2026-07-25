@@ -1,0 +1,48 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["eslint", "oxc", "import", "react", "jsx-a11y", "nextjs", "promise"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "perf": "warn"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "builtin": true
+  },
+  "ignorePatterns": [
+    ".next/**",
+    "docs/**",
+    "node_modules/**",
+    "i18n/locales/*/transpiled-dictionary.json"
+  ],
+  "options": {
+    "denyWarnings": true,
+    "reportUnusedDisableDirectives": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "19"
+    },
+    "jsx-a11y": {}
+  },
+  "overrides": [
+    {
+      "files": ["app/**/layout.tsx", "i18n/client.ts"],
+      "rules": {
+        "import/no-unassigned-import": "off"
+      }
+    },
+    {
+      "files": ["src/components/ContactForm.tsx"],
+      "rules": {
+        "jsx-a11y/no-noninteractive-element-interactions": "off"
+      }
+    }
+  ],
+  "rules": {
+    "react/react-compiler": "error",
+    "react/react-in-jsx-scope": "off"
+  }
+}

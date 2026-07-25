@@ -3,24 +3,24 @@
     {
       "name": "LinkedIn",
       "icon": "linkedin",
-      "url": "https://www.linkedin.com/in/nandous"
+      "url": "https://www.linkedin.com/in/pablousx"
     },
     {
       "name": "Email",
       "icon": "email",
-      "url": "mailto:me@nandous.com"
+      "url": "mailto:me@pablousx.vercel.app"
     },
     {
       "name": "GitHub",
       "icon": "github",
-      "url": "https://github.com/nandou54"
+      "url": "https://github.com/pablousx"
     }
   ],
   "landing": {
     "title": "Inicio",
     "name": "Pablo Pineda",
     "presentation": "Creando experiencias digitales <strong>inolvidables</strong>.",
-    "email": "me@nandous.com",
+    "email": "me@pablousx.vercel.app",
     "emailButton": "Copia mi email",
     "cvButton": "¡Descarga mi CV!",
     "image": {
@@ -71,8 +71,8 @@
         "icon": "quizgame",
         "name": "Quiz Game",
         "description": "<u>Juego de preguntas en línea</u>. Tiene una interfaz cómoda y sencilla para proveer una <u>divertida</u> y <u>educativa</u> experiencia.",
-        "website": "https://quiz.nandous.com/",
-        "code": "https://github.com/nandou54/quiz-game",
+        "website": "https://quiz.pablousx.vercel.app/",
+        "code": "https://github.com/pablousx/quiz-game",
         "skills": ["React.js", "Redux", "HTML5", "CSS", "Vite.js"],
         "images": [
           {
@@ -106,8 +106,8 @@
         "icon": "minitranslator",
         "name": "Mini Translator",
         "description": "<u>Traductor minimalista</u> en tiempo real. Facilita la traducción entre <u>más de 100 lenguajes</u>, así como el dictado del texto.",
-        "website": "https://translator.nandous.com/",
-        "code": "https://github.com/nandou54/mini-translator",
+        "website": "https://translator.pablousx.vercel.app/",
+        "code": "https://github.com/pablousx/mini-translator",
         "skills": ["JavaScript", "HTML5", "CSS", "Vite.js"],
         "images": [
           {
@@ -133,8 +133,8 @@
         "icon": "jolc",
         "name": "JOLC",
         "description": "<u>Intérprete de JOLC</u>, un lenguaje de programación derivado de <u>Julia</u>, ejecutable en la web. Facilita el debug del lenguaje mediante reportes.",
-        "website": "https://jolc.nandous.com/",
-        "code": "https://github.com/nandou54/jolc",
+        "website": "https://jolc.pablousx.vercel.app/",
+        "code": "https://github.com/pablousx/jolc",
         "skills": ["React.js", "Redux", "Python", "HTML5", "CSS"],
         "images": [
           {
@@ -351,7 +351,7 @@
     "title": "Sobre mí",
     "content": [
       {
-        "text": "Mi nombre es Pablo pero mis allegados me llaman <strong>Nando</strong>. Me gusta mucho el desarrollo de software. Desde los <u>6 años</u> he mostrado interés en el mundo de la tecnología, empecé programando en Pascal a los <u>15 años</u>, y ahora con <strong>23 años</strong> he desarrollado productos innovadores dirigidos a empresas reconocidas en mi país."
+        "text": "Mi nombre es Pablo pero mis allegados me llaman <strong>Nando</strong>. Me gusta mucho el desarrollo de software. Desde los <u>6 años</u> he mostrado interés en el mundo de la tecnología, empecé programando en Pascal a los <u>15 años</u>, y ahora con <strong>25 años</strong> he desarrollado productos innovadores dirigidos a empresas reconocidas en mi país."
       },
       {
         "text": "Estoy terminando un grado de <strong>Ingeniería en Sistemas</strong> en la <u>Universidad de San Carlos de Guatemala</u>, gracias al cual he pulido mis habilidades en el desarrollo de software. Soy fiel creyente de que has aprendido bien cuando eres capaz de enseñar a otros, y he tenido la oportunidad de enseñar siendo <u>auxiliar de cátedra</u> en la universidad.",
@@ -431,10 +431,10 @@
   },
   "email": {
     "subject": "¡Gracias por ponerte en contacto!",
-    "html": "<p>Estimado {{name}},</p><p>Gracias por ponerte en contacto conmigo. He recibido tu mensaje y me pondré en contacto contigo pronto.</p><p>Saludos cordiales,<br><br>- <i>Pablo Pineda</i> — <a href='https://nandous.com'>nandous.com</a></p>"
+    "html": "<p>Estimado {{name}},</p><p>Gracias por ponerte en contacto conmigo. He recibido tu mensaje y me pondré en contacto contigo pronto.</p><p>Saludos cordiales,<br><br>- <i>Pablo Pineda</i> — <a href='https://pablousx.vercel.app'>pablousx.vercel.app</a></p>"
   },
   "meta": {
     "title": "Mi Portafolio <DEV/>",
-    "description": "¡Hola! Soy Pablo Pineda (nandous), Desarrollador Web Full-Stack a tu servicio. ¡Pongámonos en contacto! 🚀"
+    "description": "¡Hola! Soy Pablo Pineda (@pablousx), Desarrollador Web Full-Stack a tu servicio. ¡Pongámonos en contacto! 🚀"
   }
 }
