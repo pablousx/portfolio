@@ -11,8 +11,8 @@
     "lint": "oxlint . --fix",
     "format": "oxfmt",
     "doctor": "react-doctor --score",
-    "type-check": "tsc --noEmit",
-    "verify": "pnpm type-check && pnpm lint && pnpm format && pnpm knip && pnpm doctor",
+    "type-check": "next typegen && tsc --noEmit",
+    "check": "pnpm type-check && pnpm lint && pnpm format && pnpm knip && pnpm doctor",
     "test:e2e": "playwright test",
     "prepare": "lefthook install"
   },

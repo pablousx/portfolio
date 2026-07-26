@@ -31,7 +31,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Run static checks
-        run: pnpm verify
+        run: pnpm check
 
       - name: Build production application
         run: pnpm build

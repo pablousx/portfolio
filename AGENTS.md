@@ -40,7 +40,7 @@ pnpm dev                # Start Next development server
 pnpm lint               # Apply safe Oxlint fixes
 pnpm format             # Write formatting with Oxfmt
 pnpm doctor             # React Doctor audit
-pnpm verify              # Lint + format check + local React Doctor
+pnpm check              # Lint + format check + local React Doctor
 pnpm build              # Make a production build
 pnpm test:e2e           # Playwright against an existing production build
 ```
@@ -160,7 +160,7 @@ Run the smallest relevant checks while iterating. Before handing off a substanti
 change, run:
 
 ```sh
-pnpm verify
+pnpm check
 pnpm build
 pnpm test:e2e
 git diff --check
