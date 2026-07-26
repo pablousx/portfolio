@@ -7,4 +7,5 @@ trustPolicyExclude:
 allowBuilds:
   '@parcel/watcher': false
   '@swc/core': false
+  lefthook: true
   sharp: true

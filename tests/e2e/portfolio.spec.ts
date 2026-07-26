@@ -41,13 +41,23 @@ for (const [locale, label] of [
     await page.goto(`/${locale}`)
 
     const downloadLink = page.getByRole('link', { name: label })
-    for (let attempt = 0; attempt < 2; attempt += 1) {
+
+    const downloadAndAssert = async () => {
       const downloadPromise = page.waitForEvent('download')
       await downloadLink.click()
 
       const download = await downloadPromise
       expect(download.suggestedFilename()).toBe(`Pablo-Pineda-CV-${locale}.pdf`)
     }
+
+    const download = async (attempts: number): Promise<void> => {
+      if (attempts === 0) return
+
+      await downloadAndAssert()
+      await download(attempts - 1)
+    }
+
+    await download(2)
   })
 }
 

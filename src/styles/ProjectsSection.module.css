@@ -1,7 +1,10 @@
 .base {
   gap: 0;
 }
-.content { display: grid; grid-template-columns: minmax(0, 1fr) 6em; }
+.content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 6em;
+}
 .base::before {
   content: '';
   background-image:
@@ -117,7 +120,9 @@
 }
 
 @media (max-width: 700px) {
-  .content { grid-template-columns: minmax(0, 1fr) 3em; }
+  .content {
+    grid-template-columns: minmax(0, 1fr) 3em;
+  }
 
   .allProjects h3 {
     left: calc(100% + 1.5em);

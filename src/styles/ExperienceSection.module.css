@@ -23,7 +23,10 @@
   color: var(--dim-foreground-color);
 }
 
-.content { display: grid; grid-template-columns: minmax(0, 1fr) 6em; }
+.content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 6em;
+}
 
 .entries {
   display: grid;
@@ -33,7 +36,9 @@
   list-style: none;
 }
 
-.entry { position: relative; }
+.entry {
+  position: relative;
+}
 
 .allExperience > div:nth-child(odd) .entry {
   margin-right: 2.5rem;
@@ -246,7 +251,9 @@
     margin-bottom: 2rem;
   }
 
-  .content { grid-template-columns: minmax(0, 1fr) 3em; }
+  .content {
+    grid-template-columns: minmax(0, 1fr) 3em;
+  }
 
   .entries {
     margin-right: 2rem;
