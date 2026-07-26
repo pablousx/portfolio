@@ -9,6 +9,11 @@ export default function useSectionObserver() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
+        if (window.scrollY < 50) {
+          setCurrentSection('landing')
+          return
+        }
+
         const maxIntersection = Math.max(
           ...entries.map((entry) => entry.intersectionRect.height)
         )

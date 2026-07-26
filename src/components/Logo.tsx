@@ -9,10 +9,24 @@ import type { MouseEvent } from 'react'
 
 export default function Logo() {
   const currentSection = useAppStore((state) => state.currentSection)
+  const setCurrentSection = useAppStore((state) => state.setCurrentSection)
   const aria = useDictionary('aria')
 
   const handleGoToTop = (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault()
+
+    if (window.scrollY < 50) {
+      setCurrentSection('landing')
+      return
+    }
+
+    window.addEventListener(
+      'scrollend',
+      () => {
+        setCurrentSection('landing')
+      },
+      { once: true }
+    )
     document.getElementById('landing')?.scrollIntoView({ behavior: 'smooth' })
   }
 

@@ -34,7 +34,7 @@ for (const locale of ['en', 'es']) {
 }
 
 for (const [locale, label] of [
-  ['en', 'Download CV'],
+  ['en', 'Download my CV'],
   ['es', 'Descargar mi CV']
 ] as const) {
   test(`downloads the ${locale} CV on every click`, async ({ page }) => {
