@@ -69,11 +69,20 @@ export default async function LocaleLayout({ params, children }: LocaleLayoutPro
   if (!hasLocale(locales, locale)) notFound()
 
   setRequestLocale(locale)
+  const { aria, contact } = await loadDictionary(locale)
+  const clientMessages = {
+    aria,
+    contact: {
+      form: contact.form
+    }
+  }
 
   return (
     <html lang={locale} translate='no'>
       <body className={clsx(titleFont.variable, bodyFont.variable)} top='true'>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider messages={clientMessages}>
+          {children}
+        </NextIntlClientProvider>
         <ProductionInsights />
       </body>
     </html>

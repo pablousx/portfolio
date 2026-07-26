@@ -24,7 +24,7 @@ export default function OpenShowcase({
   onIndexChange,
   ...props
 }: OpenShowcaseProps) {
-  const { openShowcase } = useAppStore()
+  const openShowcase = useAppStore((state) => state.openShowcase)
   const dictionary = useDictionary()
 
   const { aria } = dictionary

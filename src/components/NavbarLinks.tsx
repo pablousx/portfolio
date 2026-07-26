@@ -5,21 +5,30 @@ import styles from '@/styles/NavbarLinks.module.css'
 import Button from '@/components/Button'
 import IconButton from '@/components/IconButton'
 import Link from '@/components/Link'
-import sections from '@/constants/sections'
+import sections from '@/constants/sectionMetadata'
 import useAppStore from '@/state/store'
 import clsx from 'clsx/lite'
 import useDictionary from 'i18n/client'
 import { useEffect, useRef, useState } from 'react'
 
-const shortcutSectionIds = sections
-  .slice(1)
-  .filter(({ noQuickLink }) => !noQuickLink)
-  .map(({ id }) => id)
+const shortcutSectionIds: string[] = []
+for (const { id, noQuickLink } of sections) {
+  if (id !== 'landing' && !noQuickLink) shortcutSectionIds.push(id)
+}
 
-export default function NavbarLinks() {
-  const { currentSection: currentSectionId } = useAppStore()
-  const dictionary = useDictionary()
-  const { aria } = dictionary
+interface NavbarLink {
+  id: string
+  label: string
+  number: string
+}
+
+interface NavbarLinksProps {
+  links: NavbarLink[]
+}
+
+export default function NavbarLinks({ links }: NavbarLinksProps) {
+  const currentSectionId = useAppStore((state) => state.currentSection)
+  const aria = useDictionary('aria')
 
   const [isMenuOpen, setMenuOpen] = useState(false)
   const menuRef = useRef<HTMLDialogElement>(null)
@@ -37,19 +46,6 @@ export default function NavbarLinks() {
     }
   }
 
-  const links: Array<{ id: string; label: string; number: string }> = []
-  for (const { id, noQuickLink } of sections.slice(1)) {
-    if (noQuickLink) continue
-
-    const sectionDictionary = dictionary[id]
-    if ('title' in sectionDictionary) {
-      links.push({
-        id,
-        label: sectionDictionary.title,
-        number: String(links.length + 1).padStart(2, '0')
-      })
-    }
-  }
   const currentSection =
     links.find(({ id }) => id === currentSectionId)?.label ?? links[0]?.label ?? ''
 

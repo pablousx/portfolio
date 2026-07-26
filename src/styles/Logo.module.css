@@ -30,15 +30,29 @@
 
 .logo svg {
   filter: drop-shadow(0 0 0.0625em var(--dark-color));
-  transition: filter 0.5s;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    filter 0.35s ease-out,
+    transform 0.35s ease-out;
 }
 
 .logo.current svg {
-  filter: drop-shadow(0 0 0.0625em var(--dark-color)) grayscale(1) brightness(0.25);
+  filter: drop-shadow(0 0 0.1em var(--accent-color))
+    drop-shadow(0 0 0.15em var(--dimmer-accent-color))
+    drop-shadow(0 0 0.125em var(--dimmest-alt-accent-color));
 }
 
-body[dark='true'] .logo.current svg {
-  filter: drop-shadow(0 0 0.0625em var(--dark-color)) grayscale(1) brightness(1.75);
+.logo:hover svg {
+  filter: drop-shadow(0 0 0.12em var(--accent-color))
+    drop-shadow(0 0 0.2em var(--dimmer-accent-color))
+    drop-shadow(0 0 0.25em var(--dimmest-alt-accent-color));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo svg {
+    transition-duration: 0.01ms;
+  }
 }
 
 @media (max-width: 500px) {

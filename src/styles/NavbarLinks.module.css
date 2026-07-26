@@ -84,10 +84,10 @@ body[top='false'] .overlay {
 }
 
 .link:not(.current) {
-  height: 1.9125rem;
-  padding-inline: 0.85rem 0.6375rem;
+  height: 1.8rem;
+  padding-inline: 0.8rem 0.6rem;
 
-  font-size: 1.0625em;
+  font-size: 1em;
   font-weight: 700;
   color: var(--dimmer-foreground-color);
 }
@@ -259,7 +259,7 @@ body[top='false'] .overlay {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   .base .link,
   .overlay,
   .status {

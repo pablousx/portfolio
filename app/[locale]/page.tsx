@@ -4,7 +4,7 @@ import sections from '@/constants/sections'
 import Interactive from '@/components/Interactive'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Showcase from '@/components/Showcase'
+import ShowcaseLoader from '@/components/ShowcaseLoader'
 import type { Locale } from 'i18n/config'
 import { setRequestLocale } from 'next-intl/server'
 
@@ -24,7 +24,7 @@ export default async function Page({ params }: PageProps) {
           <Tag key={id} id={id} />
         ))}
         <Footer />
-        <Showcase />
+        <ShowcaseLoader />
       </main>
     </Interactive>
   )

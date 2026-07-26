@@ -25,7 +25,7 @@ body:global(.no-scroll) .base {
   padding-right: 2.5rem;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 950px) {
   .base {
     height: 4em;
     gap: 1em;

@@ -25,7 +25,8 @@ const defaultImageHeight = 1080
 
 export default function Showcase() {
   const ref = useRef<ReactZoomPanPinchRef>(null)
-  const { showcase, closeShowcase } = useAppStore()
+  const showcase = useAppStore((state) => state.showcase)
+  const closeShowcase = useAppStore((state) => state.closeShowcase)
   const dictionary = useDictionary()
 
   const { aria } = dictionary

@@ -7,7 +7,8 @@ import useAppStore from '@/state/store'
 import useDictionary from 'i18n/client'
 
 export default function ThemeButton() {
-  const { theme, toggleTheme } = useAppStore()
+  const theme = useAppStore((state) => state.theme)
+  const toggleTheme = useAppStore((state) => state.toggleTheme)
   const { aria } = useDictionary()
   const isDark = theme === 'dark'
   const label = isDark ? aria.useLightTheme : aria.useDarkTheme

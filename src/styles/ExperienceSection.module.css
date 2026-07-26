@@ -5,7 +5,7 @@
 
 .base::before {
   content: '';
-  width: 100%;
+  width: 4em;
   height: 48rem;
   position: absolute;
   top: 0;
@@ -23,21 +23,24 @@
   color: var(--dim-foreground-color);
 }
 
-.content {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 1rem;
-}
+.content { display: grid; grid-template-columns: minmax(0, 1fr) 6em; }
 
 .entries {
   display: grid;
   gap: 1rem;
-  margin-right: 4.5rem;
+  margin: 0 4.5rem 0 0;
   padding: 0;
   list-style: none;
 }
 
-.entry {
-  position: relative;
+.entry { position: relative; }
+
+.allExperience > div:nth-child(odd) .entry {
+  margin-right: 2.5rem;
+}
+
+.allExperience > div:nth-child(even) .entry {
+  margin-left: 2.5rem;
 }
 
 .card {
@@ -54,12 +57,12 @@
 
 .logo {
   flex: 0 0 auto;
-  width: 3.25rem;
-  height: 3.25rem;
-  padding: 0.45rem;
-  border: 0.1875rem solid var(--dim-accent-color);
-  border-radius: 50%;
-  background: var(--background-color);
+  width: 1.75em;
+  height: 1.75em;
+  filter: drop-shadow(0.04em 0 0 var(--dim-foreground-color))
+    drop-shadow(-0.04em 0 0 var(--dim-foreground-color))
+    drop-shadow(0 0.04em 0 var(--dim-foreground-color))
+    drop-shadow(0 -0.04em 0 var(--dim-foreground-color));
 }
 
 .cardHeader > div {
@@ -113,66 +116,129 @@
   color: var(--alt-accent-color);
 }
 
-.year {
-  position: absolute;
-  top: 50%;
-  right: -5rem;
-  z-index: 1;
-  padding-inline: 0.45rem 0.55rem;
-  color: var(--background-color);
-  background: var(--foreground-color);
-  clip-path: polygon(0.45rem 0, 100% 0, calc(100% - 0.45rem) 100%, 0 100%);
-  font-family: var(--title-font);
-  font-size: 1rem;
-  font-style: italic;
-  font-variant-numeric: tabular-nums;
-  font-weight: 600;
-  transform: translateY(-50%);
+.skills {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  align-self: flex-start;
+  gap: 0.25em 0.5em;
+  margin-top: 1rem;
+}
+
+.skills > * {
+  font-size: 0.5625rem;
+}
+
+.website {
+  margin-top: 1.25rem;
 }
 
 .timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
-  width: 0.5rem;
+  width: 100%;
   height: 100%;
-  border-radius: 0.25rem;
-  background: var(--foreground-color);
+  background-image: linear-gradient(
+    to right,
+    transparent calc(50% - 0.25em),
+    var(--foreground-color) calc(50% - 0.25em),
+    var(--foreground-color) calc(50% + 0.25em),
+    transparent calc(50% + 0.25em)
+  );
+  transition: background-image 0.5s;
 }
 
 .timeline::before {
   content: '';
-  width: 0.375rem;
-  height: calc(100% - 2rem);
-  position: absolute;
-  top: 2rem;
-  left: -0.375rem;
+  display: block;
   background-image: repeating-linear-gradient(
     to bottom,
     var(--foreground-color),
-    var(--foreground-color) 0.125rem,
-    transparent 0.125rem,
-    transparent 1.75rem
+    var(--foreground-color) 0.125em,
+    transparent 0.125em,
+    transparent 1.75em
   );
+  background-repeat: no-repeat;
+  width: 0.375em;
+  height: calc(100% - 2em);
+  position: absolute;
+  top: 2em;
+  left: calc(50% - 0.5em);
+  transition: background-image 0.5s;
 }
 
 .timeline::after {
   content: '';
-  width: 0.425rem;
-  height: 0.425rem;
-  position: absolute;
-  bottom: -0.75rem;
-  left: 50%;
+  display: block;
+  background-color: var(--foreground-color);
   border-radius: 50%;
-  background: var(--foreground-color);
-  transform: translateX(-50%);
+  width: 0.425em;
+  height: 0.425em;
+  position: absolute;
+  bottom: -0.75em;
+  left: calc(50% - 0.2125em);
+  transition: background-color 0.5s;
 }
 
 .timeline figure {
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 3.2em;
+  height: 3.2em;
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translate(-50%, -0.5rem) scaleX(0.8) rotate(-90deg);
+  transform: translate(-50%, -0.5em) scaleX(0.8) rotate(-90deg);
+}
+
+.allExperience {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2em;
+  padding: 2em 0 1em;
+}
+
+.allExperience > div {
+  position: relative;
+  width: 100%;
+}
+
+.allExperience > div > h3 {
+  position: sticky;
+  top: 7em;
+  left: calc(100%);
+  z-index: 1;
+  width: max-content;
+  margin: 0 0 -1.25em;
+  transform: translateX(90%);
+  padding-inline: 0.375em 0.5em;
+  color: var(--background-color);
+  background-color: var(--foreground-color);
+  clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+  font-family: var(--title-font);
+  font-style: italic;
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+}
+
+.timeline .present {
+  position: absolute;
+  top: 1.25em;
+  z-index: 1;
+  width: max-content;
+  margin: 0;
+  padding-inline: 0.375em 0.5em;
+  color: var(--background-color);
+  background-color: var(--foreground-color);
+  clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+  font-family: var(--title-font);
+  font-style: italic;
+  text-align: center;
+  transition:
+    color 0.5s,
+    background-color 0.5s;
 }
 
 @media (max-width: 700px) {
@@ -180,25 +246,26 @@
     margin-bottom: 2rem;
   }
 
-  .content {
-    grid-template-columns: minmax(0, 1fr) 0.75rem;
-  }
+  .content { grid-template-columns: minmax(0, 1fr) 3em; }
 
   .entries {
     margin-right: 2rem;
   }
 
-  .year {
-    right: -2.75rem;
-    font-size: 0.8rem;
+  .allExperience > div .entry {
+    margin-inline: 0;
+  }
+
+  .allExperience > div > h3 {
+    left: calc(100% + 1.5em);
+    font-size: 1.125em;
+  }
+
+  .timeline .present {
+    font-size: 1.125em;
   }
 
   .card {
     padding: 1.1rem;
-  }
-
-  .logo {
-    width: 2.75rem;
-    height: 2.75rem;
   }
 }

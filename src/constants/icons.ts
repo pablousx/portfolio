@@ -34,7 +34,7 @@ import expressjs from '@icons/skills/backend/expressjs.svg'
 import ruby from '@icons/skills/backend/ruby.svg'
 import python from '@icons/skills/backend/python.svg'
 import java from '@icons/skills/backend/java.svg'
-import go from '@icons/skills/backend/go.svg'
+import nestjs from '@icons/skills/backend/nestjs.svg'
 import linux from '@icons/skills/backend/linux.svg'
 import nginx from '@icons/skills/backend/nginx.svg'
 
@@ -68,6 +68,9 @@ import wordpress from '@icons/skills/tools/wordpress.svg'
 
 import send from '@icons/contact/send-icon.svg'
 
+import efset from '@icons/credentials/efset-icon.svg'
+import usac from '@icons/credentials/usac-icon.svg'
+
 const ICONS = {
   email,
   github,
@@ -97,7 +100,7 @@ const ICONS = {
   firebase,
   gcp,
   git,
-  go,
+  nestjs,
   html5,
   java,
   javascript,
@@ -128,7 +131,9 @@ const ICONS = {
   vitejs,
   vscode,
   wordpress,
-  send
+  send,
+  efset,
+  usac
 }
 
 export default ICONS

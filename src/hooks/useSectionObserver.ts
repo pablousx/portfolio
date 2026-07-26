@@ -1,9 +1,10 @@
-import sections from '@/constants/sections'
+import sections from '@/constants/sectionMetadata'
 import useAppStore from '@/state/store'
 import { useEffect } from 'react'
 
 export default function useSectionObserver() {
-  const { currentSection, setCurrentSection } = useAppStore()
+  const currentSection = useAppStore((state) => state.currentSection)
+  const setCurrentSection = useAppStore((state) => state.setCurrentSection)
 
   useEffect(() => {
     const observer = new IntersectionObserver(

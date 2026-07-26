@@ -3,7 +3,6 @@ import styles from '@/styles/Project.module.css'
 import Icon from '@/components/Icon'
 import type { IconName } from '@/components/Icon'
 import ImageCarrousel from '@/components/ImageCarrousel'
-
 import Link from '@/components/Link'
 import RichText from '@/components/RichText'
 import Skill from '@/components/Skill'
@@ -34,8 +33,7 @@ export default async function Project({
   skills = EMPTY_SKILLS,
   images = EMPTY_IMAGES
 }: ProjectProps) {
-  const dictionary = await getDictionary('projects')
-  const { codeButton, websiteButton } = dictionary
+  const { codeButton, websiteButton } = await getDictionary('projects')
 
   return (
     <article className={clsx(styles.base, 'interactive-border')}>

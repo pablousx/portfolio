@@ -34,38 +34,6 @@
     "websiteButton": "Website",
     "content": [
       {
-        "year": 2024,
-        "icon": "lomax",
-        "name": "Lomax Technologies",
-        "description": "<u>Tailor-made</u> software development to optimize processes, drive innovation, and enhance business efficiency with <u>advanced technological solutions</u>.",
-        "website": "https://lomax.com.gt",
-        "skills": ["Vue.js", "Ruby", "PostgreSQL", "AWS", "Cloudflare"],
-        "images": []
-      },
-      {
-        "year": 2023,
-        "icon": "koloempresas",
-        "name": "KOLO Companies",
-        "description": "<u>ERP</u> that allows small and medium-sized entrepreneurs to <u>manage, grow and innovate their company</u> in an accessible and customizable way.",
-        "website": "https://info.kolo-app.com",
-        "skills": [
-          "React.js",
-          "Redux",
-          "TypeScript",
-          "Java",
-          "MySQL",
-          "AWS",
-          "Firebase",
-          "Jira"
-        ],
-        "images": [
-          {
-            "src": "projects/kolo-empresas/img1.jpg",
-            "alt": "KOLO Companies banner"
-          }
-        ]
-      },
-      {
         "year": 2023,
         "icon": "quizgame",
         "name": "Quiz Game",
@@ -74,10 +42,7 @@
         "code": "https://github.com/pablousx/quiz-game",
         "skills": ["React.js", "Redux", "HTML5", "CSS", "Vite.js"],
         "images": [
-          {
-            "src": "projects/quiz-game/img1.jpg",
-            "alt": "Quiz Game banner"
-          },
+          { "src": "projects/quiz-game/img1.jpg", "alt": "Quiz Game banner" },
           {
             "src": "projects/quiz-game/img2.jpg",
             "alt": "Quiz Game configuration menu, where the number of questions and categories are selected"
@@ -109,10 +74,7 @@
         "code": "https://github.com/pablousx/mini-translator",
         "skills": ["JavaScript", "HTML5", "CSS", "Vite.js"],
         "images": [
-          {
-            "src": "projects/mini-translator/img1.jpg",
-            "alt": "Mini Translator banner"
-          },
+          { "src": "projects/mini-translator/img1.jpg", "alt": "Mini Translator banner" },
           {
             "src": "projects/mini-translator/img2.jpg",
             "alt": "Translating from Spanish to Japanese: How are you today, friend?"
@@ -136,10 +98,7 @@
         "code": "https://github.com/pablousx/jolc",
         "skills": ["React.js", "Redux", "Python", "HTML5", "CSS", "Vite.js"],
         "images": [
-          {
-            "src": "projects/jolc/img1.jpg",
-            "alt": "JOLC banner"
-          },
+          { "src": "projects/jolc/img1.jpg", "alt": "JOLC banner" },
           {
             "src": "projects/jolc/img2.jpg",
             "alt": "Interpreting JOLC code, a factorial function is being called"
@@ -202,6 +161,10 @@
           {
             "name": "Node.js",
             "icon": "nodejs"
+          },
+          {
+            "name": "Nest.js",
+            "icon": "nestjs"
           },
           {
             "name": "Express.js",
@@ -387,13 +350,25 @@
   "experience": {
     "title": "Experience",
     "intro": "I build durable software by connecting product thinking, engineering discipline, and the realities of the people using it.",
+    "presentLabel": "Present",
+    "websiteButton": "Website",
     "content": [
       {
         "period": "September 2024 — Present",
         "icon": "lomax",
-        "role": "Senior Full-Stack Web Developer",
+        "role": "Tech Lead",
         "company": "Lomax Technologies S.A.",
-        "description": "Tailor-made enterprise systems designed around each client’s operating model.",
+        "description": "Delivering <u>tailor-made software</u> that streamlines processes, drives innovation, and improves business efficiency through <u>advanced technology solutions</u>.",
+        "website": "https://lomax.com.gt",
+        "skills": [
+          "React.js",
+          "Nest.js",
+          "Vue.js",
+          "Ruby",
+          "PostgreSQL",
+          "AWS",
+          "Cloudflare"
+        ],
         "highlights": [
           "Lead the development of business goal management systems.",
           "Build and optimize internal tools used across multiple clients."
@@ -404,7 +379,18 @@
         "icon": "koloempresas",
         "role": "Full-Stack Web Developer",
         "company": "KOLO S.A.",
-        "description": "An ERP platform adapted to the sales, purchasing, inventory, and reporting workflows of each company.",
+        "description": "Built an accessible, customizable <u>ERP platform</u> that helps small and medium-sized businesses <u>manage, grow, and innovate</u> across their operations.",
+        "website": "https://info.kolo-app.com",
+        "skills": [
+          "React.js",
+          "Redux",
+          "TypeScript",
+          "Java",
+          "MySQL",
+          "AWS",
+          "Firebase",
+          "Jira"
+        ],
         "highlights": [
           "Developed and optimized features used by companies across essential operating areas.",
           "Improved delivery practices through tooling, CI/CD, coding standards, and UI/UX patterns."
@@ -419,9 +405,12 @@
     "education": [
       {
         "period": "10th semester",
+        "icon": "usac",
         "badge": "USAC",
+        "label": "Engineering degree in Computer Science & Systems",
         "name": "Computer Science & Systems Engineering",
         "institution": "University of San Carlos of Guatemala",
+        "description": "Completing my degree with a focus on <strong>software engineering</strong>, while contributing as a <u>teaching assistant</u>, mentor, and student-community organizer.",
         "highlights": [
           "Recognized for academic excellence.",
           "Organizer for the Congress of Science and Systems Students.",
@@ -433,9 +422,12 @@
     "certifications": [
       {
         "period": "Awarded January 2024",
+        "icon": "efset",
         "badge": "C2",
+        "label": "EF SET English certificate — C2 Proficient",
         "name": "EF SET English Certificate · 78/100",
         "institution": "EF Standard English Test",
+        "description": "Demonstrated <strong>C2 Proficient</strong> English under the Common European Framework of Reference, with a score of <u>78/100</u>.",
         "highlights": [
           "C2 Proficient according to the Common European Framework of Reference."
         ]

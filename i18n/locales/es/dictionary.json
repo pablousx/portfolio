@@ -34,38 +34,6 @@
     "websiteButton": "Sitio web",
     "content": [
       {
-        "year": 2024,
-        "icon": "lomax",
-        "name": "Lomax Technologies",
-        "description": "Desarrollo de software <u>a la medida</u> para optimizar procesos, impulsar la innovación y mejorar la eficiencia empresarial con <u>soluciones tecnológicas avanzadas</u>.",
-        "website": "https://lomax.com.gt",
-        "skills": ["Vue.js", "Ruby", "PostgreSQL", "AWS", "Cloudflare"],
-        "images": []
-      },
-      {
-        "year": 2023,
-        "icon": "koloempresas",
-        "name": "KOLO Empresas",
-        "description": "<u>ERP</u> que permite al pequeño y mediano empresario <u>manejar, crece e innovar su empresa</u> de manera accesible y personalizable.",
-        "website": "https://info.kolo-app.com",
-        "skills": [
-          "React.js",
-          "Redux",
-          "TypeScript",
-          "Java",
-          "MySQL",
-          "AWS",
-          "Firebase",
-          "Jira"
-        ],
-        "images": [
-          {
-            "src": "projects/kolo-empresas/img1.jpg",
-            "alt": "Banner de KOLO Empresas"
-          }
-        ]
-      },
-      {
         "year": 2023,
         "icon": "quizgame",
         "name": "Quiz Game",
@@ -74,10 +42,7 @@
         "code": "https://github.com/pablousx/quiz-game",
         "skills": ["React.js", "Redux", "HTML5", "CSS", "Vite.js"],
         "images": [
-          {
-            "src": "projects/quiz-game/img1.jpg",
-            "alt": "Banner de Quiz Game"
-          },
+          { "src": "projects/quiz-game/img1.jpg", "alt": "Banner de Quiz Game" },
           {
             "src": "projects/quiz-game/img2.jpg",
             "alt": "Menú de configuración de Quiz Game, donde se selecciona el número de preguntas y las categorías"
@@ -136,10 +101,7 @@
         "code": "https://github.com/pablousx/jolc",
         "skills": ["React.js", "Redux", "Python", "HTML5", "CSS"],
         "images": [
-          {
-            "src": "projects/jolc/img1.jpg",
-            "alt": "Banner de JOLC"
-          },
+          { "src": "projects/jolc/img1.jpg", "alt": "Banner de JOLC" },
           {
             "src": "projects/jolc/img2.jpg",
             "alt": "Interpretando código JOLC, se está llamando a una función factorial"
@@ -202,6 +164,10 @@
           {
             "name": "Node.js",
             "icon": "nodejs"
+          },
+          {
+            "name": "Nest.js",
+            "icon": "nestjs"
           },
           {
             "name": "Express.js",
@@ -387,13 +353,25 @@
   "experience": {
     "title": "Experiencia",
     "intro": "Construyo software duradero conectando el pensamiento de producto, la disciplina de ingeniería y la realidad de las personas que lo utilizan.",
+    "presentLabel": "Presente",
+    "websiteButton": "Sitio web",
     "content": [
       {
-        "period": "Septiembre de 2024 — Actualidad",
+        "period": "Septiembre de 2024 — Presente",
         "icon": "lomax",
-        "role": "Desarrollador Web Full-Stack Senior",
+        "role": "Tech Lead",
         "company": "Lomax Technologies S.A.",
-        "description": "Sistemas empresariales a la medida, diseñados alrededor del modelo operativo de cada cliente.",
+        "description": "Desarrollo <u>software a la medida</u> que optimiza procesos, impulsa la innovación y mejora la eficiencia empresarial con <u>soluciones tecnológicas avanzadas</u>.",
+        "website": "https://lomax.com.gt",
+        "skills": [
+          "React.js",
+          "Nest.js",
+          "Vue.js",
+          "Ruby",
+          "PostgreSQL",
+          "AWS",
+          "Cloudflare"
+        ],
         "highlights": [
           "Lidero el desarrollo de sistemas de gestión de objetivos empresariales.",
           "Desarrollo y optimizo herramientas internas utilizadas por múltiples clientes."
@@ -404,7 +382,18 @@
         "icon": "koloempresas",
         "role": "Desarrollador Web Full-Stack",
         "company": "KOLO S.A.",
-        "description": "Una plataforma ERP adaptada a los flujos de ventas, compras, inventario y reportes de cada empresa.",
+        "description": "Desarrollé una plataforma <u>ERP</u> accesible y personalizable que permite a pequeñas y medianas empresas <u>gestionar, crecer e innovar</u> en sus operaciones.",
+        "website": "https://info.kolo-app.com",
+        "skills": [
+          "React.js",
+          "Redux",
+          "TypeScript",
+          "Java",
+          "MySQL",
+          "AWS",
+          "Firebase",
+          "Jira"
+        ],
         "highlights": [
           "Desarrollé y optimicé funcionalidades utilizadas por empresas en áreas operativas esenciales.",
           "Mejoré las prácticas de entrega mediante herramientas, CI/CD, estándares de código y patrones de UI/UX."
@@ -419,9 +408,12 @@
     "education": [
       {
         "period": "10.º semestre",
+        "icon": "usac",
         "badge": "USAC",
+        "label": "Ingeniería en Ciencias y Sistemas",
         "name": "Ingeniería en Ciencias y Sistemas",
         "institution": "Universidad de San Carlos de Guatemala",
+        "description": "Finalizando el grado con enfoque en <strong>ingeniería de software</strong>, mientras contribuyo como <u>auxiliar de cátedra</u>, mentor y organizador de la comunidad estudiantil.",
         "highlights": [
           "Reconocimiento por excelencia académica.",
           "Organizador del Congreso de Estudiantes de Ciencias y Sistemas.",
@@ -433,9 +425,12 @@
     "certifications": [
       {
         "period": "Otorgado en enero de 2024",
+        "icon": "efset",
         "badge": "C2",
+        "label": "Certificado de inglés EF SET — C2 competente",
         "name": "Certificado de inglés EF SET · 78/100",
         "institution": "EF Standard English Test",
+        "description": "Demostré dominio de inglés <strong>C2 competente</strong> según el Marco Común Europeo de Referencia, con una puntuación de <u>78/100</u>.",
         "highlights": ["Nivel C2 competente según el Marco Común Europeo de Referencia."]
       }
     ]
@@ -473,7 +468,7 @@
     "profile": "Desarrollador full-stack que transforma flujos empresariales complejos en productos digitales claros y confiables. Experiencia en producto, sistemas front-end, APIs, datos, nube y prácticas de ingeniería.",
     "contactLabel": "Contacto",
     "portfolioLabel": "Portafolio web",
-    "skillsLabel": "Skills principales",
+    "skillsLabel": "Habilidades",
     "fileName": "Pablo-Pineda-CV-es.pdf"
   },
   "aria": {

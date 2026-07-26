@@ -7,51 +7,31 @@ import ProjectsSection from '@/sections/ProjectsSection'
 import QuoteSection from '@/sections/QuoteSection'
 import SkillsSection from '@/sections/SkillsSection'
 import type { ComponentType } from 'react'
-import type { SectionComponentProps, SectionId } from '@/types/sections'
+import type { SectionComponentProps } from '@/types/sections'
+import sectionMetadata from '@/constants/sectionMetadata'
+import type { SectionMetadata } from '@/constants/sectionMetadata'
 
-interface SectionDefinition {
-  id: SectionId
-  noHash?: boolean
-  noQuickLink?: boolean
+interface SectionDefinition extends SectionMetadata {
   Tag: ComponentType<SectionComponentProps>
 }
 
-const sections: SectionDefinition[] = [
-  {
-    id: 'landing',
-    Tag: LandingSection,
-    noHash: true
-  },
-  {
-    id: 'experience',
-    Tag: ExperienceSection
-  },
-  {
-    id: 'projects',
-    Tag: ProjectsSection
-  },
-  {
-    id: 'credentials',
-    Tag: CredentialsSection
-  },
-  {
-    id: 'skills',
-    Tag: SkillsSection
-  },
-  {
-    id: 'about-me',
-    Tag: AboutMeSection
-  },
-  {
-    id: 'contact',
-    Tag: ContactSection
-  },
-  {
-    id: 'quote',
-    Tag: QuoteSection,
-    noHash: true,
-    noQuickLink: true
-  }
+const sectionComponents = [
+  LandingSection,
+  ExperienceSection,
+  ProjectsSection,
+  CredentialsSection,
+  SkillsSection,
+  AboutMeSection,
+  ContactSection,
+  QuoteSection
 ]
+
+const sections: SectionDefinition[] = []
+for (const [index, metadata] of sectionMetadata.entries()) {
+  sections.push({
+    ...metadata,
+    Tag: sectionComponents[index]!
+  })
+}
 
 export default sections

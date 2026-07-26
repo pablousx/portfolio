@@ -1,5 +1,3 @@
-'use client'
-
 import styles from '@/styles/Image.module.css'
 import clsx from 'clsx/lite'
 import { default as NextImage } from 'next/image'

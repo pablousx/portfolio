@@ -1,10 +1,10 @@
 import styles from '@/styles/LandingSection.module.css'
+import buttonStyles from '@/styles/Button.module.css'
 
 import Avatar from '@/components/Avatar'
 import ContactIcons from '@/components/ContactIcons'
 import Hint from '@/components/Hint'
 import Icon from '@/components/Icon'
-import Link from '@/components/Link'
 import RichText from '@/components/RichText'
 import Section from '@/components/Section'
 import clsx from 'clsx/lite'
@@ -26,10 +26,18 @@ export default async function LandingSection({ id }: SectionComponentProps) {
         </RichText>
         <div className={styles.buttons}>
           <Hint position='bottom' label={aria.downloaded} visibility='after-click'>
-            <Link asButton variant='primary' href={`/${locale}/cv`} decoration={false}>
+            <a
+              className={clsx(
+                buttonStyles.base,
+                buttonStyles.primary,
+                'interactive-button-primary no-select'
+              )}
+              href={`/${locale}/cv`}
+              download
+            >
               {cvButton}
               <Icon src='download' backgroundColor />
-            </Link>
+            </a>
           </Hint>
           <ContactIcons className={styles.contact} />
         </div>

@@ -8,7 +8,7 @@
   pointer-events: all;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 950px) {
   .base {
     gap: 0.7em;
   }

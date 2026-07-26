@@ -13,7 +13,7 @@ import type { ReactNode } from 'react'
 import Development from 'src/components/Development'
 
 export default function Interactive({ children }: { children: ReactNode }) {
-  const { theme } = useAppStore()
+  const theme = useAppStore((state) => state.theme)
 
   useInteractivenessTracker()
   useInteractiveLayout()

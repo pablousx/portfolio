@@ -4,7 +4,6 @@ import Project from '@/components/Project'
 import type { ProjectProps } from '@/components/Project'
 import Section from '@/components/Section'
 import type { SkillData } from '@/components/Skill'
-
 import Icon from '@/components/Icon'
 import getDictionary from 'i18n/server'
 import type { SectionComponentProps } from '@/types/sections'
@@ -23,20 +22,16 @@ export default async function ProjectsSection({ id }: SectionComponentProps) {
     getDictionary('projects'),
     getDictionary('skills')
   ])
-
-  const { title, content: projects } = dictionary
-  const { content: skillsGroups } = skillsDictionary
-
-  const allSkills = skillsGroups.flatMap((skillGroup) => skillGroup.skills as SkillData[])
-
-  const projectsPerYear = projects
+  const allSkills = skillsDictionary.content.flatMap(
+    (skillGroup) => skillGroup.skills as SkillData[]
+  )
+  const projectsPerYear = dictionary.content
     .reduce<ProjectsForYear[]>((acc, project) => {
       let projectsForYear = acc.find(({ year }) => year === project.year)
       if (!projectsForYear) {
         projectsForYear = { year: project.year, projects: [] }
         acc.push(projectsForYear)
       }
-
       projectsForYear.projects.push({
         ...project,
         skills: project.skills.flatMap((name) => {
@@ -44,20 +39,19 @@ export default async function ProjectsSection({ id }: SectionComponentProps) {
           return skill ? [skill] : []
         })
       })
-
       return acc
     }, [])
     .sort((a, b) => b.year - a.year)
 
   return (
-    <Section id={id} title={title} className={styles.base}>
+    <Section id={id} title={dictionary.title} className={styles.base}>
       <div className={styles.content}>
         <div className={styles.allProjects}>
-          {projectsPerYear.map(({ year, projects: yearlyProjects }) => (
+          {projectsPerYear.map(({ year, projects }) => (
             <div key={year}>
               <h3>{year}</h3>
               <div className={styles.projects}>
-                {yearlyProjects.map((project) => (
+                {projects.map((project) => (
                   <Project key={project.name} {...project} />
                 ))}
               </div>

@@ -33,6 +33,24 @@ for (const locale of ['en', 'es']) {
   })
 }
 
+for (const [locale, label] of [
+  ['en', 'Download CV'],
+  ['es', 'Descargar mi CV']
+] as const) {
+  test(`downloads the ${locale} CV on every click`, async ({ page }) => {
+    await page.goto(`/${locale}`)
+
+    const downloadLink = page.getByRole('link', { name: label })
+    for (let attempt = 0; attempt < 2; attempt += 1) {
+      const downloadPromise = page.waitForEvent('download')
+      await downloadLink.click()
+
+      const download = await downloadPromise
+      expect(download.suggestedFilename()).toBe(`Pablo-Pineda-CV-${locale}.pdf`)
+    }
+  })
+}
+
 test('switches locale and preserves client navigation', async ({ page }) => {
   await page.goto('/en')
 
@@ -62,6 +80,22 @@ test('toggles and persists the selected theme', async ({ page }) => {
   await page.reload()
   await expect(body).toHaveAttribute('dark', selectedTheme)
 })
+
+for (const [locale, label] of [
+  ['en', 'Go to top'],
+  ['es', 'Ir hacia arriba']
+] as const) {
+  test(`scrolls to the top from the ${locale} go-to-top button`, async ({ page }) => {
+    await page.goto(`/${locale}`)
+    await page.locator('#contact').scrollIntoViewIfNeeded()
+    await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(0)
+
+    await page.getByRole('link', { name: label }).click()
+
+    await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0)
+    await expect(page).toHaveURL(new RegExp(`/${locale}$`))
+  })
+}
 
 test('opens and closes the image showcase accessibly', async ({ page }) => {
   await page.goto('/en')
