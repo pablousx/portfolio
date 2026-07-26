@@ -9,6 +9,7 @@ import {
 } from 'react-zoom-pan-pinch'
 
 import Icon from '@/components/Icon'
+import type { IconName } from '@/components/Icon'
 import IconButton from '@/components/IconButton'
 import Image from '@/components/Image'
 
@@ -17,7 +18,6 @@ import useAppStore from '@/state/store'
 import clsx from 'clsx/lite'
 import useDictionary from 'i18n/client'
 import ICONS from '@/constants/icons'
-import type { IconName } from '@/types/content'
 
 const initialScale = 1
 const defaultImageWidth = 2016

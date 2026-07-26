@@ -1,7 +1,8 @@
 'use server'
 
-import type { Dictionary } from '@/types/content'
 import { getLocale, getMessages } from 'next-intl/server'
+
+import type { Dictionary } from './config'
 
 export { getLocale as getCurrentLocale }
 

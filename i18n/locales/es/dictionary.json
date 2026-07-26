@@ -489,7 +489,8 @@
     "previousImage": "Ver imagen anterior",
     "seeImage": "Ver imagen",
     "toggleLocale": "Switch to english",
-    "toggleTheme": "Cambiar tema oscuro",
+    "useDarkTheme": "Usar tema oscuro",
+    "useLightTheme": "Usar tema claro",
     "zoomIn": "Acercar",
     "zoomOut": "Alejar",
     "zoomReset": "Restablecer zoom"

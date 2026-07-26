@@ -29,7 +29,6 @@
     "nodemailer": "9.0.3",
     "react": "19.2.8",
     "react-dom": "19.2.8",
-    "react-toggle-dark-mode": "2.0.0",
     "react-zoom-pan-pinch": "4.0.3",
     "zustand": "5.0.14"
   },

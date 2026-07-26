@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "allowArbitraryExtensions": true,
     "allowJs": false,
     "allowImportingTsExtensions": true,
     "esModuleInterop": true,

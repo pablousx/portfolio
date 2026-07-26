@@ -1,20 +1,28 @@
 import styles from '@/styles/Project.module.css'
 
 import Icon from '@/components/Icon'
+import type { IconName } from '@/components/Icon'
 import ImageCarrousel from '@/components/ImageCarrousel'
 
 import Link from '@/components/Link'
 import RichText from '@/components/RichText'
 import Skill from '@/components/Skill'
+import type { SkillData } from '@/components/Skill'
+import type { ShowcaseImage } from '@/state/store'
 import clsx from 'clsx/lite'
 import getDictionary from 'i18n/server'
-import type { ProjectData, SkillData } from '@/types/content'
 
-const EMPTY_IMAGES: NonNullable<ProjectData['images']> = []
+const EMPTY_IMAGES: ShowcaseImage[] = []
 const EMPTY_SKILLS: SkillData[] = []
 
-interface ProjectProps extends Omit<ProjectData, 'skills' | 'year'> {
+export interface ProjectProps {
+  code?: string
+  description: string
+  icon: IconName
+  images?: ShowcaseImage[]
+  name: string
   skills?: SkillData[]
+  website: string
 }
 
 export default async function Project({

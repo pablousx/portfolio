@@ -11,6 +11,11 @@ import clsx from 'clsx/lite'
 import useDictionary from 'i18n/client'
 import { useEffect, useRef, useState } from 'react'
 
+const shortcutSectionIds = sections
+  .slice(1)
+  .filter(({ noQuickLink }) => !noQuickLink)
+  .map(({ id }) => id)
+
 export default function NavbarLinks() {
   const { currentSection: currentSectionId } = useAppStore()
   const dictionary = useDictionary()
@@ -32,20 +37,24 @@ export default function NavbarLinks() {
     }
   }
 
-  const links: Array<{ id: string; label: string }> = []
+  const links: Array<{ id: string; label: string; number: string }> = []
   for (const { id, noQuickLink } of sections.slice(1)) {
     if (noQuickLink) continue
 
     const sectionDictionary = dictionary[id]
     if ('title' in sectionDictionary) {
-      links.push({ id, label: sectionDictionary.title })
+      links.push({
+        id,
+        label: sectionDictionary.title,
+        number: String(links.length + 1).padStart(2, '0')
+      })
     }
   }
   const currentSection =
     links.find(({ id }) => id === currentSectionId)?.label ?? links[0]?.label ?? ''
 
   const renderLinks = (isOverlay = false) =>
-    links.map(({ id, label }) => (
+    links.map(({ id, label, number }) => (
       <Link
         key={id}
         asButton
@@ -56,7 +65,10 @@ export default function NavbarLinks() {
         aria-hidden={isOverlay || undefined}
         tabIndex={isOverlay ? -1 : undefined}
       >
-        {label}
+        <span className={styles.number} aria-hidden='true'>
+          {number}
+        </span>
+        <span>{label}</span>
         {id === 'contact' && (
           <span className={clsx(styles.status, 'no-select')}>{aria.available}</span>
         )}
@@ -101,6 +113,28 @@ export default function NavbarLinks() {
   }, [currentSectionId])
 
   useEffect(() => {
+    const handleSectionShortcut = (event: KeyboardEvent) => {
+      if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.altKey) return
+
+      const activeElement = document.activeElement
+      if (
+        activeElement instanceof HTMLElement &&
+        activeElement.closest('input, textarea, select, [contenteditable="true"]')
+      )
+        return
+
+      const sectionId = shortcutSectionIds[Number(event.key) - 1]
+      if (!sectionId) return
+
+      document.getElementById(sectionId)?.scrollIntoView()
+    }
+
+    window.addEventListener('keydown', handleSectionShortcut)
+
+    return () => window.removeEventListener('keydown', handleSectionShortcut)
+  }, [])
+
+  useEffect(() => {
     if (!isMenuOpen) return
 
     document.body.classList.add('navbar-menu-open')
@@ -116,7 +150,16 @@ export default function NavbarLinks() {
 
     menuElement.showModal()
 
+    const handleDialogClick = (event: MouseEvent) => {
+      if (event.target !== menuElement) return
+
+      setMenuOpen(false)
+      requestAnimationFrame(() => navigatorRef.current?.focus())
+    }
+    menuElement.addEventListener('click', handleDialogClick)
+
     return () => {
+      menuElement.removeEventListener('click', handleDialogClick)
       if (menuElement.open) menuElement.close()
     }
   }, [isMenuOpen])

@@ -1,14 +1,15 @@
 import styles from '@/styles/ProjectsSection.module.css'
 
 import Project from '@/components/Project'
+import type { ProjectProps } from '@/components/Project'
 import Section from '@/components/Section'
+import type { SkillData } from '@/components/Skill'
 
 import Icon from '@/components/Icon'
 import getDictionary from 'i18n/server'
-import type { ProjectData, SkillData } from '@/types/content'
 import type { SectionComponentProps } from '@/types/sections'
 
-interface EnrichedProject extends Omit<ProjectData, 'skills'> {
+interface EnrichedProject extends Omit<ProjectProps, 'skills'> {
   skills: SkillData[]
 }
 
@@ -26,7 +27,7 @@ export default async function ProjectsSection({ id }: SectionComponentProps) {
   const { title, content: projects } = dictionary
   const { content: skillsGroups } = skillsDictionary
 
-  const allSkills = skillsGroups.flatMap((skillGroup) => skillGroup.skills)
+  const allSkills = skillsGroups.flatMap((skillGroup) => skillGroup.skills as SkillData[])
 
   const projectsPerYear = projects
     .reduce<ProjectsForYear[]>((acc, project) => {

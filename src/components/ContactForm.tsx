@@ -217,7 +217,7 @@ export default function ContactForm({ children, label }: ContactFormProps) {
           type='email'
           label={emailLabel}
           name='email'
-          placeholder='keanureeves@company.com'
+          placeholder='keanureeves@matrix.com'
           required
           maxLength={EMAIL_MAX_LENGTH}
           autoComplete='email'

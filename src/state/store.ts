@@ -2,10 +2,19 @@
 
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import type { ImageData } from '@/types/content'
+
+export interface ShowcaseImage {
+  alt: string
+  contrast?: boolean
+  height?: number
+  icon?: boolean
+  placeholder?: string
+  src: string
+  width?: number
+}
 
 interface ShowcaseState {
-  images: ImageData[]
+  images: ShowcaseImage[]
   index: number
   onIndexChange?: (index: number) => void
   open: boolean

@@ -47,9 +47,6 @@ importers:
       react-dom:
         specifier: 19.2.8
         version: 19.2.8(react@19.2.8)
-      react-toggle-dark-mode:
-        specifier: 2.0.0
-        version: 2.0.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       react-zoom-pan-pinch:
         specifier: 4.0.3
         version: 4.0.3(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -1894,33 +1891,6 @@ packages:
   '@react-pdf/types@2.11.1':
     resolution: {integrity: sha512-i9xQgfaDU9QoeNnbp6rltXCWg1huEh195rpOuN8cE4BZ2FuLdQrsIcb2dhFF9aOxXf+XBA6LOSpIW051MDD/bw==}
 
-  '@react-spring/animated@10.1.2':
-    resolution: {integrity: sha512-yAsQ/bbp6+vko7WNCI1M00c6KLE9XKTGCrgRhQqS4JcK3oF5qBV4rHYrQEprvEvYXxt+1H5FsLS2eVValEPfFw==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-
-  '@react-spring/core@10.1.2':
-    resolution: {integrity: sha512-lPGOAg0V+PV3ucopOajD+YCxoe8twALqAeG4c/+sqVjBsyUNNdx8qfz/DcNSPKA8PV3+AyQELlCxlDfap9cmBQ==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-
-  '@react-spring/rafz@10.1.2':
-    resolution: {integrity: sha512-KC6vSFZyPnRJ2rXqipV9QqR4SaYbYXjvKfdYKWipNK2mWuV79gr20WmpVUOsTiEHGRY3WSOdWCHN+P9Pdaqb7Q==}
-
-  '@react-spring/shared@10.1.2':
-    resolution: {integrity: sha512-47/8bNQ/o0uEmxEnPBuERlC29VSqiTn5P9ln9tUMSVkYKYxBtouYE686F5kAGj+eHRPoNCw7drxWE9nv2d1LMw==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-
-  '@react-spring/types@10.1.2':
-    resolution: {integrity: sha512-G4CWowmVPz+rDG1y9QRVq/prZNxiNwQaHC0kgT/MgY6jAGgdRgTV4VThpvJDwWvUitk3xZB4soP4d36fjeQ09g==}
-
-  '@react-spring/web@10.1.2':
-    resolution: {integrity: sha512-KxDB3zaDqy9qFsu7fdxjyraAxweHH4k5TW5WGT/OuMK6hKaxSDfhrQfRBzfFaSVvMBf+NghbJFanllV4ia6i7A==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-
   '@schummar/icu-type-parser@1.21.5':
     resolution: {integrity: sha512-bXHSaW5jRTmke9Vd0h5P7BtWZG9Znqb8gSDxZnxaGSJnGwPLDPfS+3g0BKzeWqzgZPsIVZkM7m2tbo18cm5HBw==}
 
@@ -3230,12 +3200,6 @@ packages:
     engines: {node: '>=0.10.0'}
     peerDependencies:
       react: ^19.2.0
-
-  react-toggle-dark-mode@2.0.0:
-    resolution: {integrity: sha512-La5GHLVv9NScgpLJzVFRtphHWBKpH11qmoAtzpxkoKau2RXWhpHrN4IGTGuiNkhGWT2mTmtHt7VEhWHME2CkcA==}
-    engines: {node: '>=20'}
-    peerDependencies:
-      react: '>=16'
 
   react-zoom-pan-pinch@4.0.3:
     resolution: {integrity: sha512-N2Hi6L78fFmhRra+ORpFSW7WST5x6kxpOPplIvtB0b7b+U2anpo1z1wLgaWRPS2kUSqcraRG+JgBCIlDJnqqAg==}
@@ -5205,39 +5169,6 @@ snapshots:
       '@react-pdf/primitives': 4.3.0
       '@react-pdf/stylesheet': 6.2.1
 
-  '@react-spring/animated@10.1.2(react@19.2.8)':
-    dependencies:
-      '@react-spring/shared': 10.1.2(react@19.2.8)
-      '@react-spring/types': 10.1.2
-      react: 19.2.8
-
-  '@react-spring/core@10.1.2(react@19.2.8)':
-    dependencies:
-      '@react-spring/animated': 10.1.2(react@19.2.8)
-      '@react-spring/shared': 10.1.2(react@19.2.8)
-      '@react-spring/types': 10.1.2
-      react: 19.2.8
-
-  '@react-spring/rafz@10.1.2': {}
-
-  '@react-spring/shared@10.1.2(react@19.2.8)':
-    dependencies:
-      '@react-spring/rafz': 10.1.2
-      '@react-spring/types': 10.1.2
-      react: 19.2.8
-
-  '@react-spring/types@10.1.2': {}
-
-  '@react-spring/web@10.1.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
-    dependencies:
-      '@react-spring/animated': 10.1.2(react@19.2.8)
-      '@react-spring/core': 10.1.2(react@19.2.8)
-      '@react-spring/shared': 10.1.2(react@19.2.8)
-      '@react-spring/types': 10.1.2
-      csstype: 3.2.3
-      react: 19.2.8
-      react-dom: 19.2.8(react@19.2.8)
-
   '@schummar/icu-type-parser@1.21.5': {}
 
   '@sentry/conventions@0.16.0': {}
@@ -6606,13 +6537,6 @@ snapshots:
     dependencies:
       react: 19.2.5
       scheduler: 0.27.0
-
-  react-toggle-dark-mode@2.0.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
-    dependencies:
-      '@react-spring/web': 10.1.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
-      react: 19.2.8
-    transitivePeerDependencies:
-      - react-dom
 
   react-zoom-pan-pinch@4.0.3(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
     dependencies:

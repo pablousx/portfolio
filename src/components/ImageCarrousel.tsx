@@ -7,15 +7,15 @@ import IconButton from '@/components/IconButton'
 import Image from '@/components/Image'
 import OpenShowcase from '@/components/OpenShowcase'
 import useCarrousel from '@/hooks/useCarrousel'
+import type { ShowcaseImage } from '@/state/store'
 import clsx from 'clsx/lite'
 import useDictionary from 'i18n/client'
-import type { ImageData } from '@/types/content'
 
 interface ImageCarrouselProps {
   border?: boolean
   className?: string
   height: number
-  images: ImageData[]
+  images: ShowcaseImage[]
   width: number
   zoom?: boolean
 }

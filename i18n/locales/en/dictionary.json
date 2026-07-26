@@ -491,7 +491,8 @@
     "previousImage": "See previous image",
     "seeImage": "See image",
     "toggleLocale": "Cambiar a español",
-    "toggleTheme": "Toggle dark theme",
+    "useDarkTheme": "Use dark theme",
+    "useLightTheme": "Use light theme",
     "zoomIn": "Zoom in",
     "zoomOut": "Zoom out",
     "zoomReset": "Reset zoom"

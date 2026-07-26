@@ -1,13 +1,13 @@
 import Image from '@/components/Image'
+import type { ShowcaseImage } from '@/state/store'
 import styles from '@/styles/Avatar.module.css'
 import clsx from 'clsx/lite'
-import type { ImageData } from '@/types/content'
 
 const positions = ['Web Developer', 'Designer', 'UI / UX']
 
 interface AvatarProps {
   className?: string
-  image: ImageData
+  image: Pick<ShowcaseImage, 'alt' | 'src'>
 }
 
 export default async function Avatar({ className, image }: AvatarProps) {

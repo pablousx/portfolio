@@ -3,10 +3,17 @@ import styles from '@/styles/Skill.module.css'
 import Icon from '@/components/Icon'
 import OpenShowcase from '@/components/OpenShowcase'
 import clsx from 'clsx/lite'
-import type { SkillData } from '@/types/content'
+import type { Dictionary } from 'i18n/config'
 
-interface SkillProps extends SkillData {
+type SkillMessage = Dictionary['skills']['content'][number]['skills'][number]
+
+export type SkillData = Pick<SkillMessage, 'icon' | 'name'> & {
+  contrast?: boolean
+}
+
+type SkillProps = SkillData & {
   className?: string
+  type?: 'primary' | 'secondary'
 }
 
 export default function Skill({

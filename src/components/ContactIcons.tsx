@@ -10,20 +10,21 @@ export default async function ContactIcons({ className }: { className?: string }
 
   return (
     <div className={clsx(styles.base, className)}>
-      {contacts.map(({ name, icon, url, props }) => (
-        <Hint key={name} label={name} position='bottom'>
-          <IconLink
-            src={icon}
-            iconProps={{
-              foregroundColor: true,
-              ...props
-            }}
-            title={name}
-            href={url}
-            isExternal
-          />
-        </Hint>
-      ))}
+      {contacts.map((contact) => {
+        const { name, icon, url } = contact
+
+        return (
+          <Hint key={name} label={name} position='bottom'>
+            <IconLink
+              src={icon}
+              iconProps={{ foregroundColor: true }}
+              title={name}
+              href={url}
+              isExternal
+            />
+          </Hint>
+        )
+      })}
     </div>
   )
 }

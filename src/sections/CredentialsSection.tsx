@@ -2,8 +2,12 @@ import styles from '@/styles/CredentialsSection.module.css'
 
 import Section from '@/components/Section'
 import getDictionary from 'i18n/server'
-import type { CredentialData } from '@/types/content'
+import type { Dictionary } from 'i18n/config'
 import type { SectionComponentProps } from '@/types/sections'
+
+type CredentialData =
+  | Dictionary['credentials']['certifications'][number]
+  | Dictionary['credentials']['education'][number]
 
 function CredentialCard({
   credential,

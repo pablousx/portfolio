@@ -3,8 +3,9 @@ import styles from '@/styles/Icon.module.css'
 import clsx from 'clsx/lite'
 
 import ICONS from '@/constants/icons'
-import type { IconName } from '@/types/content'
 import type { SVGProps } from 'react'
+
+export type IconName = keyof typeof ICONS
 
 const classNameByType = {
   secondary: styles.secondary

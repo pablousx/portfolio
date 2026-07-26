@@ -50,6 +50,9 @@ body[top='false'] .overlay {
 
 .link {
   position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4em;
   font-size: 1.25em;
   height: 2.25rem;
   padding-inline: 1rem 0.75rem;
@@ -80,8 +83,33 @@ body[top='false'] .overlay {
     color 0.2s ease-out;
 }
 
-.link:not(.navigator):hover {
+.link:not(.current) {
+  height: 1.9125rem;
+  padding-inline: 0.85rem 0.6375rem;
+
+  font-size: 1.0625em;
+  font-weight: 700;
+  color: var(--dimmer-foreground-color);
+}
+
+.number {
+  font-size: 0.7em;
+  font-style: normal;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+.link:not(.current) .number {
+  color: var(--accent-color);
+}
+
+.link.current:not(.navigator):hover {
   background-color: var(--dimmer-accent-color);
+}
+
+.link:not(.current):not(.navigator):hover,
+.link:not(.current):not(.navigator):focus-visible {
+  color: var(--dim-foreground-color);
 }
 
 .link:not(.navigator):active {
@@ -192,6 +220,23 @@ body[top='false'] .overlay {
   font-size: 1.25rem;
   color: var(--light-color);
   padding-block: 0.25em;
+}
+
+.menu .link:not(.current) {
+  height: auto;
+  margin-right: 0;
+  padding-block: 0.25em;
+
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--light-color);
+
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.menu .number {
+  color: var(--accent-color);
 }
 
 .menu .link.current {

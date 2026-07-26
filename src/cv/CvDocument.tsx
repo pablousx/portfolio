@@ -1,4 +1,9 @@
-import type { CredentialData, Dictionary, ExperienceData } from '@/types/content'
+import type { Dictionary } from 'i18n/config'
+
+type CredentialData =
+  | Dictionary['credentials']['certifications'][number]
+  | Dictionary['credentials']['education'][number]
+type ExperienceData = Dictionary['experience']['content'][number]
 
 const { Document, Link, Page, StyleSheet, Text, View } =
   await import('@react-pdf/renderer')

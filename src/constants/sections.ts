@@ -23,12 +23,12 @@ const sections: SectionDefinition[] = [
     noHash: true
   },
   {
-    id: 'projects',
-    Tag: ProjectsSection
-  },
-  {
     id: 'experience',
     Tag: ExperienceSection
+  },
+  {
+    id: 'projects',
+    Tag: ProjectsSection
   },
   {
     id: 'credentials',

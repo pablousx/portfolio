@@ -1,0 +1,14 @@
+.base {
+  font-size: 1.5em;
+  line-height: 1.5em;
+  font-family: var(--title-font);
+  font-style: italic;
+  font-weight: 700;
+  text-shadow: 0 0 0.125em var(--dimmer-foreground-color);
+
+  padding: 0.2em 0.4em;
+
+  transition:
+    color 0.5s,
+    scale 0.25s ease-out;
+}

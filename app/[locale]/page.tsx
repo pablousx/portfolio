@@ -5,10 +5,11 @@ import Interactive from '@/components/Interactive'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Showcase from '@/components/Showcase'
+import type { Locale } from 'i18n/config'
 import { setRequestLocale } from 'next-intl/server'
 
 interface PageProps {
-  params: Promise<{ locale: string }>
+  params: Promise<{ locale: Locale }>
 }
 
 export default async function Page({ params }: PageProps) {

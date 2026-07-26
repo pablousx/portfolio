@@ -54,4 +54,11 @@ const nextConfig: NextConfig = {
   }
 }
 
-export default createNextIntlPlugin('./i18n/request.ts')(nextConfig)
+const withNextIntl = createNextIntlPlugin({
+  experimental: {
+    createMessagesDeclaration: './i18n/locales/en/dictionary.json'
+  },
+  requestConfig: './i18n/request.ts'
+})
+
+export default withNextIntl(nextConfig)

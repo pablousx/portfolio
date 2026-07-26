@@ -48,12 +48,16 @@ test('toggles and persists the selected theme', async ({ page }) => {
   const body = page.locator('body')
   await expect(body).toHaveAttribute('dark', /^(true|false)$/)
   const initialTheme = await body.getAttribute('dark')
+  if (initialTheme === null) throw new Error('Initial theme attribute was not set')
+  const themeSwitch = page.getByRole('switch')
 
-  await page.getByTitle('Toggle dark theme').click()
+  await expect(themeSwitch).toHaveAttribute('aria-checked', initialTheme)
+  await themeSwitch.click()
 
   await expect.poll(() => body.getAttribute('dark')).not.toBe(initialTheme)
   const selectedTheme = await body.getAttribute('dark')
   if (selectedTheme === null) throw new Error('Theme attribute was not set')
+  await expect(themeSwitch).toHaveAttribute('aria-checked', selectedTheme)
 
   await page.reload()
   await expect(body).toHaveAttribute('dark', selectedTheme)
@@ -69,6 +73,29 @@ test('opens and closes the image showcase accessibly', async ({ page }) => {
 
   await page.keyboard.press('Escape')
   await expect(dialog).not.toBeVisible()
+})
+
+test('navigates sections with number keys without interrupting form input', async ({
+  page
+}) => {
+  await page.goto('/en')
+
+  await page.keyboard.press('6')
+  await expect
+    .poll(() =>
+      page.locator('#contact').evaluate((element) => {
+        const { top } = element.getBoundingClientRect()
+        return top >= 0 && top < window.innerHeight / 2
+      })
+    )
+    .toBe(true)
+
+  const nameInput = page.getByLabel('Name')
+  await nameInput.focus()
+  await page.keyboard.press('1')
+
+  await expect(nameInput).toHaveValue('1')
+  await expect(page).toHaveURL(/#contact$/)
 })
 
 test('keeps the interactive overlay aligned after a viewport resize', async ({
@@ -140,5 +167,24 @@ test.describe('mobile navigation', () => {
     await expect(dialog).not.toBeVisible()
     await expect(trigger).toBeFocused()
     await expect(page.locator('body')).not.toHaveClass(/navbar-menu-open/)
+  })
+
+  test('closes from the close button and the modal backdrop', async ({ page }) => {
+    await page.goto('/en')
+
+    const trigger = page.getByRole('button', { name: 'Navigate to' })
+    const dialog = page.getByRole('dialog', { name: 'Navigate to' })
+
+    await trigger.click()
+    await expect(dialog).toBeVisible()
+
+    await dialog.getByRole('button', { name: 'Close' }).click()
+    await expect(dialog).not.toBeVisible()
+
+    await trigger.click()
+    await expect(dialog).toBeVisible()
+
+    await page.mouse.click(8, 8)
+    await expect(dialog).not.toBeVisible()
   })
 })

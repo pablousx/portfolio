@@ -12,20 +12,24 @@ export default async function AboutMeSection({ id }: SectionComponentProps) {
 
   return (
     <Section id={id} title={title} className={styles.base}>
-      {content.map(({ images, text }) => (
-        <div key={images?.[0]?.src ?? text} className={styles.subsection}>
-          <RichText as='p'>{text}</RichText>
-          {images && (
-            <ImageCarrousel
-              className={styles.images}
-              border
-              images={images}
-              height={171}
-              width={256}
-            />
-          )}
-        </div>
-      ))}
+      {content.map((item) => {
+        const images = 'images' in item ? item.images : undefined
+
+        return (
+          <div key={images?.[0]?.src ?? item.text} className={styles.subsection}>
+            <RichText as='p'>{item.text}</RichText>
+            {images && (
+              <ImageCarrousel
+                className={styles.images}
+                border
+                images={images}
+                height={171}
+                width={256}
+              />
+            )}
+          </div>
+        )
+      })}
     </Section>
   )
 }

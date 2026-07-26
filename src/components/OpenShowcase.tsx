@@ -1,16 +1,16 @@
 'use client'
 
 import useAppStore from '@/state/store'
+import type { ShowcaseImage } from '@/state/store'
 import styles from '@/styles/OpenShowcase.module.css'
 import clsx from 'clsx/lite'
 import useDictionary from 'i18n/client'
-import type { ImageData } from '@/types/content'
 import type { ComponentPropsWithoutRef, ReactNode } from 'react'
 
 interface OpenShowcaseProps extends Omit<ComponentPropsWithoutRef<'button'>, 'children'> {
   children: ReactNode
   disable?: boolean
-  images?: ImageData[]
+  images?: ShowcaseImage[]
   index?: number
   onIndexChange?: (index: number) => void
 }

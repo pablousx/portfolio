@@ -1,12 +1,12 @@
 import useDebouncedCallback from '@/hooks/useDebouncedCallback'
+import type { ShowcaseImage } from '@/state/store'
 import { useState } from 'react'
 import type { UIEvent } from 'react'
-import type { ImageData } from '@/types/content'
 
-const EMPTY_IMAGE: ImageData = { alt: '', src: '' }
+const EMPTY_IMAGE: ShowcaseImage = { alt: '', src: '' }
 
 interface UseCarrouselOptions {
-  images?: ImageData[]
+  images?: ShowcaseImage[]
   initialIndex?: number
   onImageChange?: (index: number) => void
 }

@@ -5,26 +5,35 @@ import styles from '@/styles/ThemeButton.module.css'
 import Hint from '@/components/Hint'
 import useAppStore from '@/state/store'
 import useDictionary from 'i18n/client'
-import { DarkModeSwitch } from 'react-toggle-dark-mode'
 
 export default function ThemeButton() {
   const { theme, toggleTheme } = useAppStore()
   const { aria } = useDictionary()
+  const isDark = theme === 'dark'
+  const label = isDark ? aria.useLightTheme : aria.useDarkTheme
 
   return (
     <Hint
       className={styles.base}
       position='bottom-left'
-      label={aria.toggleTheme}
+      label={label}
       visibility='until-click'
     >
-      <DarkModeSwitch
-        checked={theme === 'dark'}
-        onChange={toggleTheme}
-        moonColor='var(--foreground-color)'
-        sunColor='var(--foreground-color)'
-        title={aria.toggleTheme}
-      />
+      <button
+        className={styles.button}
+        type='button'
+        role='switch'
+        aria-checked={isDark}
+        aria-label={label}
+        title={label}
+        onClick={() => toggleTheme(!isDark)}
+      >
+        <span className={styles.track} aria-hidden='true'>
+          <span className={styles.orbGlow}>
+            <span className={styles.orb} />
+          </span>
+        </span>
+      </button>
     </Hint>
   )
 }
