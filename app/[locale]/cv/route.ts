@@ -20,11 +20,15 @@ export async function GET(_request: Request, { params }: RouteContext) {
 
   return new Response(new Uint8Array(file), {
     headers: {
-      'Cache-Control': 'public, max-age=0, must-revalidate',
       'Content-Type': 'application/pdf',
       'Content-Disposition': `attachment; filename="${dictionary.resume.fileName}"`
     }
   })
 }
 
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }))
+}
+
+export const dynamic = 'force-static'
 export const runtime = 'nodejs'
