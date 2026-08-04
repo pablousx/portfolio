@@ -2,6 +2,7 @@ import type { NextConfig } from 'next'
 import createNextIntlPlugin from 'next-intl/plugin'
 
 const nextConfig: NextConfig = {
+  cacheComponents: true,
   reactCompiler: true,
   webpack(config) {
     if (!config.module?.rules) return config

@@ -1,34 +1,41 @@
 import type { MetadataRoute } from 'next'
+import { cacheLife } from 'next/cache'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  'use cache'
+
+  cacheLife('days')
+
+  const lastModified = new Date()
+
   return [
     {
       url: 'https://pablousx.vercel.app/en',
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: 'weekly',
       priority: 1
     },
     {
       url: 'https://pablousx.vercel.app/es',
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: 'weekly',
       priority: 1
     },
     {
       url: 'https://quiz.pablousx.vercel.app',
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: 'weekly',
       priority: 0.8
     },
     {
       url: 'https://jolc.pablousx.vercel.app',
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: 'weekly',
       priority: 0.8
     },
     {
       url: 'https://translator.pablousx.vercel.app',
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: 'weekly',
       priority: 0.8
     }

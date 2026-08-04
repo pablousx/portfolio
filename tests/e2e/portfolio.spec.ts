@@ -70,6 +70,26 @@ test('switches locale and preserves client navigation', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Proyectos' })).toBeVisible()
 })
 
+test('preserves form state across locale navigation', async ({ page }) => {
+  await page.goto('/en')
+
+  const draftName = 'Cache Components draft'
+  await page.getByLabel('Name').fill(draftName)
+
+  await page.getByRole('link', { name: 'Go to top' }).click()
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0)
+
+  await page.getByRole('link', { name: 'en', exact: true }).click()
+  await expect(page).toHaveURL(/\/es$/)
+
+  await page.evaluate(() => localStorage.removeItem('contact-form:v1'))
+
+  await page.getByRole('link', { name: 'es', exact: true }).click()
+  await expect(page).toHaveURL(/\/en$/)
+
+  await expect(page.getByLabel('Name')).toHaveValue(draftName)
+})
+
 test('toggles and persists the selected theme', async ({ page }) => {
   await page.goto('/en')
 
@@ -123,6 +143,8 @@ test('navigates sections with number keys without interrupting form input', asyn
   page
 }) => {
   await page.goto('/en')
+
+  await expect(page.locator('body')).toHaveAttribute('dark', /^(true|false)$/)
 
   await page.keyboard.press('6')
   await expect
