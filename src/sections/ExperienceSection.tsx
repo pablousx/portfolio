@@ -17,7 +17,7 @@ export default async function ExperienceSection({ id }: SectionComponentProps) {
     getDictionary('experience'),
     getDictionary('skills')
   ])
-  const { title, presentLabel, websiteButton, content } = dictionary
+  const { title, intro, presentLabel, websiteButton, content } = dictionary
   const allSkills = skillsDictionary.content.flatMap(
     (skillGroup) => skillGroup.skills as SkillData[]
   )
@@ -44,6 +44,7 @@ export default async function ExperienceSection({ id }: SectionComponentProps) {
 
   return (
     <Section id={id} title={title} className={styles.base}>
+      <p className={styles.intro}>{intro}</p>
       <div className={styles.content}>
         <div className={styles.allExperience}>
           {experiencesPerYear.map(({ experiences, isCurrent, year }) => (

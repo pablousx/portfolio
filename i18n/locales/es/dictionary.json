@@ -19,7 +19,7 @@
   "landing": {
     "title": "Inicio",
     "name": "Pablo Pineda",
-    "presentation": "Creando experiencias digitales <strong>inolvidables</strong>.",
+    "presentation": "Ingeniero de Producto Full-Stack y Tech Lead hands-on que desarrolla <strong>software crítico para el negocio</strong> desde el descubrimiento hasta producción.",
     "email": "pablo@steralynx.com",
     "emailButton": "Copia mi email",
     "cvButton": "Descargar mi CV",
@@ -30,6 +30,7 @@
   },
   "projects": {
     "title": "Proyectos",
+    "intro": "Productos web seleccionados que demuestran implementación end-to-end en interfaces, lógica de aplicación, datos y entrega.",
     "codeButton": "Código",
     "websiteButton": "Sitio web",
     "content": [
@@ -116,6 +117,7 @@
   },
   "skills": {
     "title": "Skills",
+    "intro": "Un conjunto de herramientas full-stack para llevar ideas de producto desde las primeras decisiones hasta software confiable en producción.",
     "content": [
       {
         "name": "Front-End",
@@ -316,10 +318,10 @@
     "title": "Sobre mí",
     "content": [
       {
-        "text": "Mi nombre es Pablo pero mis allegados me llaman <strong>Nando</strong>. Me gusta mucho el desarrollo de software. Desde los <u>6 años</u> he mostrado interés en el mundo de la tecnología, empecé programando en Pascal a los <u>15 años</u>, y ahora con <strong>25 años</strong> he desarrollado productos innovadores dirigidos a empresas reconocidas en mi país."
+        "text": "Soy <strong>Ingeniero de Producto Full-Stack</strong> y Tech Lead hands-on de Guatemala, con <u>cuatro años de experiencia profesional</u>. Convierto necesidades empresariales complejas en productos de software claros y confiables, participando desde las decisiones de producto y arquitectura hasta la implementación y entrega en producción."
       },
       {
-        "text": "Estoy terminando un grado de <strong>Ingeniería en Sistemas</strong> en la <u>Universidad de San Carlos de Guatemala</u>, gracias al cual he pulido mis habilidades en el desarrollo de software. Soy fiel creyente de que has aprendido bien cuando eres capaz de enseñar a otros, y he tenido la oportunidad de enseñar siendo <u>auxiliar de cátedra</u> en la universidad.",
+        "text": "Me gradué de <strong>Ingeniería en Ciencias y Sistemas</strong> en la <u>Universidad de San Carlos de Guatemala</u>. Enseñar como auxiliar universitario y orientar a otros estudiantes fortaleció mi capacidad para comunicar decisiones técnicas, compartir contexto y ayudar a los equipos a crecer.",
         "images": [
           {
             "src": "about-me/usac/img1.jpg",
@@ -407,13 +409,13 @@
     "educationLabel": "Educación",
     "education": [
       {
-        "period": "10.º semestre",
+        "period": "Grado finalizado",
         "icon": "usac",
         "badge": "USAC",
         "label": "Ingeniería en Ciencias y Sistemas",
         "name": "Ingeniería en Ciencias y Sistemas",
         "institution": "Universidad de San Carlos de Guatemala",
-        "description": "Finalizando el grado con enfoque en <strong>ingeniería de software</strong>, mientras contribuyo como <u>auxiliar de cátedra</u>, mentor y organizador de la comunidad estudiantil.",
+        "description": "Obtuve un grado con enfoque en <strong>ingeniería de software</strong> mientras contribuía como <u>auxiliar de cátedra</u>, mentor y organizador de la comunidad estudiantil.",
         "highlights": [
           "Reconocimiento por excelencia académica.",
           "Organizador del Congreso de Estudiantes de Ciencias y Sistemas.",
@@ -462,13 +464,18 @@
     "text": "El misterio de la <u>vida</u> no es un problema a resolver, sino una realidad a <strong>experimentar</strong>"
   },
   "resume": {
-    "title": "Desarrollador Web Full-Stack Senior",
+    "title": "Ingeniero de Producto Full-Stack y Tech Lead",
     "location": "Ciudad de Guatemala, Guatemala",
     "profileLabel": "Perfil",
-    "profile": "Desarrollador full-stack que transforma flujos empresariales complejos en productos digitales claros y confiables. Experiencia en producto, sistemas front-end, APIs, datos, nube y prácticas de ingeniería.",
+    "profile": "Ingeniero de Producto Full-Stack y Tech Lead hands-on con cuatro años de experiencia entregando software crítico para el negocio, desde las decisiones de producto hasta producción. Experiencia en sistemas front-end, APIs, datos, nube y prácticas de ingeniería.",
     "contactLabel": "Contacto",
     "portfolioLabel": "Portafolio web",
     "skillsLabel": "Habilidades",
+    "availability": "Disponible para empleo remoto internacional y proyectos freelance.",
+    "downloadLabel": "Descargar PDF",
+    "backLabel": "Volver al portafolio",
+    "languagesLabel": "Idiomas",
+    "languages": "Español (nativo) · Inglés (C2 competente)",
     "fileName": "Pablo-Pineda-CV-es.pdf"
   },
   "aria": {
@@ -492,10 +499,10 @@
   },
   "email": {
     "subject": "¡Gracias por ponerte en contacto!",
-    "html": "<p>Estimado {{name}},</p><p>Gracias por ponerte en contacto conmigo. He recibido tu mensaje y me pondré en contacto contigo pronto.</p><p>Saludos cordiales,<br><br>- <i>Pablo Pineda</i> — <a href='https://pablousx.vercel.app'>pablousx.vercel.app</a></p>"
+    "html": "<p>Estimado {{name}},</p><p>Gracias por ponerte en contacto conmigo. He recibido tu mensaje y me pondré en contacto contigo pronto.</p><p>Saludos cordiales,<br><br>- <i>Pablo Pineda</i> — <a href='{{siteUrl}}'>{{siteHost}}</a></p>"
   },
   "meta": {
-    "title": "Mi Portafolio <DEV/>",
-    "description": "¡Hola! Soy Pablo Pineda (@pablousx), Desarrollador Web Full-Stack a tu servicio. ¡Pongámonos en contacto! 🚀"
+    "title": "Pablo Pineda | Ingeniero de Producto Full-Stack y Tech Lead",
+    "description": "Ingeniero de Producto Full-Stack y Tech Lead hands-on con 4 años desarrollando software crítico para el negocio. Disponible para empleo remoto internacional y freelance."
   }
 }

@@ -3,7 +3,6 @@ import buttonStyles from '@/styles/Button.module.css'
 
 import Avatar from '@/components/Avatar'
 import ContactIcons from '@/components/ContactIcons'
-import Hint from '@/components/Hint'
 import Icon from '@/components/Icon'
 import RichText from '@/components/RichText'
 import Section from '@/components/Section'
@@ -14,7 +13,7 @@ import type { SectionComponentProps } from '@/types/sections'
 export default async function LandingSection({ id }: SectionComponentProps) {
   const [locale, dictionary] = await Promise.all([getCurrentLocale(), getDictionary()])
 
-  const { landing, aria } = dictionary
+  const { landing } = dictionary
   const { name, presentation, cvButton, image } = landing
 
   return (
@@ -25,20 +24,18 @@ export default async function LandingSection({ id }: SectionComponentProps) {
           {presentation}
         </RichText>
         <div className={styles.buttons}>
-          <Hint position='bottom' label={aria.downloaded} visibility='after-click'>
-            <a
-              className={clsx(
-                buttonStyles.base,
-                buttonStyles.primary,
-                'interactive-button-primary no-select'
-              )}
-              href={`/${locale}/cv`}
-              download
-            >
-              {cvButton}
-              <Icon src='download' backgroundColor />
-            </a>
-          </Hint>
+          <a
+            className={clsx(
+              buttonStyles.base,
+              buttonStyles.primary,
+              'interactive-button-primary no-select'
+            )}
+            href={`/${locale}/cv`}
+            download
+          >
+            {cvButton}
+            <Icon src='download' backgroundColor />
+          </a>
           <ContactIcons className={styles.contact} />
         </div>
       </div>

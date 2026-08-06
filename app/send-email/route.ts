@@ -5,6 +5,7 @@ import {
   NAME_MAX_LENGTH,
   SUBJECT_MAX_LENGTH
 } from '@/constants/patterns'
+import { SITE_URL } from '@/constants/seo'
 import getDictionary, { getCurrentLocale } from 'i18n/server'
 import nodemailer from 'nodemailer'
 
@@ -87,7 +88,10 @@ export async function POST(request: Request) {
         from: smtpEmail,
         to: email,
         subject: cxSubject,
-        html: cxHtml.replaceAll('{{name}}', name)
+        html: cxHtml
+          .replaceAll('{{name}}', name)
+          .replaceAll('{{siteUrl}}', SITE_URL)
+          .replaceAll('{{siteHost}}', new URL(SITE_URL).hostname)
       }),
       transporter.sendMail({
         from: smtpEmail,

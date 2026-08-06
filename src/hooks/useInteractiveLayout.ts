@@ -32,18 +32,15 @@ const interactiveElementTypes = [
 ]
 
 const interactiveElementSelector = interactiveElementTypes
-  .map(
-    (interactiveElementType) =>
-      `main ${
-        interactiveElementType.tag
-          ? interactiveElementType.tag
-          : `.${interactiveElementType.className}`
-      }`
+  .map((interactiveElementType) =>
+    interactiveElementType.tag
+      ? interactiveElementType.tag
+      : `.${interactiveElementType.className}`
   )
   .join(',')
 
-const getElements = (): HTMLElement[] =>
-  Array.from(document.querySelectorAll<HTMLElement>(interactiveElementSelector))
+const getElements = (mainElement: HTMLElement): HTMLElement[] =>
+  Array.from(mainElement.querySelectorAll<HTMLElement>(interactiveElementSelector))
 
 const getInteractiveElementType = (element: HTMLElement) => {
   return interactiveElementTypes.find((interactiveElementType) =>
@@ -82,16 +79,20 @@ const updateElementPosition = (
 export default function useInteractiveLayout() {
   useEffect(() => {
     const layoutElement = document.getElementById('layout')
-    const mainElement = document.querySelector('main')
-    if (!layoutElement || !mainElement) return () => {}
+    if (!layoutElement) return () => {}
 
     const interactiveElements = new Map<HTMLElement, HTMLElement>()
+    let observedElements = new Set<HTMLElement>()
     let animationFrame: number | undefined
+    let settleFrames = 0
+
+    const resizeObserver = new ResizeObserver(() => scheduleSynchronization())
 
     const synchronizeLayout = () => {
       animationFrame = undefined
 
-      const sourceElements = getElements()
+      const mainElement = document.querySelector<HTMLElement>('main')
+      const sourceElements = mainElement ? getElements(mainElement) : []
       const sourceElementSet = new Set(sourceElements)
 
       for (const [sourceElement, interactiveElement] of interactiveElements) {
@@ -101,7 +102,7 @@ export default function useInteractiveLayout() {
         interactiveElements.delete(sourceElement)
       }
 
-      for (const sourceElement of sourceElements) {
+      for (const [index, sourceElement] of sourceElements.entries()) {
         if (interactiveElements.has(sourceElement)) continue
 
         const interactiveElementType = getInteractiveElementType(sourceElement)
@@ -116,6 +117,7 @@ export default function useInteractiveLayout() {
         else interactiveElement.classList.add(...sourceElement.classList)
 
         interactiveElement.style.opacity = '0'
+        interactiveElement.dataset.interactiveIndex = String(index)
 
         const parentSourceElement = sourceElements.findLast(
           (candidate) => candidate !== sourceElement && candidate.contains(sourceElement)
@@ -123,35 +125,92 @@ export default function useInteractiveLayout() {
         const parent = parentSourceElement
           ? interactiveElements.get(parentSourceElement)
           : layoutElement
+        const targetParent = parent ?? layoutElement
 
-        parent?.appendChild(interactiveElement)
+        targetParent.appendChild(interactiveElement)
         interactiveElements.set(sourceElement, interactiveElement)
       }
 
-      for (const sourceElement of sourceElements) {
+      for (const [index, sourceElement] of sourceElements.entries()) {
         const interactiveElement = interactiveElements.get(sourceElement)
-        if (interactiveElement) updateElementPosition(sourceElement, interactiveElement)
+        if (!interactiveElement) continue
+
+        interactiveElement.dataset.interactiveIndex = String(index)
+        updateElementPosition(sourceElement, interactiveElement)
       }
+
+      const nextObservedElements = new Set(sourceElements)
+      if (mainElement) nextObservedElements.add(mainElement)
+
+      for (const element of observedElements) {
+        if (!nextObservedElements.has(element)) resizeObserver.unobserve(element)
+      }
+      for (const element of nextObservedElements) {
+        if (!observedElements.has(element)) resizeObserver.observe(element)
+      }
+      observedElements = nextObservedElements
+
+      if (settleFrames === 0) return
+
+      settleFrames -= 1
+      animationFrame = window.requestAnimationFrame(synchronizeLayout)
     }
 
     const scheduleSynchronization = () => {
+      settleFrames = 2
       if (animationFrame !== undefined) return
 
       animationFrame = window.requestAnimationFrame(synchronizeLayout)
     }
 
-    const resizeObserver = new ResizeObserver(scheduleSynchronization)
-    const mutationObserver = new MutationObserver(scheduleSynchronization)
+    const mutationObserver = new MutationObserver((records) => {
+      const mainElement = document.querySelector('main')
+      const hasSourceMutation = records.some((record) => {
+        const { target } = record
+        if (target === layoutElement || layoutElement.contains(target)) return false
+        if (mainElement && (target === mainElement || mainElement.contains(target))) {
+          return true
+        }
+        if (record.type !== 'childList') return false
 
-    resizeObserver.observe(mainElement)
-    mutationObserver.observe(mainElement, { childList: true, subtree: true })
+        return [...record.addedNodes, ...record.removedNodes].some(
+          (node) =>
+            node instanceof Element &&
+            (node.matches('main') || node.querySelector('main'))
+        )
+      })
+      if (hasSourceMutation) scheduleSynchronization()
+    })
+
+    const fontSet = document.fonts
+    const handleSourceEvent = (event: Event) => {
+      if (event.target instanceof Node && layoutElement.contains(event.target)) return
+      scheduleSynchronization()
+    }
+
+    mutationObserver.observe(document.body, {
+      attributes: true,
+      characterData: true,
+      childList: true,
+      subtree: true
+    })
     window.addEventListener('resize', scheduleSynchronization)
-    synchronizeLayout()
+    window.addEventListener('pageshow', scheduleSynchronization)
+    document.addEventListener('load', handleSourceEvent, true)
+    document.addEventListener('transitionend', handleSourceEvent, true)
+    document.addEventListener('animationend', handleSourceEvent, true)
+    fontSet.addEventListener('loadingdone', scheduleSynchronization)
+    scheduleSynchronization()
 
     return () => {
       if (animationFrame !== undefined) window.cancelAnimationFrame(animationFrame)
 
       window.removeEventListener('resize', scheduleSynchronization)
+      window.removeEventListener('pageshow', scheduleSynchronization)
+      document.removeEventListener('load', handleSourceEvent, true)
+      document.removeEventListener('transitionend', handleSourceEvent, true)
+      document.removeEventListener('animationend', handleSourceEvent, true)
+      fontSet.removeEventListener('loadingdone', scheduleSynchronization)
       mutationObserver.disconnect()
       resizeObserver.disconnect()
 

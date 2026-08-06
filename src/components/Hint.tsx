@@ -33,6 +33,11 @@ export default function Hint({
     resetTimer.current = setTimeout(() => setClicked(false), CLICK_TIMEOUT)
   }
 
+  const handlePointerLeave = () => {
+    clearTimeout(resetTimer.current)
+    setClicked(false)
+  }
+
   useEffect(() => {
     return () => {
       clearTimeout(resetTimer.current)
@@ -40,6 +45,8 @@ export default function Hint({
   }, [])
 
   const isClickControlled = visibility === 'after-click' || visibility === 'until-click'
+  const isAlwaysVisible =
+    visibility === 'always' || (visibility === 'after-click' && clicked)
   return (
     <span
       className={clsx(
@@ -48,7 +55,7 @@ export default function Hint({
         'no-select',
         'hint--no-shadow hint--rounded hint--bounce',
         `hint--${position}`,
-        (clicked || visibility === 'always') && 'hint--always',
+        isAlwaysVisible && 'hint--always',
         (label == null ||
           visibility === 'hidden' ||
           (visibility === 'after-click' && !clicked) ||
@@ -56,6 +63,7 @@ export default function Hint({
           styles.hide
       )}
       data-hint={label}
+      onPointerLeave={visibility === 'until-click' ? handlePointerLeave : undefined}
       onPointerUp={isClickControlled ? handleClick : undefined}
     >
       {children}

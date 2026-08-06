@@ -3,7 +3,7 @@ import type { ShowcaseImage } from '@/state/store'
 import styles from '@/styles/Avatar.module.css'
 import clsx from 'clsx/lite'
 
-const positions = ['Developer', 'UI / UX', 'Builder']
+const positions = ['Product Engineer', 'Tech Lead', 'Builder']
 
 interface AvatarProps {
   className?: string

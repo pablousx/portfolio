@@ -1,5 +1,7 @@
 import type { Dictionary } from 'i18n/config'
 
+import { SITE_URL } from '@/constants/seo'
+
 type CredentialData =
   | Dictionary['credentials']['certifications'][number]
   | Dictionary['credentials']['education'][number]
@@ -29,6 +31,8 @@ const colors = {
   dim: '#343434',
   paper: '#ffffff'
 }
+
+const siteHostname = new URL(SITE_URL).hostname
 
 const styles = StyleSheet.create({
   page: {
@@ -60,8 +64,8 @@ const styles = StyleSheet.create({
   },
   roleLine: {
     display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'baseline',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
     marginTop: 3,
     fontSize: 14.5
   },
@@ -69,7 +73,9 @@ const styles = StyleSheet.create({
     fontFamily: 'Helvetica-Bold'
   },
   location: {
-    marginLeft: 4
+    marginTop: 3,
+    color: colors.dim,
+    fontSize: 10.5
   },
   columns: {
     display: 'flex',
@@ -429,7 +435,7 @@ export default function CvDocument({ dictionary }: { dictionary: Dictionary }) {
           <Text style={styles.name}>{landing.name}</Text>
           <View style={styles.roleLine}>
             <Text style={styles.role}>{resume.title}</Text>
-            <Text style={styles.location}>- {resume.location}</Text>
+            <Text style={styles.location}>{resume.location}</Text>
           </View>
         </View>
 
@@ -461,8 +467,8 @@ export default function CvDocument({ dictionary }: { dictionary: Dictionary }) {
           <View style={styles.aside}>
             <View style={styles.section}>
               <SectionTitle>{resume.contactLabel}</SectionTitle>
-              <ContactRow icon='website' url='https://pablousx.vercel.app'>
-                pablousx.vercel.app
+              <ContactRow icon='website' url={SITE_URL}>
+                {siteHostname}
               </ContactRow>
               <ContactRow icon='email' url={`mailto:${landing.email}`}>
                 {landing.email}

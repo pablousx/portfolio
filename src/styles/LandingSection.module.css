@@ -50,15 +50,17 @@ header.base {
 .buttons {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1.5em;
+  justify-content: center;
+  gap: 1.75em;
 
   width: 100%;
   margin-top: 1em;
 }
 
-.buttons a {
+.buttons > a {
   font-size: 1.5em;
+  width: 10em;
+  flex-shrink: 0;
 }
 
 .contact {
@@ -91,13 +93,14 @@ header.base {
     justify-content: center;
   }
 
-  .buttons a {
+  .buttons > a {
     font-size: 1.3em;
   }
 }
 @media (max-width: 450px) {
   .buttons {
     flex-direction: column;
+    gap: 1em;
   }
 
   .contact {

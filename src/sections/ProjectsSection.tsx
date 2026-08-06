@@ -45,6 +45,7 @@ export default async function ProjectsSection({ id }: SectionComponentProps) {
 
   return (
     <Section id={id} title={dictionary.title} className={styles.base}>
+      <p className={styles.intro}>{dictionary.intro}</p>
       <div className={styles.content}>
         <div className={styles.allProjects}>
           {projectsPerYear.map(({ year, projects }) => (

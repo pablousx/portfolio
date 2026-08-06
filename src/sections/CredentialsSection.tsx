@@ -34,10 +34,11 @@ function CredentialCard({ credential }: { credential: CredentialData }) {
 }
 
 export default async function CredentialsSection({ id }: SectionComponentProps) {
-  const { title, education, certifications } = await getDictionary('credentials')
+  const { title, intro, education, certifications } = await getDictionary('credentials')
 
   return (
     <Section id={id} title={title} className={styles.base}>
+      <p className={styles.intro}>{intro}</p>
       <div className={styles.cards}>
         <div>
           {education.map((credential) => (

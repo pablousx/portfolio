@@ -1,17 +1,19 @@
 # Pablo Pineda's portfolio
 
-The source for [pablousx.vercel.app](https://pablousx.vercel.app), a personal
-portfolio available in [English](https://pablousx.vercel.app/en) and
-[Spanish](https://pablousx.vercel.app/es).
+The source for [pablo.steralynx.com](https://pablo.steralynx.com), a personal
+portfolio available in [English](https://pablo.steralynx.com/en) and
+[Spanish](https://pablo.steralynx.com/es).
 
 ![Portfolio preview](./i18n/locales/en/splash.jpg)
 
-Built with Next.js, React, TypeScript, and CSS Modules. The site is a single-page
-portfolio with project galleries, a skills overview, a contact form, and a small set of
-interactions that make browsing it feel less static.
+Built with Next.js, React, TypeScript, and CSS Modules. The site combines a localized
+portfolio with crawlable HTML résumés, project galleries, a skills overview, a contact
+form, and a small set of interactions that make browsing it feel less static.
 
 - Locale content comes from separate English and Spanish dictionaries, with localized
-  metadata and CV downloads for each route.
+  metadata, HTML résumés, and PDF CV downloads for each route.
+- Search discovery includes canonical and alternate-language URLs, JSON-LD profile
+  data, a sitemap, crawler rules, and an AI-readable `llms.txt` summary.
 - The project viewer is an accessible dialog: it supports Escape to close, arrow keys
   to move through images, and pan and zoom controls for a closer look.
 - Theme preference is stored locally, and navigation follows the section currently in
@@ -43,6 +45,27 @@ MY_EMAIL=
 
 If they are not present, the email endpoint returns `503` without affecting the rest
 of the site.
+
+### Site URL
+
+Canonical URLs, sitemap entries, structured data, the PDF résumé, and email signatures
+use the server-side `SITE_URL` variable. It defaults to the production domain and can
+be overridden for another deployment:
+
+```sh
+SITE_URL=https://pablo.steralynx.com
+```
+
+### Search Console
+
+Google Search Console verification is optional. For an HTML-tag verification, set the
+server-side token in the deployment environment and rebuild:
+
+```sh
+GOOGLE_SITE_VERIFICATION=
+```
+
+The verification metadata is omitted when the variable is not present.
 
 ## Useful commands
 

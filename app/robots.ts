@@ -1,33 +1,15 @@
 import type { MetadataRoute } from 'next'
 
+import { SITE_URL } from '@/constants/seo'
+
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: [
-      {
-        userAgent: '*',
-        allow: '/en/'
-      },
-      {
-        userAgent: '*',
-        allow: '/es/'
-      },
-      {
-        userAgent: '*',
-        allow: '/en/cv/'
-      },
-      {
-        userAgent: '*',
-        allow: '/es/cv/'
-      },
-      {
-        userAgent: '*',
-        allow: '/splash/'
-      },
-      {
-        userAgent: '*',
-        disallow: '/static/'
-      }
-    ],
-    sitemap: 'https://pablousx.vercel.app/sitemap.xml'
+    rules: {
+      userAgent: '*',
+      allow: '/',
+      disallow: '/send-email'
+    },
+    host: SITE_URL,
+    sitemap: `${SITE_URL}/sitemap.xml`
   }
 }

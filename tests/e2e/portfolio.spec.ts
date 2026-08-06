@@ -1,9 +1,14 @@
 import { expect, test } from '@playwright/test'
 
+const siteUrl = (process.env.SITE_URL ?? 'https://pablo.steralynx.com').replace(
+  /\/+$/,
+  ''
+)
+
 test('renders both localized portfolio routes', async ({ page }) => {
   await page.goto('/en')
 
-  await expect(page).toHaveTitle(/Portfolio/)
+  await expect(page).toHaveTitle(/Full-Stack Product Engineer/)
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Pablo Pineda')
   await expect(page.getByRole('heading', { name: 'Projects' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Experience' })).toBeVisible()
@@ -34,11 +39,11 @@ for (const locale of ['en', 'es']) {
 }
 
 for (const [locale, label] of [
-  ['en', 'Download my CV'],
-  ['es', 'Descargar mi CV']
+  ['en', 'Download PDF'],
+  ['es', 'Descargar PDF']
 ] as const) {
-  test(`downloads the ${locale} CV on every click`, async ({ page }) => {
-    await page.goto(`/${locale}`)
+  test(`downloads the ${locale} CV from the HTML resume`, async ({ page }) => {
+    await page.goto(`/${locale}/resume`)
 
     const downloadLink = page.getByRole('link', { name: label })
 
@@ -61,13 +66,197 @@ for (const [locale, label] of [
   })
 }
 
+for (const [locale, profileLabel, title] of [
+  ['en', 'Profile', 'Full-Stack Product Engineer & Tech Lead'],
+  ['es', 'Perfil', 'Ingeniero de Producto Full-Stack y Tech Lead']
+] as const) {
+  test(`renders the crawlable ${locale} resume`, async ({ page }) => {
+    await page.goto(`/${locale}/resume`)
+
+    await expect(page).toHaveTitle(new RegExp(title))
+    await expect(page.locator('html')).toHaveAttribute('lang', locale)
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText('Pablo Pineda')
+    await expect(page.getByRole('heading', { name: profileLabel })).toBeVisible()
+    await expect(page.getByText(/four years|cuatro años/).first()).toBeVisible()
+    await expect(page.getByRole('link', { name: /PDF/ })).toHaveAttribute(
+      'href',
+      `/${locale}/cv`
+    )
+  })
+}
+
+test('redirects the root URL to the default English profile', async ({ page }) => {
+  await page.goto('/')
+
+  await expect(page).toHaveURL(/\/en$/)
+})
+
+for (const [locale, expectedTitle] of [
+  ['en', 'Pablo Pineda | Full-Stack Product Engineer & Tech Lead'],
+  ['es', 'Pablo Pineda | Ingeniero de Producto Full-Stack y Tech Lead']
+] as const) {
+  test(`publishes complete ${locale} search metadata`, async ({ page }) => {
+    await page.goto(`/${locale}`)
+
+    await expect(page).toHaveTitle(expectedTitle)
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+      'href',
+      `${siteUrl}/${locale}`
+    )
+    await expect(page.locator('link[rel="alternate"][hreflang="en"]')).toHaveAttribute(
+      'href',
+      `${siteUrl}/en`
+    )
+    await expect(page.locator('link[rel="alternate"][hreflang="es"]')).toHaveAttribute(
+      'href',
+      `${siteUrl}/es`
+    )
+    await expect(
+      page.locator('link[rel="alternate"][hreflang="x-default"]')
+    ).toHaveAttribute('href', `${siteUrl}/en`)
+
+    const jsonLd = await page
+      .locator('script[type="application/ld+json"]')
+      .first()
+      .textContent()
+    expect(jsonLd).not.toBeNull()
+    const graph = JSON.parse(jsonLd ?? '{}')['@graph'] as Record<string, unknown>[]
+    const person = graph.find((item) => item['@type'] === 'Person')
+    expect(person).toMatchObject({
+      name: 'Pablo Pineda',
+      jobTitle: ['Full-Stack Product Engineer', 'Tech Lead']
+    })
+  })
+}
+
+test('exposes crawl controls and AI-readable discovery files', async ({ request }) => {
+  const [robotsResponse, sitemapResponse, llmsResponse] = await Promise.all([
+    request.get('/robots.txt'),
+    request.get('/sitemap.xml'),
+    request.get('/llms.txt')
+  ])
+
+  await expect(robotsResponse).toBeOK()
+  await expect(sitemapResponse).toBeOK()
+  await expect(llmsResponse).toBeOK()
+
+  const robots = await robotsResponse.text()
+  expect(robots).toContain('User-Agent: *')
+  expect(robots).toContain('Allow: /')
+  expect(robots).toContain(`Sitemap: ${siteUrl}/sitemap.xml`)
+
+  const sitemap = await sitemapResponse.text()
+  expect(sitemap).toContain(`${siteUrl}/en`)
+  expect(sitemap).toContain(`${siteUrl}/es`)
+  expect(sitemap).toContain(`${siteUrl}/en/resume`)
+  expect(sitemap).toContain('hreflang="x-default"')
+  expect(sitemap).not.toContain('quiz.pablousx.vercel.app')
+
+  const llms = await llmsResponse.text()
+  expect(llms).toContain('Full-Stack Product Engineer')
+  expect(llms).toContain(`${siteUrl}/en/cv`)
+})
+
 test('switches locale and preserves client navigation', async ({ page }) => {
   await page.goto('/en')
 
-  await page.getByRole('link', { name: 'en', exact: true }).click()
+  const localeLink = page.getByRole('link', { name: 'en', exact: true })
+  const localeHint = localeLink.locator('..')
+
+  await localeLink.hover()
+  await expect
+    .poll(() => localeHint.evaluate((hint) => getComputedStyle(hint, '::after').opacity))
+    .toBe('1')
+
+  await localeLink.evaluate((link) => {
+    link.addEventListener('click', (event) => event.preventDefault(), { once: true })
+  })
+  await localeLink.click()
+  await expect(localeHint).toHaveClass(/hide/)
+  await expect(localeHint).not.toHaveClass(/hint--always/)
+
+  await page.mouse.move(0, 0)
+  await expect(localeHint).not.toHaveClass(/hide/, { timeout: 500 })
+  await localeLink.hover()
+  await expect
+    .poll(() => localeHint.evaluate((hint) => getComputedStyle(hint, '::after').opacity))
+    .toBe('1')
+
+  await localeLink.click()
 
   await expect(page).toHaveURL(/\/es$/)
   await expect(page.getByRole('heading', { name: 'Proyectos' })).toBeVisible()
+  await page.mouse.move(0, 0)
+  const switchedLocaleHint = page
+    .getByRole('link', { name: 'es', exact: true })
+    .locator('..')
+  await expect(switchedLocaleHint).not.toHaveClass(/hint--always/)
+  await expect
+    .poll(() =>
+      switchedLocaleHint.evaluate((hint) => getComputedStyle(hint, '::after').opacity)
+    )
+    .toBe('0')
+
+  const switchedLocaleLink = page.getByRole('link', { name: 'es', exact: true })
+  await switchedLocaleLink.hover()
+  await expect
+    .poll(() =>
+      switchedLocaleHint.evaluate((hint) => getComputedStyle(hint, '::after').opacity)
+    )
+    .toBe('1')
+})
+
+test('keeps the CV action width and contact spacing consistent across locales', async ({
+  page
+}) => {
+  const getActionLayout = (label: string) =>
+    page.getByRole('link', { name: label }).evaluate((action) => {
+      const contact = action.nextElementSibling
+      const firstIcon = contact?.firstElementChild
+      if (!(contact instanceof HTMLElement) || !(firstIcon instanceof HTMLElement)) {
+        return null
+      }
+
+      const actionRect = action.getBoundingClientRect()
+      const iconRect = action.querySelector('figure')?.getBoundingClientRect()
+      const contactRect = contact.getBoundingClientRect()
+      const firstIconRect = firstIcon.getBoundingClientRect()
+      const borderWidth = Number.parseFloat(getComputedStyle(contact).borderLeftWidth)
+
+      return {
+        width: Math.round(actionRect.width),
+        iconWidth: Math.round(iconRect?.width ?? 0),
+        beforeSeparator: Math.round(contactRect.left - actionRect.right),
+        afterSeparator: Math.round(firstIconRect.left - contactRect.left - borderWidth)
+      }
+    })
+
+  await page.goto('/en')
+  const englishAction = page.getByRole('link', { name: 'Download my CV' })
+  await expect(englishAction).toHaveAttribute('href', '/en/cv')
+  await expect(englishAction).toHaveAttribute('download', '')
+  await expect
+    .poll(() => getActionLayout('Download my CV'))
+    .toEqual({
+      width: 240,
+      iconWidth: 24,
+      beforeSeparator: 28,
+      afterSeparator: 28
+    })
+
+  await page.getByRole('link', { name: 'en', exact: true }).click()
+  await expect(page).toHaveURL(/\/es$/)
+  const spanishAction = page.getByRole('link', { name: 'Descargar mi CV' })
+  await expect(spanishAction).toHaveAttribute('href', '/es/cv')
+  await expect(spanishAction).toHaveAttribute('download', '')
+  await expect
+    .poll(() => getActionLayout('Descargar mi CV'))
+    .toEqual({
+      width: 240,
+      iconWidth: 24,
+      beforeSeparator: 28,
+      afterSeparator: 28
+    })
 })
 
 test('preserves form state across locale navigation', async ({ page }) => {
@@ -210,6 +399,65 @@ test('keeps the interactive overlay aligned after a viewport resize', async ({
       })
     )
     .toBe(true)
+})
+
+test('keeps the interactive overlay aligned after switching locale', async ({ page }) => {
+  await page.goto('/en')
+
+  await page.getByRole('heading', { name: 'Experience' }).scrollIntoViewIfNeeded()
+
+  const getMisalignedElementCount = () =>
+    page.evaluate(() => {
+      const main = document.querySelector('main')
+      const layout = document.getElementById('layout')
+      if (!main || !layout) return -1
+
+      const selector = [
+        '.interactive-layout',
+        '.interactive-aura',
+        '.interactive-border',
+        'h2',
+        'strong',
+        '.interactive-text',
+        '.interactive-icon'
+      ].join(',')
+      const sourceElements = Array.from(main.querySelectorAll<HTMLElement>(selector))
+      const overlayElements = layout.querySelectorAll('[data-interactive-index]')
+      if (sourceElements.length !== overlayElements.length) return -1
+
+      return sourceElements.reduce((misalignedCount, source, index) => {
+        const overlay = layout.querySelector<HTMLElement>(
+          `[data-interactive-index="${index}"]`
+        )
+        if (!overlay) return misalignedCount + 1
+
+        const sourceRect = source.getBoundingClientRect()
+        const overlayRect = overlay.getBoundingClientRect()
+        const isMisaligned =
+          Math.abs(sourceRect.top - overlayRect.top) >= 1 ||
+          Math.abs(sourceRect.left - overlayRect.left) >= 1
+
+        return misalignedCount + Number(isMisaligned)
+      }, 0)
+    })
+
+  const switchLocale = async (
+    currentLocale: 'en' | 'es',
+    nextLocale: 'en' | 'es',
+    heading: 'Experience' | 'Experiencia'
+  ) => {
+    await page.getByRole('link', { name: currentLocale, exact: true }).click()
+    await expect(page).toHaveURL(new RegExp(`/${nextLocale}$`))
+    await expect(page.getByRole('heading', { name: heading })).toBeVisible()
+    await expect.poll(getMisalignedElementCount).toBe(0)
+  }
+
+  await switchLocale('en', 'es', 'Experiencia')
+  await switchLocale('es', 'en', 'Experience')
+  await switchLocale('en', 'es', 'Experiencia')
+
+  await page.setViewportSize({ width: 1024, height: 700 })
+  await expect.poll(getMisalignedElementCount).toBe(0)
 })
 
 test.describe('mobile navigation', () => {

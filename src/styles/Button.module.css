@@ -76,6 +76,7 @@
 .base > figure {
   height: 1em;
   width: 1em;
+  flex-shrink: 0;
 }
 
 @keyframes spin {

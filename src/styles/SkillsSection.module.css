@@ -14,6 +14,12 @@
   pointer-events: none;
 }
 
+.intro {
+  max-width: 42rem;
+  margin: 2rem 0 0.5rem;
+  color: var(--dim-foreground-color);
+}
+
 .content {
   position: relative;
   height: 50em;

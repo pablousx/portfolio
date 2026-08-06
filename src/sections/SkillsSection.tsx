@@ -9,10 +9,11 @@ import type { SectionComponentProps } from '@/types/sections'
 export default async function SkillsSection({ id }: SectionComponentProps) {
   const dictionary = await getDictionary('skills')
 
-  const { title, content } = dictionary
+  const { title, intro, content } = dictionary
 
   return (
     <Section id={id} title={title} className={styles.base}>
+      <p className={styles.intro}>{intro}</p>
       <div className={styles.content}>
         {content.map((skillGroup) => (
           <SkillsGroup key={skillGroup.name} name={skillGroup.name}>

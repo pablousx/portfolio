@@ -1,43 +1,32 @@
 import type { MetadataRoute } from 'next'
-import { cacheLife } from 'next/cache'
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  'use cache'
+import { languageAlternates, localizedUrl } from '@/constants/seo'
 
-  cacheLife('days')
-
-  const lastModified = new Date()
-
+export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://pablousx.vercel.app/en',
-      lastModified,
-      changeFrequency: 'weekly',
-      priority: 1
+      url: localizedUrl('en'),
+      changeFrequency: 'monthly',
+      priority: 1,
+      alternates: { languages: languageAlternates() }
     },
     {
-      url: 'https://pablousx.vercel.app/es',
-      lastModified,
-      changeFrequency: 'weekly',
-      priority: 1
+      url: localizedUrl('es'),
+      changeFrequency: 'monthly',
+      priority: 1,
+      alternates: { languages: languageAlternates() }
     },
     {
-      url: 'https://quiz.pablousx.vercel.app',
-      lastModified,
-      changeFrequency: 'weekly',
-      priority: 0.8
+      url: localizedUrl('en', '/resume'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+      alternates: { languages: languageAlternates('/resume') }
     },
     {
-      url: 'https://jolc.pablousx.vercel.app',
-      lastModified,
-      changeFrequency: 'weekly',
-      priority: 0.8
-    },
-    {
-      url: 'https://translator.pablousx.vercel.app',
-      lastModified,
-      changeFrequency: 'weekly',
-      priority: 0.8
+      url: localizedUrl('es', '/resume'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+      alternates: { languages: languageAlternates('/resume') }
     }
   ]
 }
