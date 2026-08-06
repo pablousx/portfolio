@@ -7,7 +7,10 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: '/send-email'
+      disallow: '/send-email',
+      other: {
+        'Content-Signal': 'ai-train=no, search=yes, ai-input=no'
+      }
     },
     host: SITE_URL,
     sitemap: `${SITE_URL}/sitemap.xml`

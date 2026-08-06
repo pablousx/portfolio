@@ -143,6 +143,7 @@ test('exposes crawl controls and AI-readable discovery files', async ({ request 
   const robots = await robotsResponse.text()
   expect(robots).toContain('User-Agent: *')
   expect(robots).toContain('Allow: /')
+  expect(robots).toContain('Content-Signal: ai-train=no, search=yes, ai-input=no')
   expect(robots).toContain(`Sitemap: ${siteUrl}/sitemap.xml`)
 
   const sitemap = await sitemapResponse.text()
@@ -155,6 +156,30 @@ test('exposes crawl controls and AI-readable discovery files', async ({ request 
   const llms = await llmsResponse.text()
   expect(llms).toContain('Full-Stack Product Engineer')
   expect(llms).toContain(`${siteUrl}/en/cv`)
+})
+
+test('negotiates localized pages as Markdown for agents', async ({ request }) => {
+  await Promise.all(
+    (
+      [
+        ['/en', '# Pablo Pineda'],
+        ['/es', '# Pablo Pineda']
+      ] as const
+    ).map(async ([path, heading]) => {
+      const [markdownResponse, htmlResponse] = await Promise.all([
+        request.get(path, { headers: { Accept: 'text/markdown' } }),
+        request.get(path)
+      ])
+
+      await expect(markdownResponse).toBeOK()
+      expect(markdownResponse.headers()['content-type']).toContain('text/markdown')
+      expect(markdownResponse.headers()['vary']).toContain('Accept')
+      expect(await markdownResponse.text()).toContain(heading)
+
+      await expect(htmlResponse).toBeOK()
+      expect(htmlResponse.headers()['content-type']).toContain('text/html')
+    })
+  )
 })
 
 test('switches locale and preserves client navigation', async ({ page }) => {
