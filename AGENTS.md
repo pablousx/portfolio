@@ -14,7 +14,8 @@ remain functional and equivalent.
 
 ## Required toolchain
 
-- Use Node.js 22 for complete React Doctor analysis and CI parity.
+- Use Node.js 24.18.0 for complete React Doctor analysis and CI parity. The
+  authoritative version is `.node-version`.
 - Use pnpm 11.15.1. The authoritative version is the `packageManager` field in
   `package.json`.
 - Use pnpm commands only. Do not introduce npm or Yarn commands or lockfiles.

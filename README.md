@@ -28,6 +28,12 @@ form, and a small set of interactions that make browsing it feel less static.
 Next.js App Router · React 19 · TypeScript · next-intl · Zustand ·
 react-zoom-pan-pinch · Sharp · Vercel Analytics · Playwright
 
+## Requirements
+
+- Node.js 24.18.0 (see `.node-version`)
+- pnpm 11.17.0 (see `package.json`)
+- Ghostscript (`gs`) for local ATS-style PDF extraction checks
+
 ### Contact form
 
 Email delivery is optional during local development. To enable it, provide these
@@ -73,6 +79,7 @@ The verification metadata is omitted when the variable is not present.
 pnpm dev                # Start development and watch locale sources
 pnpm check              # Type-check, lint, format, and run project audits
 pnpm build              # Create a production build
+pnpm test:cv-ats        # Validate both generated CVs for ATS-readable output
 pnpm test:e2e           # Run browser tests after building
 ```
 

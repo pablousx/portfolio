@@ -466,16 +466,17 @@
   "resume": {
     "title": "Ingeniero de Producto Full-Stack y Tech Lead",
     "location": "Ciudad de Guatemala, Guatemala",
-    "profileLabel": "Perfil",
+    "profileLabel": "Resumen profesional",
     "profile": "Ingeniero de Producto Full-Stack y Tech Lead hands-on con cuatro años de experiencia entregando software crítico para el negocio, desde las decisiones de producto hasta producción. Experiencia en sistemas front-end, APIs, datos, nube y prácticas de ingeniería.",
     "contactLabel": "Contacto",
     "portfolioLabel": "Portafolio web",
-    "skillsLabel": "Habilidades",
+    "skillsLabel": "Habilidades técnicas",
+    "technologiesLabel": "Tecnologías",
     "availability": "Disponible para empleo remoto internacional y proyectos freelance.",
     "downloadLabel": "Descargar PDF",
     "backLabel": "Volver al portafolio",
     "languagesLabel": "Idiomas",
-    "languages": "Español (nativo) · Inglés (C2 competente)",
+    "languages": "Español (nativo), Inglés (C2 competente)",
     "fileName": "Pablo-Pineda-CV-es.pdf"
   },
   "aria": {

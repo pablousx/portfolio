@@ -126,10 +126,32 @@ export default async function ResumePage({ params }: ResumePageProps) {
           </section>
 
           <section aria-labelledby='resume-education'>
-            <h2 id='resume-education'>{credentials.title}</h2>
-            <p className={styles.intro}>{credentials.intro}</p>
+            <h2 id='resume-education'>{credentials.educationLabel}</h2>
             <div className={styles.entries}>
-              {[...credentials.education, ...credentials.certifications].map((item) => (
+              {credentials.education.map((item) => (
+                <article key={item.name}>
+                  <header className={styles.entryHeader}>
+                    <div>
+                      <h3>{item.label}</h3>
+                      <p className={styles.organization}>{item.institution}</p>
+                    </div>
+                    <p className={styles.period}>{item.period}</p>
+                  </header>
+                  <RichText as='p'>{item.description}</RichText>
+                  <ul>
+                    {item.highlights.map((highlight) => (
+                      <li key={highlight}>{highlight}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section aria-labelledby='resume-certification'>
+            <h2 id='resume-certification'>{credentials.certificationLabel}</h2>
+            <div className={styles.entries}>
+              {credentials.certifications.map((item) => (
                 <article key={item.name}>
                   <header className={styles.entryHeader}>
                     <div>

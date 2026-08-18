@@ -66,9 +66,31 @@ for (const [locale, label] of [
   })
 }
 
-for (const [locale, profileLabel, title] of [
-  ['en', 'Profile', 'Full-Stack Product Engineer & Tech Lead'],
-  ['es', 'Perfil', 'Ingeniero de Producto Full-Stack y Tech Lead']
+for (const { locale, profileLabel, sectionHeadings, title } of [
+  {
+    locale: 'en',
+    profileLabel: 'Professional Summary',
+    sectionHeadings: [
+      'Technical Skills',
+      'Experience',
+      'Education',
+      'Certification',
+      'Languages'
+    ],
+    title: 'Full-Stack Product Engineer & Tech Lead'
+  },
+  {
+    locale: 'es',
+    profileLabel: 'Resumen profesional',
+    sectionHeadings: [
+      'Habilidades técnicas',
+      'Experiencia',
+      'Educación',
+      'Certificación',
+      'Idiomas'
+    ],
+    title: 'Ingeniero de Producto Full-Stack y Tech Lead'
+  }
 ] as const) {
   test(`renders the crawlable ${locale} resume`, async ({ page }) => {
     await page.goto(`/${locale}/resume`)
@@ -77,6 +99,11 @@ for (const [locale, profileLabel, title] of [
     await expect(page.locator('html')).toHaveAttribute('lang', locale)
     await expect(page.getByRole('heading', { level: 1 })).toHaveText('Pablo Pineda')
     await expect(page.getByRole('heading', { name: profileLabel })).toBeVisible()
+    await Promise.all(
+      sectionHeadings.map((heading) =>
+        expect(page.getByRole('heading', { name: heading, exact: true })).toBeVisible()
+      )
+    )
     await expect(page.getByText(/four years|cuatro años/).first()).toBeVisible()
     await expect(page.getByRole('link', { name: /PDF/ })).toHaveAttribute(
       'href',

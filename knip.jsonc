@@ -1,5 +1,9 @@
 {
   "$schema": "https://unpkg.com/knip@6/schema.json",
+  "ignoreBinaries": [
+    // System dependency used to inspect generated PDFs in the ATS check.
+    "gs"
+  ],
   "ignoreDependencies": [
     // Referenced as a loader string by both webpack and Turbopack in next.config.ts.
     "@svgr/webpack"
