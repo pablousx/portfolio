@@ -102,7 +102,6 @@ export default async function ResumePage({ params }: ResumePageProps) {
 
           <section aria-labelledby='resume-experience'>
             <h2 id='resume-experience'>{experience.title}</h2>
-            <p className={styles.intro}>{experience.intro}</p>
             <div className={styles.entries}>
               {experience.content.map((item) => (
                 <article key={`${item.company}-${item.period}`}>

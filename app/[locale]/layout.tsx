@@ -200,7 +200,7 @@ export default async function LocaleLayout({ params, children }: LocaleLayoutPro
   }
 
   return (
-    <html lang={locale} translate='no'>
+    <html lang={locale} translate='no' suppressHydrationWarning>
       <head>
         <StructuredData data={structuredData} />
       </head>

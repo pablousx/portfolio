@@ -132,28 +132,12 @@
             "icon": "vuejs"
           },
           {
-            "name": "JavaScript",
-            "icon": "javascript"
-          },
-          {
-            "name": "CSS",
-            "icon": "css"
-          },
-          {
-            "name": "HTML5",
-            "icon": "html5"
-          },
-          {
             "name": "TypeScript",
             "icon": "typescript"
           },
           {
             "name": "Vite.js",
             "icon": "vitejs"
-          },
-          {
-            "name": "Redux",
-            "icon": "redux"
           }
         ]
       },
@@ -167,11 +151,6 @@
           {
             "name": "Nest.js",
             "icon": "nestjs"
-          },
-          {
-            "name": "Express.js",
-            "icon": "expressjs",
-            "contrast": true
           },
           {
             "name": "Ruby",
@@ -188,10 +167,6 @@
           {
             "name": "Linux",
             "icon": "linux"
-          },
-          {
-            "name": "Nginx",
-            "icon": "nginx"
           }
         ]
       },
@@ -218,14 +193,6 @@
           {
             "name": "Google Cloud Platform",
             "icon": "gcp"
-          },
-          {
-            "name": "Netlify",
-            "icon": "netlify"
-          },
-          {
-            "name": "Oracle Cloud",
-            "icon": "oraclecloud"
           }
         ]
       },
@@ -233,12 +200,12 @@
         "name": "Database",
         "skills": [
           {
-            "name": "MySQL",
-            "icon": "mysql"
-          },
-          {
             "name": "PostgreSQL",
             "icon": "postgresql"
+          },
+          {
+            "name": "MySQL",
+            "icon": "mysql"
           },
           {
             "name": "SQL Server",
@@ -262,8 +229,8 @@
             "icon": "playwright"
           },
           {
-            "name": "Cypress.io",
-            "icon": "cypressio"
+            "name": "Vitest",
+            "icon": "vitest"
           }
         ]
       },
@@ -283,29 +250,12 @@
             "icon": "notion"
           },
           {
-            "name": "VS Code",
-            "icon": "vscode"
-          },
-          {
-            "name": "JetBrains",
-            "icon": "jetbrains"
-          },
-          {
-            "name": "Jira",
-            "icon": "jira"
-          },
-          {
             "name": "Kubernetes",
             "icon": "kubernetes"
           },
           {
             "name": "Slack",
             "icon": "slack"
-          },
-          {
-            "name": "WordPress",
-            "icon": "wordpress",
-            "contrast": true
           }
         ]
       }
@@ -351,7 +301,6 @@
   },
   "experience": {
     "title": "Experience",
-    "intro": "I build durable software by connecting product thinking, engineering discipline, and the realities of the people using it.",
     "presentLabel": "Present",
     "websiteButton": "Website",
     "content": [
@@ -362,18 +311,12 @@
         "company": "Lomax Technologies S.A.",
         "description": "Delivering <u>tailor-made software</u> that streamlines processes, drives innovation, and improves business efficiency through <u>advanced technology solutions</u>.",
         "website": "https://lomax.com.gt",
-        "skills": [
-          "React.js",
-          "Nest.js",
-          "Vue.js",
-          "Ruby",
-          "PostgreSQL",
-          "AWS",
-          "Cloudflare"
-        ],
+        "skills": ["Next.js", "React.js", "Nest.js", "Vue.js", "PostgreSQL", "AWS"],
         "highlights": [
-          "Lead the development of business goal management systems.",
-          "Build and optimize internal tools used across multiple clients."
+          "Lead a team of developers to deliver high-quality software solutions for multiple clients.",
+          "Migrate legacy systems to modern architectures, improving performance and maintainability.",
+          "Collaborate with stakeholders to define project requirements and ensure successful delivery.",
+          "Move critical business processes to secure, scalable and reliable cloud infrastructure."
         ]
       },
       {
@@ -383,16 +326,7 @@
         "company": "KOLO S.A.",
         "description": "Built an accessible, customizable <u>ERP platform</u> that helps small and medium-sized businesses <u>manage, grow, and innovate</u> across their operations.",
         "website": "https://info.kolo-app.com",
-        "skills": [
-          "React.js",
-          "Redux",
-          "TypeScript",
-          "Java",
-          "MySQL",
-          "AWS",
-          "Firebase",
-          "Jira"
-        ],
+        "skills": ["React.js", "TypeScript", "Java", "MySQL", "AWS"],
         "highlights": [
           "Developed and optimized features used by companies across essential operating areas.",
           "Improved delivery practices through tooling, CI/CD, coding standards, and UI/UX patterns."

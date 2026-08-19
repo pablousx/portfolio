@@ -55,6 +55,7 @@ import mongodb from '@icons/skills/database/mongodb.svg'
 
 import playwright from '@icons/skills/testing/playwright.svg'
 import cypressio from '@icons/skills/testing/cypressio.svg'
+import vitest from '@icons/skills/testing/vitest.svg'
 
 import docker from '@icons/skills/tools/docker.svg'
 import git from '@icons/skills/tools/git.svg'
@@ -121,6 +122,7 @@ const ICONS = {
   playwright,
   python,
   reactjs,
+  vitest,
   vuejs,
   redis,
   redux,
