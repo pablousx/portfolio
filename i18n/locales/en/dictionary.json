@@ -19,7 +19,7 @@
   "landing": {
     "title": "Home",
     "name": "Pablo Pineda",
-    "presentation": "Full-Stack Product Engineer and hands-on Tech Lead building <strong>business-critical software</strong> from product discovery to production.",
+    "presentation": "Full-Stack Product Developer and hands-on Tech Lead building <strong>business-critical software</strong> from product discovery to production.",
     "email": "pablo@steralynx.com",
     "emailButton": "Copy my email",
     "cvButton": "Download my CV",
@@ -265,10 +265,10 @@
     "title": "About me",
     "content": [
       {
-        "text": "I am a <strong>Full-Stack Product Engineer</strong> and hands-on Tech Lead from Guatemala with <u>four years of professional experience</u>. I turn complex business needs into clear, reliable software products and stay involved from product decisions and architecture through implementation and production delivery."
+        "text": "I am a <strong>Full-Stack Product Developer</strong> and hands-on Tech Lead from Guatemala with <u>four years of professional experience</u>. I turn complex business needs into clear, reliable software products and stay involved from product decisions and architecture through implementation and production delivery."
       },
       {
-        "text": "I earned my degree in <strong>Computer Science and Systems Engineering</strong> from the <u>University of San Carlos of Guatemala</u>. Teaching as a university assistant and mentoring other students strengthened the way I communicate technical decisions, share context, and help teams grow.",
+        "text": "I'm studying a <strong>Computer Science and Systems Engineering</strong> degree from the <u>University of San Carlos of Guatemala</u>. Teaching as a university assistant and mentoring other students strengthened the way I communicate technical decisions, share context, and help teams grow.",
         "images": [
           {
             "src": "about-me/usac/img1.jpg",
@@ -340,13 +340,13 @@
     "educationLabel": "Education",
     "education": [
       {
-        "period": "Degree completed",
+        "period": "Pensum completed",
         "icon": "usac",
         "badge": "USAC",
         "label": "Engineering degree in Computer Science & Systems",
         "name": "Computer Science & Systems Engineering",
         "institution": "University of San Carlos of Guatemala",
-        "description": "Earned a degree focused on <strong>software engineering</strong> while contributing as a <u>teaching assistant</u>, mentor, and student-community organizer.",
+        "description": "Studying a degree focused on <strong>software engineering</strong> while contributing as a <u>teaching assistant</u>, mentor, and student-community organizer.",
         "highlights": [
           "Recognized for academic excellence.",
           "Organizer for the Congress of Science and Systems Students.",
@@ -397,10 +397,10 @@
     "text": "The mystery of <u>life</u> is not a problem to be solved, but a reality to be <strong>experienced</strong>"
   },
   "resume": {
-    "title": "Full-Stack Product Engineer & Tech Lead",
+    "title": "Full-Stack Product Developer & Tech Lead",
     "location": "Guatemala City, Guatemala",
     "profileLabel": "Professional Summary",
-    "profile": "Full-Stack Product Engineer and hands-on Tech Lead with four years of experience delivering business-critical software from product decisions to production. Experienced across front-end systems, APIs, data, cloud infrastructure, and engineering practices.",
+    "profile": "Full-Stack Product Developer and hands-on Tech Lead with four years of experience delivering business-critical software from product decisions to production. Experienced across front-end systems, APIs, data, cloud infrastructure, and engineering practices.",
     "contactLabel": "Contact",
     "portfolioLabel": "Web portfolio",
     "skillsLabel": "Technical Skills",
@@ -436,7 +436,7 @@
     "html": "<p>Dear {{name}},</p><p>Thank you for getting in touch with me. I have received your message and will be in contact with you soon.</p><p>Best regards,<br><br>- <i>Pablo Pineda</i> — <a href='{{siteUrl}}'>{{siteHost}}</a></p>"
   },
   "meta": {
-    "title": "Pablo Pineda | Full-Stack Product Engineer & Tech Lead",
-    "description": "Full-Stack Product Engineer and hands-on Tech Lead with 4 years of experience building business-critical software. Available for remote international roles and freelance work."
+    "title": "Pablo Pineda | Full-Stack Product Developer & Tech Lead",
+    "description": "Full-Stack Product Developer and hands-on Tech Lead with 4 years of experience building business-critical software. Available for remote international roles and freelance work."
   }
 }

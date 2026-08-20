@@ -19,7 +19,7 @@
   "landing": {
     "title": "Inicio",
     "name": "Pablo Pineda",
-    "presentation": "Ingeniero de Producto Full-Stack y Tech Lead hands-on que desarrolla <strong>software crítico para el negocio</strong> desde el descubrimiento hasta producción.",
+    "presentation": "Desarrollador Full-Stack y Tech Lead hands-on que desarrolla <strong>software crítico para el negocio</strong> desde el descubrimiento hasta producción.",
     "email": "pablo@steralynx.com",
     "emailButton": "Copia mi email",
     "cvButton": "Descargar mi CV",
@@ -268,10 +268,10 @@
     "title": "Sobre mí",
     "content": [
       {
-        "text": "Soy <strong>Ingeniero de Producto Full-Stack</strong> y Tech Lead hands-on de Guatemala, con <u>cuatro años de experiencia profesional</u>. Convierto necesidades empresariales complejas en productos de software claros y confiables, participando desde las decisiones de producto y arquitectura hasta la implementación y entrega en producción."
+        "text": "Soy <strong>Desarrollador de Producto Full-Stack</strong> y Tech Lead hands-on de Guatemala, con <u>cuatro años de experiencia profesional</u>. Convierto necesidades empresariales complejas en productos de software claros y confiables, participando desde las decisiones de producto y arquitectura hasta la implementación y entrega en producción."
       },
       {
-        "text": "Me gradué de <strong>Ingeniería en Ciencias y Sistemas</strong> en la <u>Universidad de San Carlos de Guatemala</u>. Enseñar como auxiliar universitario y orientar a otros estudiantes fortaleció mi capacidad para comunicar decisiones técnicas, compartir contexto y ayudar a los equipos a crecer.",
+        "text": "Estudio <strong>Ingeniería en Ciencias y Sistemas</strong> en la <u>Universidad de San Carlos de Guatemala</u>. Enseñar como auxiliar universitario y orientar a otros estudiantes fortaleció mi capacidad para comunicar decisiones técnicas, compartir contexto y ayudar a los equipos a crecer.",
         "images": [
           {
             "src": "about-me/usac/img1.jpg",
@@ -343,7 +343,7 @@
     "educationLabel": "Educación",
     "education": [
       {
-        "period": "Grado finalizado",
+        "period": "Pénsum cerrado",
         "icon": "usac",
         "badge": "USAC",
         "label": "Ingeniería en Ciencias y Sistemas",
@@ -398,10 +398,10 @@
     "text": "El misterio de la <u>vida</u> no es un problema a resolver, sino una realidad a <strong>experimentar</strong>"
   },
   "resume": {
-    "title": "Ingeniero de Producto Full-Stack y Tech Lead",
+    "title": "Desarrollador de Producto Full-Stack y Tech Lead",
     "location": "Ciudad de Guatemala, Guatemala",
     "profileLabel": "Resumen profesional",
-    "profile": "Ingeniero de Producto Full-Stack y Tech Lead hands-on con cuatro años de experiencia entregando software crítico para el negocio, desde las decisiones de producto hasta producción. Experiencia en sistemas front-end, APIs, datos, nube y prácticas de ingeniería.",
+    "profile": "Desarrollador de Producto Full-Stack y Tech Lead hands-on con cuatro años de experiencia entregando software crítico para el negocio, desde las decisiones de producto hasta producción. Experiencia en sistemas front-end, APIs, datos, nube y prácticas de ingeniería.",
     "contactLabel": "Contacto",
     "portfolioLabel": "Portafolio web",
     "skillsLabel": "Habilidades técnicas",
@@ -437,7 +437,7 @@
     "html": "<p>Estimado {{name}},</p><p>Gracias por ponerte en contacto conmigo. He recibido tu mensaje y me pondré en contacto contigo pronto.</p><p>Saludos cordiales,<br><br>- <i>Pablo Pineda</i> — <a href='{{siteUrl}}'>{{siteHost}}</a></p>"
   },
   "meta": {
-    "title": "Pablo Pineda | Ingeniero de Producto Full-Stack y Tech Lead",
-    "description": "Ingeniero de Producto Full-Stack y Tech Lead hands-on con 4 años desarrollando software crítico para el negocio. Disponible para empleo remoto internacional y freelance."
+    "title": "Pablo Pineda | Desarrollador de Producto Full-Stack y Tech Lead",
+    "description": "Desarrollador de Producto Full-Stack y Tech Lead hands-on con 4 años desarrollando software crítico para el negocio. Disponible para empleo remoto internacional y freelance."
   }
 }
