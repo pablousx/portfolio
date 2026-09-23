@@ -2,7 +2,7 @@ import styles from '@/styles/Skill.module.css'
 
 import Icon from '@/components/Icon'
 import OpenShowcase from '@/components/OpenShowcase'
-import clsx from 'clsx/lite'
+import { clsx } from 'clsx/lite'
 import type { Dictionary } from 'i18n/config'
 
 type SkillMessage = Dictionary['skills']['content'][number]['skills'][number]

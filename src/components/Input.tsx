@@ -2,7 +2,7 @@
 import Hint from '@/components/Hint'
 import styles from '@/styles/Input.module.css'
 
-import clsx from 'clsx/lite'
+import { clsx } from 'clsx/lite'
 import useDictionary from 'i18n/client'
 import type { HTMLInputAutoCompleteAttribute } from 'react'
 

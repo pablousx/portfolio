@@ -7,7 +7,7 @@ import IconButton from '@/components/IconButton'
 import Link from '@/components/Link'
 import sections from '@/constants/sectionMetadata'
 import useAppStore from '@/state/store'
-import clsx from 'clsx/lite'
+import { clsx } from 'clsx/lite'
 import useDictionary from 'i18n/client'
 import { useEffect, useRef, useState } from 'react'
 
@@ -102,11 +102,20 @@ export default function NavbarLinks({ links }: NavbarLinksProps) {
     }
 
     const resizeObserver = new ResizeObserver(updateOverlay)
+    const mutationObserver = new MutationObserver(updateOverlay)
     resizeObserver.observe(overlayElement)
+    mutationObserver.observe(overlayElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+      subtree: true
+    })
     updateOverlay()
 
-    return () => resizeObserver.disconnect()
-  }, [currentSectionId])
+    return () => {
+      resizeObserver.disconnect()
+      mutationObserver.disconnect()
+    }
+  }, [])
 
   useEffect(() => {
     const handleSectionShortcut = (event: KeyboardEvent) => {

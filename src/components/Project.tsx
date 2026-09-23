@@ -8,7 +8,7 @@ import RichText from '@/components/RichText'
 import Skill from '@/components/Skill'
 import type { SkillData } from '@/components/Skill'
 import type { ShowcaseImage } from '@/state/store'
-import clsx from 'clsx/lite'
+import { clsx } from 'clsx/lite'
 import getDictionary from 'i18n/server'
 
 const EMPTY_IMAGES: ShowcaseImage[] = []

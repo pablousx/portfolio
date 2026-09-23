@@ -3,7 +3,7 @@
 import useAppStore from '@/state/store'
 import type { ShowcaseImage } from '@/state/store'
 import styles from '@/styles/OpenShowcase.module.css'
-import clsx from 'clsx/lite'
+import { clsx } from 'clsx/lite'
 import useDictionary from 'i18n/client'
 import type { ComponentPropsWithoutRef, ReactNode } from 'react'
 

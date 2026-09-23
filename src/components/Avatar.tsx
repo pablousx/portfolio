@@ -1,7 +1,7 @@
 import Image from '@/components/Image'
 import type { ShowcaseImage } from '@/state/store'
 import styles from '@/styles/Avatar.module.css'
-import clsx from 'clsx/lite'
+import { clsx } from 'clsx/lite'
 
 const positions = ['Product Engineer', 'Tech Lead', 'Builder']
 

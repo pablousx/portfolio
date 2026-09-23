@@ -15,7 +15,7 @@ import Image from '@/components/Image'
 
 import useCarrousel from '@/hooks/useCarrousel'
 import useAppStore from '@/state/store'
-import clsx from 'clsx/lite'
+import { clsx } from 'clsx/lite'
 import useDictionary from 'i18n/client'
 import ICONS from '@/constants/icons'
 

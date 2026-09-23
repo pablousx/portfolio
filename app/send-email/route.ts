@@ -7,7 +7,7 @@ import {
 } from '@/constants/patterns'
 import { SITE_URL } from '@/constants/seo'
 import getDictionary, { getCurrentLocale } from 'i18n/server'
-import nodemailer from 'nodemailer'
+import { createTransport } from 'nodemailer'
 
 interface ContactFormData {
   email: string
@@ -73,7 +73,7 @@ export async function POST(request: Request) {
     )
       return new Response(null, { status: 400 })
 
-    const transporter = nodemailer.createTransport({
+    const transporter = createTransport({
       host: smtpHost,
       port: smtpPort,
       secure: process.env.SMTP_SECURE === 'true',

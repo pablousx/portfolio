@@ -1,5 +1,5 @@
 import styles from '@/styles/Section.module.css'
-import clsx from 'clsx/lite'
+import { clsx } from 'clsx/lite'
 import type { ReactNode } from 'react'
 
 interface SectionProps {

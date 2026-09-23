@@ -2,7 +2,7 @@
 
 import styles from '@/styles/Button.module.css'
 
-import clsx from 'clsx/lite'
+import { clsx } from 'clsx/lite'
 import type { ComponentPropsWithRef } from 'react'
 
 const classNameByVariant = {

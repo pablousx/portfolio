@@ -13,7 +13,7 @@ import {
   NAME_MAX_LENGTH,
   SUBJECT_MAX_LENGTH
 } from '@/constants/patterns'
-import clsx from 'clsx/lite'
+import { clsx } from 'clsx/lite'
 import useDictionary from 'i18n/client'
 import RichText from '@/components/RichText'
 

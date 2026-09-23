@@ -1,7 +1,7 @@
 import Hint from '@/components/Hint'
 import IconLink from '@/components/IconLink'
 import styles from '@/styles/ContactIcons.module.css'
-import clsx from 'clsx/lite'
+import { clsx } from 'clsx/lite'
 
 import getDictionary from 'i18n/server'
 

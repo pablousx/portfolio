@@ -1,7 +1,7 @@
 'use client'
 
 import styles from '@/styles/Interactive.module.css'
-import clsx from 'clsx/lite'
+import { clsx } from 'clsx/lite'
 
 import useInteractiveLayout from '@/hooks/useInteractiveLayout'
 import useInteractivenessTracker from '@/hooks/useInteractivenessTracker'

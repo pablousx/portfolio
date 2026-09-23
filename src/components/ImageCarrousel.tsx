@@ -8,7 +8,7 @@ import Image from '@/components/Image'
 import OpenShowcase from '@/components/OpenShowcase'
 import useCarrousel from '@/hooks/useCarrousel'
 import type { ShowcaseImage } from '@/state/store'
-import clsx from 'clsx/lite'
+import { clsx } from 'clsx/lite'
 import useDictionary from 'i18n/client'
 
 interface ImageCarrouselProps {

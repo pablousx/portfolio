@@ -3,7 +3,7 @@ import styles from '@/styles/Logo.module.css'
 
 import IconLink from '@/components/IconLink'
 import useAppStore from '@/state/store'
-import clsx from 'clsx/lite'
+import { clsx } from 'clsx/lite'
 import useDictionary from 'i18n/client'
 import type { MouseEvent } from 'react'
 

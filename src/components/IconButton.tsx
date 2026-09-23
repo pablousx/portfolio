@@ -4,7 +4,7 @@ import styles from '@/styles/IconButton.module.css'
 
 import Icon from '@/components/Icon'
 import type { IconProps } from '@/components/Icon'
-import clsx from 'clsx/lite'
+import { clsx } from 'clsx/lite'
 import type { ComponentPropsWithoutRef } from 'react'
 
 interface IconButtonProps extends Omit<

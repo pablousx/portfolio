@@ -1,7 +1,7 @@
 'use client'
 
 import styles from '@/styles/SkillsGroup.module.css'
-import clsx from 'clsx/lite'
+import { clsx } from 'clsx/lite'
 
 import { useRef, type ReactNode } from 'react'
 

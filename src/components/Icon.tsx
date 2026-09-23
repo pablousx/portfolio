@@ -1,6 +1,6 @@
 import Hint from '@/components/Hint'
 import styles from '@/styles/Icon.module.css'
-import clsx from 'clsx/lite'
+import { clsx } from 'clsx/lite'
 
 import ICONS from '@/constants/icons'
 import type { SVGProps } from 'react'

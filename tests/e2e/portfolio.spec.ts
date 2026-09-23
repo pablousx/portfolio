@@ -8,7 +8,7 @@ const siteUrl = (process.env.SITE_URL ?? 'https://pablo.steralynx.com').replace(
 test('renders both localized portfolio routes', async ({ page }) => {
   await page.goto('/en')
 
-  await expect(page).toHaveTitle(/Full-Stack Product Engineer/)
+  await expect(page).toHaveTitle(/Full-Stack Product Developer/)
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Pablo Pineda')
   await expect(page.getByRole('heading', { name: 'Projects' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Experience' })).toBeVisible()
@@ -77,7 +77,7 @@ for (const { locale, profileLabel, sectionHeadings, title } of [
       'Certification',
       'Languages'
     ],
-    title: 'Full-Stack Product Engineer & Tech Lead'
+    title: 'Full-Stack Product Developer & Tech Lead'
   },
   {
     locale: 'es',
@@ -89,7 +89,7 @@ for (const { locale, profileLabel, sectionHeadings, title } of [
       'Certificación',
       'Idiomas'
     ],
-    title: 'Ingeniero de Producto Full-Stack y Tech Lead'
+    title: 'Desarrollador de Producto Full-Stack y Tech Lead'
   }
 ] as const) {
   test(`renders the crawlable ${locale} resume`, async ({ page }) => {
@@ -119,8 +119,8 @@ test('redirects the root URL to the default English profile', async ({ page }) =
 })
 
 for (const [locale, expectedTitle] of [
-  ['en', 'Pablo Pineda | Full-Stack Product Engineer & Tech Lead'],
-  ['es', 'Pablo Pineda | Ingeniero de Producto Full-Stack y Tech Lead']
+  ['en', 'Pablo Pineda | Full-Stack Product Developer & Tech Lead'],
+  ['es', 'Pablo Pineda | Desarrollador de Producto Full-Stack y Tech Lead']
 ] as const) {
   test(`publishes complete ${locale} search metadata`, async ({ page }) => {
     await page.goto(`/${locale}`)
