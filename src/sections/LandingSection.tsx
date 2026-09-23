@@ -6,7 +6,7 @@ import ContactIcons from '@/components/ContactIcons'
 import Icon from '@/components/Icon'
 import RichText from '@/components/RichText'
 import Section from '@/components/Section'
-import clsx from 'clsx/lite'
+import { clsx } from 'clsx/lite'
 import getDictionary, { getCurrentLocale } from 'i18n/server'
 import type { SectionComponentProps } from '@/types/sections'
 

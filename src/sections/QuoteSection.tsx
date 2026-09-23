@@ -1,7 +1,7 @@
 import RichText from '@/components/RichText'
 import Section from '@/components/Section'
 import styles from '@/styles/QuoteSection.module.css'
-import clsx from 'clsx/lite'
+import { clsx } from 'clsx/lite'
 import getDictionary from 'i18n/server'
 import type { SectionComponentProps } from '@/types/sections'
 

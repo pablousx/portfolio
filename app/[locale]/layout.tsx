@@ -2,7 +2,7 @@ import 'hint.css/hint.min.css'
 import './global.css'
 
 import { bodyFont, titleFont } from 'app/fonts'
-import clsx from 'clsx/lite'
+import { clsx } from 'clsx/lite'
 import { loadDictionary, locales } from 'i18n/config'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'

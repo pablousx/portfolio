@@ -47,14 +47,13 @@ export async function GET(request: Request) {
     bulletListMarker: '-',
     headingStyle: 'atx'
   })
-  turndown.remove(['script', 'style', 'noscript'])
-  turndown.addRule('removeSvg', {
-    filter: (node) => node.nodeName === 'SVG',
-    replacement: () => ''
-  })
+  const sanitizedHtml = html.replace(
+    /<(script|style|noscript|svg)\b[^>]*>[\s\S]*?<\/\1\s*>/gi,
+    ''
+  )
 
-  const metadata = extractMetadata(html, turndown)
-  const body = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i)?.[1] ?? html
+  const metadata = extractMetadata(sanitizedHtml, turndown)
+  const body = sanitizedHtml.match(/<body[^>]*>([\s\S]*?)<\/body>/i)?.[1] ?? sanitizedHtml
   const markdown = turndown.turndown(body).trim()
   const frontmatter = [
     '---',
