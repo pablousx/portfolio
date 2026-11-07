@@ -35,6 +35,28 @@
     "websiteButton": "Website",
     "content": [
       {
+        "year": 2026,
+        "icon": "wiredesk",
+        "name": "WIRE Desk",
+        "description": "<u>Service management platform</u> connecting providers and clients to receive requests, coordinate work, and track assignees, communication, and evidence in one place.",
+        "website": "https://wiredesk.app",
+        "skills": [
+          "Next.js",
+          "React.js",
+          "TypeScript",
+          "Nest.js",
+          "PostgreSQL",
+          "Redis",
+          "Docker"
+        ],
+        "images": [
+          {
+            "src": "projects/wiredesk/projects.png",
+            "alt": "WIRE Desk projects dashboard with search, filters, and status cards"
+          }
+        ]
+      },
+      {
         "year": 2023,
         "icon": "quizgame",
         "name": "Quiz Game",
@@ -43,7 +65,10 @@
         "code": "https://github.com/pablousx/quiz-game",
         "skills": ["React.js", "Redux", "HTML5", "CSS", "Vite.js"],
         "images": [
-          { "src": "projects/quiz-game/img1.jpg", "alt": "Quiz Game banner" },
+          {
+            "src": "projects/quiz-game/img1.jpg",
+            "alt": "Quiz Game banner"
+          },
           {
             "src": "projects/quiz-game/img2.jpg",
             "alt": "Quiz Game configuration menu, where the number of questions and categories are selected"
@@ -75,7 +100,10 @@
         "code": "https://github.com/pablousx/mini-translator",
         "skills": ["JavaScript", "HTML5", "CSS", "Vite.js"],
         "images": [
-          { "src": "projects/mini-translator/img1.jpg", "alt": "Mini Translator banner" },
+          {
+            "src": "projects/mini-translator/img1.jpg",
+            "alt": "Mini Translator banner"
+          },
           {
             "src": "projects/mini-translator/img2.jpg",
             "alt": "Translating from Spanish to Japanese: How are you today, friend?"
@@ -99,7 +127,10 @@
         "code": "https://github.com/pablousx/jolc",
         "skills": ["React.js", "Redux", "Python", "HTML5", "CSS", "Vite.js"],
         "images": [
-          { "src": "projects/jolc/img1.jpg", "alt": "JOLC banner" },
+          {
+            "src": "projects/jolc/img1.jpg",
+            "alt": "JOLC banner"
+          },
           {
             "src": "projects/jolc/img2.jpg",
             "alt": "Interpreting JOLC code, a factorial function is being called"

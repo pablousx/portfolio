@@ -13,6 +13,7 @@ import plus from '@icons/general/plus-icon.svg'
 import website from '@icons/general/website-icon.svg'
 import zoom from '@icons/general/zoom-icon.svg'
 
+import wiredesk from '@icons/projects/wiredesk-icon.svg'
 import jolc from '@icons/projects/jolc-icon.svg'
 import koloempresas from '@icons/projects/kolo-empresas-icon.svg'
 import lomax from '@icons/projects/lomax-icon.svg'
@@ -135,7 +136,8 @@ const ICONS = {
   wordpress,
   send,
   efset,
-  usac
+  usac,
+  wiredesk
 }
 
 export default ICONS

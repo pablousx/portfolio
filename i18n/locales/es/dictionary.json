@@ -35,6 +35,28 @@
     "websiteButton": "Sitio web",
     "content": [
       {
+        "year": 2026,
+        "icon": "wiredesk",
+        "name": "WIRE Desk",
+        "description": "Plataforma de <u>gestión de servicios</u> que conecta proveedores y clientes para recibir solicitudes, coordinar trabajo y dar seguimiento a responsables, comunicación y evidencias en un solo lugar.",
+        "website": "https://wiredesk.app",
+        "skills": [
+          "Next.js",
+          "React.js",
+          "TypeScript",
+          "Nest.js",
+          "PostgreSQL",
+          "Redis",
+          "Docker"
+        ],
+        "images": [
+          {
+            "src": "projects/wiredesk/projects.png",
+            "alt": "Panel de proyectos de WIRE Desk con búsqueda, filtros y tarjetas de estado"
+          }
+        ]
+      },
+      {
         "year": 2023,
         "icon": "quizgame",
         "name": "Quiz Game",
@@ -43,7 +65,10 @@
         "code": "https://github.com/pablousx/quiz-game",
         "skills": ["React.js", "Redux", "HTML5", "CSS", "Vite.js"],
         "images": [
-          { "src": "projects/quiz-game/img1.jpg", "alt": "Banner de Quiz Game" },
+          {
+            "src": "projects/quiz-game/img1.jpg",
+            "alt": "Banner de Quiz Game"
+          },
           {
             "src": "projects/quiz-game/img2.jpg",
             "alt": "Menú de configuración de Quiz Game, donde se selecciona el número de preguntas y las categorías"
@@ -102,7 +127,10 @@
         "code": "https://github.com/pablousx/jolc",
         "skills": ["React.js", "Redux", "Python", "HTML5", "CSS"],
         "images": [
-          { "src": "projects/jolc/img1.jpg", "alt": "Banner de JOLC" },
+          {
+            "src": "projects/jolc/img1.jpg",
+            "alt": "Banner de JOLC"
+          },
           {
             "src": "projects/jolc/img2.jpg",
             "alt": "Interpretando código JOLC, se está llamando a una función factorial"
